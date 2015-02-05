@@ -35,6 +35,8 @@
 		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ResetSettingsOnLaunch"];
 		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"DarkMode"];
 		
+		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"SmallSizeLoadedOnce"];
+		
 		[[NSUserDefaults standardUserDefaults] setFloat:64.0f forKey:@"RelativeFontScale"];
 		[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TextAlignment"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"Impact" forKey:@"FontName"];

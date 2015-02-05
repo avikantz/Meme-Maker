@@ -298,6 +298,21 @@
 		[AllMemes addObject:meme];
 	}
 	
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"SmallSizeLoadedOnce"]) {
+			for (MemeObject *meme in AllMemes) {
+				UIImage *imagey = [UIImage imageNamed:meme.Image];
+				imagey = [self imageByCroppingImage:imagey toSize:CGSizeMake(MIN(imagey.size.width, imagey.size.height), MIN(imagey.size.width, imagey.size.height))];
+				NSData *dataOfImage = UIImageJPEGRepresentation(imagey, 0.7);
+				NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
+				[dataOfImage writeToFile:imagePath atomically:YES];
+				[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+				[[NSUserDefaults standardUserDefaults] synchronize];
+				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SmallSizeLoadedOnce"];
+			}
+		}
+	});
+	
 //	[self.searchDisplayController.searchBar setImage:[UIImage imageNamed:@"Settings"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
 //	[self.searchDisplayController.searchBar setPositionAdjustment:UIOffsetMake(-10, 0) forSearchBarIcon:UISearchBarIconBookmark];
 
@@ -426,6 +441,12 @@
 	cell.backgroundColor = DefColor;
 	cell.backgroundView.backgroundColor = DefColor;
 	
+	NSData *dataOfImage = UIImageJPEGRepresentation(cell.cellImage.image, 0.7);
+	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
+	[dataOfImage writeToFile:imagePath atomically:YES];
+	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
 	return cell;
 }
 
@@ -449,6 +470,12 @@
 	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	return newImage;
+}
+
+- (NSString *)documentsPathForFileName:(NSString *)name {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0];
+	return [documentsPath stringByAppendingPathComponent:name];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -710,12 +737,6 @@
 	[pick dismissViewControllerAnimated:YES completion:NULL];
 	[self.navigationController pushViewController:dvc animated:YES];
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
-}
-
-- (NSString *)documentsPathForFileName:(NSString *)name {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsPath = [paths objectAtIndex:0];
-	return [documentsPath stringByAppendingPathComponent:name];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)pick {

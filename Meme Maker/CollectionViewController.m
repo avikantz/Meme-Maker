@@ -135,7 +135,15 @@
 	MemeObject *meme = nil;
 	meme = [AllMemes objectAtIndex:indexPath.row];
 	
-	UIImage *image = [UIImage imageNamed:[NSString stringWithFormat: @"%@", meme.Image]];
+	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
+	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+	NSString *imageKey = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+	
+	UIImage *image;
+	if (imageKey)
+		image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+	else
+		image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", meme.Image]];
 	CGFloat larger = MIN(image.size.width, image.size.height);
 	image = [self imageByCroppingImage:image toSize:CGSizeMake(larger, larger)];
 	cell.imageView.image = image;
