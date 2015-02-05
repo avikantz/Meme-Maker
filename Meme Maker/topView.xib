@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="topView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Quote Goes Here&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-3p-jfh">
+                    <rect key="frame" x="8" y="519" width="584" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kje-3p-jfh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="17e-cn-dNd"/>
+                <constraint firstAttribute="bottom" secondItem="kje-3p-jfh" secondAttribute="bottom" constant="60" id="dUp-iz-Z0a"/>
+                <constraint firstAttribute="trailing" secondItem="kje-3p-jfh" secondAttribute="trailing" constant="8" id="gG0-r5-mCR"/>
+                <constraint firstAttribute="centerX" secondItem="kje-3p-jfh" secondAttribute="centerX" id="par-Ad-yrr"/>
+            </constraints>
+            <connections>
+                <outlet property="QuoteLabel" destination="kje-3p-jfh" id="vdj-rB-ybs"/>
+            </connections>
+        </view>
+    </objects>
+</document>

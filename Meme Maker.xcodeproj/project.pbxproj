@@ -1,0 +1,2018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		591F26EE1A73DB5600F508D5 /* twoSidedArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */; };
+		59357EB21A765B37003D0245 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59357EB11A765B37003D0245 /* Settings@3x.png */; };
+		596D8FF41A7697850008F060 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596D8FF31A7697850008F060 /* AdSupport.framework */; };
+		596D8FF81A76979C0008F060 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596D8FF71A76979C0008F060 /* CoreGraphics.framework */; };
+		5984AE0E1A712A6D009B078F /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE0D1A712A6D009B078F /* Impact.ttf */; };
+		5984AE101A715405009B078F /* SaveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE0F1A715405009B078F /* SaveIcon.png */; };
+		5984AE141A715B78009B078F /* BlackBlurredmage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE131A715B78009B078F /* BlackBlurredmage.png */; };
+		5984AE171A715E44009B078F /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE161A715E44009B078F /* FontTableViewController.m */; };
+		5984AE1A1A715E5C009B078F /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5984AE191A715E5C009B078F /* FontTableViewCell.m */; };
+		5984AE1C1A716AB4009B078F /* Absender.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE1B1A716AB4009B078F /* Absender.ttf */; };
+		5984AE491A717DE8009B078F /* I Know Fuck Me Right.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE1D1A717DE8009B078F /* I Know Fuck Me Right.jpeg */; };
+		5984AE4A1A717DE8009B078F /* Yo Dawg Heard You.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE1E1A717DE8009B078F /* Yo Dawg Heard You.jpeg */; };
+		5984AE4B1A717DE8009B078F /* The Most Interesting Cat in the World.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE1F1A717DE8009B078F /* The Most Interesting Cat in the World.jpeg */; };
+		5984AE4C1A717DE8009B078F /* Engineering Professor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE201A717DE8009B078F /* Engineering Professor.jpeg */; };
+		5984AE4D1A717DE8009B078F /* Dr Evil Laser.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE211A717DE8009B078F /* Dr Evil Laser.jpeg */; };
+		5984AE4E1A717DE8009B078F /* Kill Yourself Guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE221A717DE8009B078F /* Kill Yourself Guy.jpeg */; };
+		5984AE4F1A717DE8009B078F /* If You Know What I Mean.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE231A717DE8009B078F /* If You Know What I Mean.jpeg */; };
+		5984AE501A717DE8009B078F /* I Too Like To Live Life Dangerously.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE241A717DE8009B078F /* I Too Like To Live Life Dangerously.jpeg */; };
+		5984AE511A717DE8009B078F /* I Should Buy A Boat Cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE251A717DE8009B078F /* I Should Buy A Boat Cat.jpeg */; };
+		5984AE521A717DE8009B078F /* Sparta Leonidas.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE261A717DE8009B078F /* Sparta Leonidas.jpeg */; };
+		5984AE531A717DE8009B078F /* Conspiracy Keanu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE271A717DE8009B078F /* Conspiracy Keanu.jpeg */; };
+		5984AE541A717DE8009B078F /* Disaster Girl.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE281A717DE8009B078F /* Disaster Girl.jpeg */; };
+		5984AE551A717DE8009B078F /* Angry Baby.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE291A717DE8009B078F /* Angry Baby.jpeg */; };
+		5984AE561A717DE8009B078F /* Scumbag Parents.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2A1A717DE8009B078F /* Scumbag Parents.jpeg */; };
+		5984AE571A717DE8009B078F /* Scumbag Stacy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2B1A717DE8009B078F /* Scumbag Stacy.jpeg */; };
+		5984AE581A717DE8009B078F /* Scumbag Steve.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2C1A717DE8009B078F /* Scumbag Steve.jpeg */; };
+		5984AE591A717DE9009B078F /* Skeptical Baby.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2D1A717DE8009B078F /* Skeptical Baby.jpeg */; };
+		5984AE5A1A717DE9009B078F /* Grandma Finds The Internet.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2E1A717DE8009B078F /* Grandma Finds The Internet.jpeg */; };
+		5984AE5B1A717DE9009B078F /* Say That Again I Dare You.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE2F1A717DE8009B078F /* Say That Again I Dare You.jpeg */; };
+		5984AE5C1A717DE9009B078F /* Philosoraptor.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE301A717DE8009B078F /* Philosoraptor.jpeg */; };
+		5984AE5D1A717DE9009B078F /* Evil Toddler.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE311A717DE8009B078F /* Evil Toddler.jpeg */; };
+		5984AE5E1A717DE9009B078F /* Confession Bear.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE321A717DE8009B078F /* Confession Bear.jpeg */; };
+		5984AE601A717DE9009B078F /* Third World Success Kid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE341A717DE8009B078F /* Third World Success Kid.jpeg */; };
+		5984AE621A717DE9009B078F /* Captain Picard Facepalm.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE361A717DE8009B078F /* Captain Picard Facepalm.jpeg */; };
+		5984AE631A717DE9009B078F /* Too Damn High.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE371A717DE8009B078F /* Too Damn High.jpeg */; };
+		5984AE641A717DE9009B078F /* Picard Wtf.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE381A717DE8009B078F /* Picard Wtf.jpeg */; };
+		5984AE651A717DE9009B078F /* Matrix Morpheus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE391A717DE8009B078F /* Matrix Morpheus.jpeg */; };
+		5984AE661A717DE9009B078F /* X All The Y.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3A1A717DE8009B078F /* X All The Y.jpeg */; };
+		5984AE671A717DE9009B078F /* Dwight Schrute.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3B1A717DE8009B078F /* Dwight Schrute.jpeg */; };
+		5984AE681A717DE9009B078F /* That Would Be Great.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3C1A717DE8009B078F /* That Would Be Great.jpeg */; };
+		5984AE691A717DE9009B078F /* Third World Skeptical Kid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3D1A717DE8009B078F /* Third World Skeptical Kid.jpeg */; };
+		5984AE6A1A717DE9009B078F /* Success Kid.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3E1A717DE8009B078F /* Success Kid.jpeg */; };
+		5984AE6B1A717DE9009B078F /* Grumpy Cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE3F1A717DE8009B078F /* Grumpy Cat.jpeg */; };
+		5984AE6C1A717DE9009B078F /* Condescending Wonka.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE401A717DE8009B078F /* Condescending Wonka.jpeg */; };
+		5984AE6D1A717DE9009B078F /* Y U NO.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE411A717DE8009B078F /* Y U NO.jpeg */; };
+		5984AE6E1A717DE9009B078F /* Brace Yourselves X is Coming.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE421A717DE8009B078F /* Brace Yourselves X is Coming.jpeg */; };
+		5984AE6F1A717DE9009B078F /* Bad Luck Brian.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE431A717DE8009B078F /* Bad Luck Brian.jpeg */; };
+		5984AE701A717DE9009B078F /* Futurama Fry.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE441A717DE8009B078F /* Futurama Fry.jpeg */; };
+		5984AE711A717DE9009B078F /* First World Problems.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE451A717DE8009B078F /* First World Problems.jpeg */; };
+		5984AE721A717DE9009B078F /* The Most Interesting Man In The World.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE461A717DE8009B078F /* The Most Interesting Man In The World.jpeg */; };
+		5984AE731A717DE9009B078F /* Batman Slapping Robin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE471A717DE8009B078F /* Batman Slapping Robin.jpeg */; };
+		5984AE741A717DE9009B078F /* One Does Not Simply.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE481A717DE8009B078F /* One Does Not Simply.jpeg */; };
+		5984AE761A717E3D009B078F /* X, X Everywhere.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE751A717E3D009B078F /* X, X Everywhere.jpeg */; };
+		599D0B0F1A6E902B00A1EB34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B0E1A6E902B00A1EB34 /* main.m */; };
+		599D0B121A6E902B00A1EB34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B111A6E902B00A1EB34 /* AppDelegate.m */; };
+		599D0B181A6E902B00A1EB34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B161A6E902B00A1EB34 /* Main.storyboard */; };
+		599D0B1A1A6E902B00A1EB34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B191A6E902B00A1EB34 /* Images.xcassets */; };
+		599D0B1D1A6E902B00A1EB34 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B1B1A6E902B00A1EB34 /* LaunchScreen.xib */; };
+		599D0B291A6E902B00A1EB34 /* Meme_MakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B281A6E902B00A1EB34 /* Meme_MakerTests.m */; };
+		599D0B331A6E908200A1EB34 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599D0B321A6E908200A1EB34 /* AudioToolbox.framework */; };
+		599D0B351A6E908700A1EB34 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599D0B341A6E908700A1EB34 /* AVFoundation.framework */; };
+		599D0B371A6E908B00A1EB34 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599D0B361A6E908B00A1EB34 /* MessageUI.framework */; };
+		599D0B391A6E909200A1EB34 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599D0B381A6E909200A1EB34 /* Social.framework */; };
+		599D0B3D1A6E91AC00A1EB34 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B3C1A6E91AC00A1EB34 /* TableCell.m */; };
+		599D0B401A6E91BA00A1EB34 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B3F1A6E91BA00A1EB34 /* TableViewController.m */; };
+		599D0B431A6E91CA00A1EB34 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B421A6E91CA00A1EB34 /* DetailViewController.m */; };
+		599D0B471A6E922600A1EB34 /* MemeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 599D0B461A6E922600A1EB34 /* MemeObject.m */; };
+		599D0B5C1A6E934700A1EB34 /* 1st World Canadian Problems.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B481A6E934700A1EB34 /* 1st World Canadian Problems.jpeg */; };
+		599D0B5D1A6E934700A1EB34 /* 2nd Term Obama.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B491A6E934700A1EB34 /* 2nd Term Obama.jpeg */; };
+		599D0B5E1A6E934700A1EB34 /* 3g3xw.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4A1A6E934700A1EB34 /* 3g3xw.jpeg */; };
+		599D0B5F1A6E934700A1EB34 /* 10 Guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4B1A6E934700A1EB34 /* 10 Guy.jpeg */; };
+		599D0B601A6E934700A1EB34 /* 1950s Middle Finger.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4C1A6E934700A1EB34 /* 1950s Middle Finger.jpeg */; };
+		599D0B611A6E934700A1EB34 /* 1990s First World Problems.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4D1A6E934700A1EB34 /* 1990s First World Problems.jpeg */; };
+		599D0B621A6E934700A1EB34 /* Aaaaaand Its Gone.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4E1A6E934700A1EB34 /* Aaaaaand Its Gone.jpeg */; };
+		599D0B631A6E934700A1EB34 /* Actual Advice Mallard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B4F1A6E934700A1EB34 /* Actual Advice Mallard.jpeg */; };
+		599D0B641A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B501A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg */; };
+		599D0B651A6E934700A1EB34 /* Advice Dog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B511A6E934700A1EB34 /* Advice Dog.jpeg */; };
+		599D0B661A6E934700A1EB34 /* Advice God.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B521A6E934700A1EB34 /* Advice God.jpeg */; };
+		599D0B671A6E934700A1EB34 /* Advice Yoda.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B531A6E934700A1EB34 /* Advice Yoda.jpeg */; };
+		599D0B681A6E934700A1EB34 /* Ain't Nobody Got Time For That.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B541A6E934700A1EB34 /* Ain't Nobody Got Time For That.jpeg */; };
+		599D0B691A6E934700A1EB34 /* Alan Greenspan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B551A6E934700A1EB34 /* Alan Greenspan.jpeg */; };
+		599D0B6A1A6E934700A1EB34 /* Alarm Clock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B561A6E934700A1EB34 /* Alarm Clock.jpeg */; };
+		599D0B6B1A6E934700A1EB34 /* Albert Cagestein.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B571A6E934700A1EB34 /* Albert Cagestein.jpeg */; };
+		599D0B6C1A6E934700A1EB34 /* Albert Einstein.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B581A6E934700A1EB34 /* Albert Einstein.jpeg */; };
+		599D0B6D1A6E934700A1EB34 /* Am I The Only One Around Here.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B591A6E934700A1EB34 /* Am I The Only One Around Here.jpeg */; };
+		599D0B6E1A6E934700A1EB34 /* Ancient Aliens.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B5A1A6E934700A1EB34 /* Ancient Aliens.jpeg */; };
+		599D0B6F1A6E934700A1EB34 /* And everybody loses their minds.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B5B1A6E934700A1EB34 /* And everybody loses their minds.jpeg */; };
+		599D0B721A6E9A9100A1EB34 /* MemeList.json in Resources */ = {isa = PBXBuildFile; fileRef = 599D0B711A6E9A9100A1EB34 /* MemeList.json */; };
+		599F3C821A7964B30056CF5D /* South Park Randy Marsh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C7E1A7964B20056CF5D /* South Park Randy Marsh.jpg */; };
+		599F3C831A7964B30056CF5D /* I Would Be So Happy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C7F1A7964B30056CF5D /* I Would Be So Happy.jpg */; };
+		599F3C841A7964B30056CF5D /* Captain Hindsight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C801A7964B30056CF5D /* Captain Hindsight.jpg */; };
+		599F3C851A7964B30056CF5D /* You Know What Really Grinds My Gears?.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C811A7964B30056CF5D /* You Know What Really Grinds My Gears?.jpg */; };
+		599F3C871A79676F0056CF5D /* LithosPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C861A79676F0056CF5D /* LithosPro-Black.otf */; };
+		599F3C891A7967D60056CF5D /* PoplarStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C881A7967D60056CF5D /* PoplarStd.otf */; };
+		599F3C8B1A7968240056CF5D /* StencilStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 599F3C8A1A7968240056CF5D /* StencilStd.otf */; };
+		59AE79321A77E4E300014735 /* This is Where.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE79311A77E4E300014735 /* This is Where.jpg */; };
+		59AE79341A77E67B00014735 /* What Year is It.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE79331A77E67B00014735 /* What Year is It.jpeg */; };
+		59AE79361A77E7C500014735 /* Obi Wan Kenobi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE79351A77E7C500014735 /* Obi Wan Kenobi.jpeg */; };
+		59AE79381A77E85C00014735 /* Look at all these....jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE79371A77E85C00014735 /* Look at all these....jpg */; };
+		59AE793D1A77EB5C00014735 /* Hipster Barista.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE79391A77EB5C00014735 /* Hipster Barista.jpg */; };
+		59AE793E1A77EB5C00014735 /* Disappointed Picard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE793A1A77EB5C00014735 /* Disappointed Picard.jpg */; };
+		59AE793F1A77EB5C00014735 /* Nobody Cares.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE793B1A77EB5C00014735 /* Nobody Cares.jpg */; };
+		59AE79401A77EB5C00014735 /* Don't You Squidward.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59AE793C1A77EB5C00014735 /* Don't You Squidward.jpeg */; };
+		59AF27831A7D65F800AC5E7F /* topView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AF27821A7D65F800AC5E7F /* topView.m */; };
+		59AF27851A7D660800AC5E7F /* topView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59AF27841A7D660800AC5E7F /* topView.xib */; };
+		59AF27871A7D673500AC5E7F /* AvenirCondensedHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59AF27861A7D673500AC5E7F /* AvenirCondensedHand.ttf */; };
+		59AF27B71A7D6F9D00AC5E7F /* Quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 59AF27B61A7D6F9D00AC5E7F /* Quotes.json */; };
+		59B161021A7B584A00301E25 /* Hasta La Vista, Baby.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E21A7B584A00301E25 /* Hasta La Vista, Baby.jpg */; };
+		59B161031A7B584A00301E25 /* Shashawnk Redemption.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E31A7B584A00301E25 /* Shashawnk Redemption.jpg */; };
+		59B161041A7B584A00301E25 /* Jim Carrey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E41A7B584A00301E25 /* Jim Carrey.jpg */; };
+		59B161051A7B584A00301E25 /* Alrighty Then.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E51A7B584A00301E25 /* Alrighty Then.jpg */; };
+		59B161061A7B584A00301E25 /* Ridiculously Photogenic Guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E61A7B584A00301E25 /* Ridiculously Photogenic Guy.jpg */; };
+		59B161071A7B584A00301E25 /* Misunderstood Metalhead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E71A7B584A00301E25 /* Misunderstood Metalhead.jpg */; };
+		59B161081A7B584A00301E25 /* Ridiculously Photogenic Metalhead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E81A7B584A00301E25 /* Ridiculously Photogenic Metalhead.jpg */; };
+		59B161091A7B584A00301E25 /* Nyan Cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160E91A7B584A00301E25 /* Nyan Cat.jpeg */; };
+		59B1610A1A7B584A00301E25 /* It's So Fluffy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160EA1A7B584A00301E25 /* It's So Fluffy.jpg */; };
+		59B1610B1A7B584A00301E25 /* Fluffy Unicorn Dash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160EB1A7B584A00301E25 /* Fluffy Unicorn Dash.jpg */; };
+		59B1610C1A7B584A00301E25 /* Agnes Despicable Me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160EC1A7B584A00301E25 /* Agnes Despicable Me.jpg */; };
+		59B1610D1A7B584A00301E25 /* Impossibru.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160ED1A7B584A00301E25 /* Impossibru.jpg */; };
+		59B1610E1A7B584A00301E25 /* Foreign Policy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160EE1A7B584A00301E25 /* Foreign Policy.jpg */; };
+		59B1610F1A7B584A00301E25 /* Seems Legit.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160EF1A7B584A00301E25 /* Seems Legit.jpeg */; };
+		59B161101A7B584A00301E25 /* Not Bad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F01A7B584A00301E25 /* Not Bad.jpg */; };
+		59B161111A7B584A00301E25 /* Yeah, Science!.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F11A7B584A00301E25 /* Yeah, Science!.jpeg */; };
+		59B161121A7B584A00301E25 /* I See What You Did There.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F21A7B584A00301E25 /* I See What You Did There.jpg */; };
+		59B161131A7B584A00301E25 /* Dafuq Rage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F31A7B584A00301E25 /* Dafuq Rage.jpg */; };
+		59B161141A7B584A00301E25 /* Scumbag Boss.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F41A7B584A00301E25 /* Scumbag Boss.jpeg */; };
+		59B161151A7B584A00301E25 /* Like a Boss Putin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F51A7B584A00301E25 /* Like a Boss Putin.jpeg */; };
+		59B161161A7B584A00301E25 /* Pun Putin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F61A7B584A00301E25 /* Pun Putin.jpeg */; };
+		59B161171A7B584A00301E25 /* Good Guy Putin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F71A7B584A00301E25 /* Good Guy Putin.jpg */; };
+		59B161181A7B584A00301E25 /* PSY.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F81A7B584A00301E25 /* PSY.jpeg */; };
+		59B161191A7B584A00301E25 /* Malicious Advice Mallard.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160F91A7B584A00301E25 /* Malicious Advice Mallard.jpeg */; };
+		59B1611A1A7B584A00301E25 /* Actual Revenge Duck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FA1A7B584A00301E25 /* Actual Revenge Duck.jpg */; };
+		59B1611B1A7B584A00301E25 /* Meme Colored Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FB1A7B584A00301E25 /* Meme Colored Background.jpg */; };
+		59B1611C1A7B584A00301E25 /* Jesus Says.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FC1A7B584A00301E25 /* Jesus Says.jpg */; };
+		59B1611D1A7B584A00301E25 /* Dafuq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FD1A7B584A00301E25 /* Dafuq.jpg */; };
+		59B1611E1A7B584A00301E25 /* Angry Dumbledore.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FE1A7B584A00301E25 /* Angry Dumbledore.jpeg */; };
+		59B1611F1A7B584A00301E25 /* I Will Find You and I Will Kill You.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B160FF1A7B584A00301E25 /* I Will Find You and I Will Kill You.jpg */; };
+		59B161201A7B584A00301E25 /* Krillin Peace.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B161001A7B584A00301E25 /* Krillin Peace.jpg */; };
+		59B161211A7B584A00301E25 /* It's over 9000!!!.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59B161011A7B584A00301E25 /* It's over 9000!!!.jpg */; };
+		59C3ADBE1A7011690046A652 /* AbadiMTBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C3ADBD1A7011690046A652 /* AbadiMTBold.ttf */; };
+		59C3ADC01A7012800046A652 /* Consolas Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59C3ADBF1A7012800046A652 /* Consolas Bold.ttf */; };
+		59C3ADC31A701A310046A652 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C3ADC21A701A310046A652 /* UIImage+ImageEffects.m */; };
+		59C3ADC51A701E160046A652 /* EtelkaNarrowTextPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59C3ADC41A701E160046A652 /* EtelkaNarrowTextPro.otf */; };
+		59DF1B011A76AC1400C49011 /* Darth Vader and Luke Skywalker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AEF1A76AC1400C49011 /* Darth Vader and Luke Skywalker.jpg */; };
+		59DF1B021A76AC1400C49011 /* It's a Trap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF01A76AC1400C49011 /* It's a Trap.jpg */; };
+		59DF1B031A76AC1400C49011 /* Pirate Poker Face.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF11A76AC1400C49011 /* Pirate Poker Face.jpg */; };
+		59DF1B041A76AC1400C49011 /* Jack Sparrow Being Chased.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF21A76AC1400C49011 /* Jack Sparrow Being Chased.jpeg */; };
+		59DF1B051A76AC1400C49011 /* Confused Jackie Chan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF31A76AC1400C49011 /* Confused Jackie Chan.jpeg */; };
+		59DF1B061A76AC1400C49011 /* Jack Nicholson The Shining.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF41A76AC1400C49011 /* Jack Nicholson The Shining.jpeg */; };
+		59DF1B071A76AC1400C49011 /* Barbosa And Sparrow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF51A76AC1400C49011 /* Barbosa And Sparrow.jpg */; };
+		59DF1B081A76AC1400C49011 /* Jar of Dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF61A76AC1400C49011 /* Jar of Dirt.jpg */; };
+		59DF1B091A76AC1400C49011 /* You Were The Chosen One.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF71A76AC1400C49011 /* You Were The Chosen One.jpg */; };
+		59DF1B0A1A76AC1400C49011 /* You Underestimate My Power.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF81A76AC1400C49011 /* You Underestimate My Power.jpeg */; };
+		59DF1B0B1A76AC1400C49011 /* Darth Vader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AF91A76AC1400C49011 /* Darth Vader.jpg */; };
+		59DF1B0C1A76AC1400C49011 /* Darth Sidious.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFA1A76AC1400C49011 /* Darth Sidious.jpg */; };
+		59DF1B0D1A76AC1400C49011 /* So Much Win.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFB1A76AC1400C49011 /* So Much Win.jpeg */; };
+		59DF1B0E1A76AC1400C49011 /* Spock.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFC1A76AC1400C49011 /* Spock.jpeg */; };
+		59DF1B0F1A76AC1400C49011 /* Yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFD1A76AC1400C49011 /* Yoda.jpg */; };
+		59DF1B101A76AC1400C49011 /* Morgan Freeman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFE1A76AC1400C49011 /* Morgan Freeman.jpg */; };
+		59DF1B111A76AC1400C49011 /* Heisenberg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1AFF1A76AC1400C49011 /* Heisenberg.jpg */; };
+		59DF1B121A76AC1400C49011 /* Confession Tiger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B001A76AC1400C49011 /* Confession Tiger.jpg */; };
+		59DF1B4A1A76BDF900C49011 /* Hipster Ariel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B131A76BDF900C49011 /* Hipster Ariel.jpg */; };
+		59DF1B4B1A76BDF900C49011 /* Thor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B141A76BDF900C49011 /* Thor.jpg */; };
+		59DF1B4C1A76BDF900C49011 /* Walking Away from an Explosion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B151A76BDF900C49011 /* Walking Away from an Explosion.jpg */; };
+		59DF1B4D1A76BDF900C49011 /* Tony Stark Fame.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B161A76BDF900C49011 /* Tony Stark Fame.jpg */; };
+		59DF1B4E1A76BDF900C49011 /* Legolas Elf Eyes.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B171A76BDF900C49011 /* Legolas Elf Eyes.jpeg */; };
+		59DF1B4F1A76BDF900C49011 /* Grumpy Cat Alternate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B181A76BDF900C49011 /* Grumpy Cat Alternate.jpeg */; };
+		59DF1B501A76BDF900C49011 /* Angry Arnold.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B191A76BDF900C49011 /* Angry Arnold.jpg */; };
+		59DF1B511A76BDF900C49011 /* Unimressed Queen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1A1A76BDF900C49011 /* Unimressed Queen.jpg */; };
+		59DF1B521A76BDF900C49011 /* You Don't Say?.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1B1A76BDF900C49011 /* You Don't Say?.jpg */; };
+		59DF1B531A76BDF900C49011 /* Oh Lord!.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1C1A76BDF900C49011 /* Oh Lord!.jpg */; };
+		59DF1B541A76BDF900C49011 /* Sheldon Cooper Mind Control.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1D1A76BDF900C49011 /* Sheldon Cooper Mind Control.jpeg */; };
+		59DF1B551A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1E1A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg */; };
+		59DF1B561A76BDF900C49011 /* Sheldon Logic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B1F1A76BDF900C49011 /* Sheldon Logic.jpeg */; };
+		59DF1B571A76BDFA00C49011 /* Bill Nye the Science Guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B201A76BDF900C49011 /* Bill Nye the Science Guy.jpg */; };
+		59DF1B581A76BDFA00C49011 /* Ron Swanson.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B211A76BDF900C49011 /* Ron Swanson.jpeg */; };
+		59DF1B591A76BDFA00C49011 /* Ron Burgundy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B221A76BDF900C49011 /* Ron Burgundy.jpg */; };
+		59DF1B5A1A76BDFA00C49011 /* Gordon Ramsay.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B231A76BDF900C49011 /* Gordon Ramsay.jpeg */; };
+		59DF1B5B1A76BDFA00C49011 /* I'll Just Wait Here.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B241A76BDF900C49011 /* I'll Just Wait Here.jpeg */; };
+		59DF1B5C1A76BDFA00C49011 /* Imagination.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B251A76BDF900C49011 /* Imagination.jpeg */; };
+		59DF1B5D1A76BDFA00C49011 /* But Thats None Of My Business.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B261A76BDF900C49011 /* But Thats None Of My Business.jpg */; };
+		59DF1B5E1A76BDFA00C49011 /* Frank Underwood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B271A76BDF900C49011 /* Frank Underwood.jpg */; };
+		59DF1B5F1A76BDFA00C49011 /* Deadpool Pick Up Lines.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B281A76BDF900C49011 /* Deadpool Pick Up Lines.jpeg */; };
+		59DF1B601A76BDFA00C49011 /* Metal Jesus.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B291A76BDF900C49011 /* Metal Jesus.jpeg */; };
+		59DF1B611A76BDFA00C49011 /* Kim Jong-Un Lube Factory.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2A1A76BDF900C49011 /* Kim Jong-Un Lube Factory.jpg */; };
+		59DF1B621A76BDFA00C49011 /* Pitbull.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2B1A76BDF900C49011 /* Pitbull.jpg */; };
+		59DF1B631A76BDFA00C49011 /* Titanic Jack.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2C1A76BDF900C49011 /* Titanic Jack.jpeg */; };
+		59DF1B641A76BDFA00C49011 /* Leo Bites his Hand.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2D1A76BDF900C49011 /* Leo Bites his Hand.jpg */; };
+		59DF1B651A76BDFA00C49011 /* Inception.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2E1A76BDF900C49011 /* Inception.jpg */; };
+		59DF1B661A76BDFA00C49011 /* Leonardo Dicaprio Cheers.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B2F1A76BDF900C49011 /* Leonardo Dicaprio Cheers.jpeg */; };
+		59DF1B671A76BDFA00C49011 /* Surprised Doc Brown and Marty.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B301A76BDF900C49011 /* Surprised Doc Brown and Marty.jpg */; };
+		59DF1B681A76BDFA00C49011 /* Great Scott.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B311A76BDF900C49011 /* Great Scott.jpg */; };
+		59DF1B691A76BDFA00C49011 /* Back To The Future.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B321A76BDF900C49011 /* Back To The Future.jpg */; };
+		59DF1B6A1A76BDFA00C49011 /* Doc Brown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B331A76BDF900C49011 /* Doc Brown.jpg */; };
+		59DF1B6B1A76BDFA00C49011 /* Matrix Bullet Evasion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B341A76BDF900C49011 /* Matrix Bullet Evasion.jpg */; };
+		59DF1B6C1A76BDFA00C49011 /* Morpheus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B351A76BDF900C49011 /* Morpheus.jpg */; };
+		59DF1B6D1A76BDFA00C49011 /* Matrix Neo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B361A76BDF900C49011 /* Matrix Neo.jpg */; };
+		59DF1B6E1A76BDFA00C49011 /* Batman Smiles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B371A76BDF900C49011 /* Batman Smiles.jpg */; };
+		59DF1B6F1A76BDFA00C49011 /* Permission Bane.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B381A76BDF900C49011 /* Permission Bane.jpeg */; };
+		59DF1B701A76BDFA00C49011 /* Sad Batman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B391A76BDF900C49011 /* Sad Batman.jpg */; };
+		59DF1B711A76BDFA00C49011 /* The Joker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3A1A76BDF900C49011 /* The Joker.jpg */; };
+		59DF1B721A76BDFA00C49011 /* Why So Serious?.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3B1A76BDF900C49011 /* Why So Serious?.jpeg */; };
+		59DF1B731A76BDFA00C49011 /* LOL Guy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3C1A76BDF900C49011 /* LOL Guy.jpeg */; };
+		59DF1B741A76BDFA00C49011 /* Not Sure If Gusta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3D1A76BDF900C49011 /* Not Sure If Gusta.jpg */; };
+		59DF1B751A76BDFA00C49011 /* Fap Guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3E1A76BDF900C49011 /* Fap Guy.jpg */; };
+		59DF1B761A76BDFA00C49011 /* Peter Parker Smile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B3F1A76BDF900C49011 /* Peter Parker Smile.jpg */; };
+		59DF1B771A76BDFA00C49011 /* Spiderman Hospital.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B401A76BDF900C49011 /* Spiderman Hospital.jpeg */; };
+		59DF1B781A76BDFA00C49011 /* Hungover Spiderman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B411A76BDF900C49011 /* Hungover Spiderman.jpg */; };
+		59DF1B791A76BDFA00C49011 /* Spiderman Pssssst.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B421A76BDF900C49011 /* Spiderman Pssssst.jpg */; };
+		59DF1B7A1A76BDFA00C49011 /* And I'm Just Sitting Here.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B431A76BDF900C49011 /* And I'm Just Sitting Here.jpg */; };
+		59DF1B7B1A76BDFA00C49011 /* Wolverine Crush.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B441A76BDF900C49011 /* Wolverine Crush.jpg */; };
+		59DF1B7C1A76BDFA00C49011 /* Charles Xavier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B451A76BDF900C49011 /* Charles Xavier.jpg */; };
+		59DF1B7D1A76BDFA00C49011 /* You Shall Not Pass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B461A76BDF900C49011 /* You Shall Not Pass.jpg */; };
+		59DF1B7E1A76BDFA00C49011 /* I Have No Memory of This Place.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B471A76BDF900C49011 /* I Have No Memory of This Place.jpeg */; };
+		59DF1B7F1A76BDFA00C49011 /* Heavy Breathing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B481A76BDF900C49011 /* Heavy Breathing.jpg */; };
+		59DF1B801A76BDFA00C49011 /* My Precious.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B491A76BDF900C49011 /* My Precious.jpg */; };
+		59DF1B841A76C10300C49011 /* Awwwwww Yeah.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B811A76C10300C49011 /* Awwwwww Yeah.jpeg */; };
+		59DF1B851A76C10300C49011 /* Surprise Mo********er.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B821A76C10300C49011 /* Surprise Mo********er.jpg */; };
+		59DF1B861A76C10300C49011 /* Incredibles Syndrome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B831A76C10300C49011 /* Incredibles Syndrome.jpg */; };
+		59E68E351A75871100D1C0C8 /* Screen3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E311A75871100D1C0C8 /* Screen3.jpg */; };
+		59E68E361A75871100D1C0C8 /* Screen4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E321A75871100D1C0C8 /* Screen4.jpg */; };
+		59E68E371A75871100D1C0C8 /* Screen2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E331A75871100D1C0C8 /* Screen2.jpg */; };
+		59E68E381A75871100D1C0C8 /* Screen1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E341A75871100D1C0C8 /* Screen1.jpg */; };
+		59E68E671A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E391A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg */; };
+		59E68E681A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3A1A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg */; };
+		59E68E691A7596AE00D1C0C8 /* Y'all Got Any More.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3B1A7596AE00D1C0C8 /* Y'all Got Any More.jpg */; };
+		59E68E6A1A7596AE00D1C0C8 /* College Liberal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3C1A7596AE00D1C0C8 /* College Liberal.jpg */; };
+		59E68E6B1A7596AE00D1C0C8 /* Well That Escalated Quickly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3D1A7596AE00D1C0C8 /* Well That Escalated Quickly.jpg */; };
+		59E68E6C1A7596AE00D1C0C8 /* No Shit Sherock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3E1A7596AE00D1C0C8 /* No Shit Sherock.jpg */; };
+		59E68E6D1A7596AE00D1C0C8 /* Hannibal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3F1A7596AE00D1C0C8 /* Hannibal.jpg */; };
+		59E68E6E1A7596AE00D1C0C8 /* Advice Doge.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E401A7596AE00D1C0C8 /* Advice Doge.jpeg */; };
+		59E68E6F1A7596AE00D1C0C8 /* Doge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E411A7596AE00D1C0C8 /* Doge.jpg */; };
+		59E68E701A7596AE00D1C0C8 /* Success Kid : I Hate Sandcastles.png in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E421A7596AE00D1C0C8 /* Success Kid : I Hate Sandcastles.png */; };
+		59E68E711A7596AE00D1C0C8 /* True Story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E431A7596AE00D1C0C8 /* True Story.jpg */; };
+		59E68E721A7596AE00D1C0C8 /* Archer Deal With It.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E441A7596AE00D1C0C8 /* Archer Deal With It.jpg */; };
+		59E68E731A7596AE00D1C0C8 /* Archer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E451A7596AE00D1C0C8 /* Archer.jpeg */; };
+		59E68E741A7596AE00D1C0C8 /* Darwin Facepalm.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E461A7596AE00D1C0C8 /* Darwin Facepalm.jpeg */; };
+		59E68E751A7596AE00D1C0C8 /* Minion What!.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E471A7596AE00D1C0C8 /* Minion What!.jpg */; };
+		59E68E761A7596AE00D1C0C8 /* Minions Bottom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E481A7596AE00D1C0C8 /* Minions Bottom.jpg */; };
+		59E68E771A7596AE00D1C0C8 /* Minion Banana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E491A7596AE00D1C0C8 /* Minion Banana.jpg */; };
+		59E68E781A7596AE00D1C0C8 /* Excited Minions.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4A1A7596AE00D1C0C8 /* Excited Minions.jpeg */; };
+		59E68E791A7596AE00D1C0C8 /* Carter the Banana Boy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4B1A7596AE00D1C0C8 /* Carter the Banana Boy.jpg */; };
+		59E68E7A1A7596AE00D1C0C8 /* George RR Martin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4C1A7596AE00D1C0C8 /* George RR Martin.jpg */; };
+		59E68E7B1A7596AE00D1C0C8 /* Gabe Newell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4D1A7596AE00D1C0C8 /* Gabe Newell.jpg */; };
+		59E68E7C1A7596AE00D1C0C8 /* Rick and Carl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4E1A7596AE00D1C0C8 /* Rick and Carl.jpg */; };
+		59E68E7D1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E4F1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg */; };
+		59E68E7E1A7596AE00D1C0C8 /* House Thumbs Up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E501A7596AE00D1C0C8 /* House Thumbs Up.jpg */; };
+		59E68E7F1A7596AE00D1C0C8 /* 10 Peeking.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E511A7596AE00D1C0C8 /* 10 Peeking.jpg */; };
+		59E68E801A7596AE00D1C0C8 /* Doctor Who Don't.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E521A7596AE00D1C0C8 /* Doctor Who Don't.jpeg */; };
+		59E68E811A7596AE00D1C0C8 /* Dr. Evil Pinky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E531A7596AE00D1C0C8 /* Dr. Evil Pinky.jpg */; };
+		59E68E821A7596AE00D1C0C8 /* Neil deGrasse Tyson.png in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E541A7596AE00D1C0C8 /* Neil deGrasse Tyson.png */; };
+		59E68E831A7596AE00D1C0C8 /* Scumbag Body.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E551A7596AE00D1C0C8 /* Scumbag Body.jpg */; };
+		59E68E841A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E561A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg */; };
+		59E68E851A7596AE00D1C0C8 /* Cereal Guy Spit.png in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E571A7596AE00D1C0C8 /* Cereal Guy Spit.png */; };
+		59E68E861A7596AE00D1C0C8 /* Cereal Guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E581A7596AE00D1C0C8 /* Cereal Guy.jpg */; };
+		59E68E871A7596AE00D1C0C8 /* Pissed Off Obama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E591A7596AE00D1C0C8 /* Pissed Off Obama.jpg */; };
+		59E68E881A7596AE00D1C0C8 /* Vladmir Putin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5A1A7596AE00D1C0C8 /* Vladmir Putin.jpg */; };
+		59E68E891A7596AE00D1C0C8 /* Bad Joke Eel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5B1A7596AE00D1C0C8 /* Bad Joke Eel.jpg */; };
+		59E68E8A1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5C1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg */; };
+		59E68E8B1A7596AE00D1C0C8 /* Foul Bachelor Frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5D1A7596AE00D1C0C8 /* Foul Bachelor Frog.jpg */; };
+		59E68E8C1A7596AE00D1C0C8 /* Lame Pun Coon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5E1A7596AE00D1C0C8 /* Lame Pun Coon.jpg */; };
+		59E68E8D1A7596AE00D1C0C8 /* Depression Dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E5F1A7596AE00D1C0C8 /* Depression Dog.jpg */; };
+		59E68E8E1A7596AE00D1C0C8 /* Sheltering Suburban Mom.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E601A7596AE00D1C0C8 /* Sheltering Suburban Mom.jpeg */; };
+		59E68E8F1A7596AE00D1C0C8 /* Art Student Owl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E611A7596AE00D1C0C8 /* Art Student Owl.jpg */; };
+		59E68E901A7596AE00D1C0C8 /* Technologically Impaired Duck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E621A7596AE00D1C0C8 /* Technologically Impaired Duck.jpg */; };
+		59E68E911A7596AE00D1C0C8 /* Annoying Gym Newbie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E631A7596AE00D1C0C8 /* Annoying Gym Newbie.jpg */; };
+		59E68E921A7596AE00D1C0C8 /* Tim Cook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E641A7596AE00D1C0C8 /* Tim Cook.jpg */; };
+		59E68E931A7596AE00D1C0C8 /* Steve Jobs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E651A7596AE00D1C0C8 /* Steve Jobs.jpeg */; };
+		59E68E941A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E661A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg */; };
+		59EE0A1F1A729ECD009C75DC /* LeagueGothic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59EE0A1E1A729ECD009C75DC /* LeagueGothic-Regular.otf */; };
+		59EE0A211A729EE5009C75DC /* LeagueGothic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59EE0A201A729EE5009C75DC /* LeagueGothic-Italic.otf */; };
+		59EE0A251A729FA9009C75DC /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59EE0A241A729FA9009C75DC /* Righteous-Regular.ttf */; };
+		59EE0A281A72A530009C75DC /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE0A271A72A530009C75DC /* CollectionViewController.m */; };
+		59EE0A2E1A72AC3E009C75DC /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EE0A2D1A72AC3E009C75DC /* CustomCollectionViewCell.m */; };
+		59F6679F1A740B300089FD23 /* MemeMakerIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F6679E1A740B300089FD23 /* MemeMakerIcon.jpg */; };
+		59F667CE1A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A01A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg */; };
+		59F667CF1A7431980089FD23 /* Socially Awesome Penguin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A11A7431980089FD23 /* Socially Awesome Penguin.jpg */; };
+		59F667D01A7431980089FD23 /* Socially Awesome Awkward Penguin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A21A7431980089FD23 /* Socially Awesome Awkward Penguin.jpg */; };
+		59F667D11A7431980089FD23 /* Socially Awkward Penguin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A31A7431980089FD23 /* Socially Awkward Penguin.jpg */; };
+		59F667D21A7431980089FD23 /* Scumbag Brain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A41A7431980089FD23 /* Scumbag Brain.jpg */; };
+		59F667D31A7431980089FD23 /* Net N00b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A51A7431980089FD23 /* Net N00b.jpg */; };
+		59F667D41A7431980089FD23 /* Buisness Cat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A61A7431980089FD23 /* Buisness Cat.jpg */; };
+		59F667D51A7431980089FD23 /* Pedobear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A71A7431980089FD23 /* Pedobear.jpg */; };
+		59F667D61A7431980089FD23 /* Rage Fuuuuu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A81A7431980089FD23 /* Rage Fuuuuu.jpg */; };
+		59F667D71A7431980089FD23 /* Pickup Line Panda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667A91A7431980089FD23 /* Pickup Line Panda.jpg */; };
+		59F667D81A7431980089FD23 /* Okay Guy.png in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AA1A7431980089FD23 /* Okay Guy.png */; };
+		59F667D91A7431980089FD23 /* Paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AB1A7431980089FD23 /* Paper.jpg */; };
+		59F667DA1A7431980089FD23 /* Sudden Clarity Clarence.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AC1A7431980089FD23 /* Sudden Clarity Clarence.jpg */; };
+		59F667DB1A7431980089FD23 /* Insanity Wolf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AD1A7431980089FD23 /* Insanity Wolf.jpg */; };
+		59F667DC1A7431980089FD23 /* Today was a good day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AE1A7431980089FD23 /* Today was a good day.jpg */; };
+		59F667DD1A7431980089FD23 /* Annoying Facebook Girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667AF1A7431980089FD23 /* Annoying Facebook Girl.jpg */; };
+		59F667DE1A7431980089FD23 /* American Pride Eagle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B01A7431980089FD23 /* American Pride Eagle.jpg */; };
+		59F667DF1A7431980089FD23 /* I am Not a Smart Man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B11A7431980089FD23 /* I am Not a Smart Man.jpg */; };
+		59F667E01A7431980089FD23 /* Butthurt Dweller.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B21A7431980089FD23 /* Butthurt Dweller.jpeg */; };
+		59F667E11A7431980089FD23 /* Dat Ass.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B31A7431980089FD23 /* Dat Ass.jpg */; };
+		59F667E21A7431980089FD23 /* Bear Grylls.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B41A7431980089FD23 /* Bear Grylls.jpeg */; };
+		59F667E31A7431980089FD23 /* Chemistry Cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B51A7431980089FD23 /* Chemistry Cat.jpeg */; };
+		59F667E41A7431980089FD23 /* Forever Resentful Mother.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B61A7431980089FD23 /* Forever Resentful Mother.jpg */; };
+		59F667E51A7431980089FD23 /* Evil Plotting Raccoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B71A7431980089FD23 /* Evil Plotting Raccoon.jpg */; };
+		59F667E61A7431980089FD23 /* Internet Husband.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B81A7431980089FD23 /* Internet Husband.jpg */; };
+		59F667E71A7431980089FD23 /* Whyyy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667B91A7431980089FD23 /* Whyyy.jpg */; };
+		59F667E81A7431980089FD23 /* High Expectations Asian Father.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BA1A7431980089FD23 /* High Expectations Asian Father.jpg */; };
+		59F667E91A7431980089FD23 /* Forever Alone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BB1A7431980089FD23 /* Forever Alone.jpg */; };
+		59F667EA1A7431980089FD23 /* Joseph Ducreux.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BC1A7431980089FD23 /* Joseph Ducreux.jpeg */; };
+		59F667EB1A7431980089FD23 /* Good Guy Boss.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BD1A7431980089FD23 /* Good Guy Boss.jpg */; };
+		59F667EC1A7431980089FD23 /* Overly Attached Boyfriend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BE1A7431980089FD23 /* Overly Attached Boyfriend.jpg */; };
+		59F667ED1A7431980089FD23 /* Back In My Day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667BF1A7431980089FD23 /* Back In My Day.jpg */; };
+		59F667EE1A7431980089FD23 /* Overly Attached Girlfriend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C01A7431980089FD23 /* Overly Attached Girlfriend.jpg */; };
+		59F667EF1A7431980089FD23 /* Challenge Accepted.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C11A7431980089FD23 /* Challenge Accepted.jpg */; };
+		59F667F01A7431980089FD23 /* Trollface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C21A7431980089FD23 /* Trollface.jpg */; };
+		59F667F11A7431980089FD23 /* Good Girl Gina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C31A7431980089FD23 /* Good Girl Gina.jpg */; };
+		59F667F21A7431980089FD23 /* Good Dog Greg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C41A7431980089FD23 /* Good Dog Greg.jpg */; };
+		59F667F31A7431980089FD23 /* First Day on the Internet Kid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C51A7431980089FD23 /* First Day on the Internet Kid.jpg */; };
+		59F667F41A7431980089FD23 /* Good Guy Greg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C61A7431980089FD23 /* Good Guy Greg.jpg */; };
+		59F667F51A7431980089FD23 /* Lazy College Senior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C71A7431980089FD23 /* Lazy College Senior.jpg */; };
+		59F667F61A7431980089FD23 /* Surprised Koala.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C81A7431980089FD23 /* Surprised Koala.jpeg */; };
+		59F667F71A7431980089FD23 /* Unhelpful Highschool Teacher.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667C91A7431980089FD23 /* Unhelpful Highschool Teacher.jpg */; };
+		59F667F81A7431980089FD23 /* Chill Out Lemur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667CA1A7431980089FD23 /* Chill Out Lemur.jpg */; };
+		59F667F91A7431980089FD23 /* Please Guy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667CB1A7431980089FD23 /* Please Guy.jpg */; };
+		59F667FA1A7431980089FD23 /* Awkward Moment Seal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667CC1A7431980089FD23 /* Awkward Moment Seal.jpg */; };
+		59F667FB1A7431980089FD23 /* Overly Manly Man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667CD1A7431980089FD23 /* Overly Manly Man.jpg */; };
+		59F6680C1A7438480089FD23 /* Good Girl Ana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667FC1A7438470089FD23 /* Good Girl Ana.jpg */; };
+		59F6680D1A7438480089FD23 /* Jealous Girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667FD1A7438470089FD23 /* Jealous Girl.jpg */; };
+		59F6680E1A7438480089FD23 /* Idiot Nerd Girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667FE1A7438470089FD23 /* Idiot Nerd Girl.jpg */; };
+		59F6680F1A7438480089FD23 /* Vengeance Dad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F667FF1A7438470089FD23 /* Vengeance Dad.jpg */; };
+		59F668101A7438480089FD23 /* Anti Joke Chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668001A7438470089FD23 /* Anti Joke Chicken.jpg */; };
+		59F668111A7438480089FD23 /* Weird Stuff I Do Potoo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668011A7438480089FD23 /* Weird Stuff I Do Potoo.jpg */; };
+		59F668121A7438480089FD23 /* Courage Wolf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668021A7438480089FD23 /* Courage Wolf.jpg */; };
+		59F668131A7438480089FD23 /* Dating Site Murderer.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668031A7438480089FD23 /* Dating Site Murderer.jpeg */; };
+		59F668141A7438480089FD23 /* Paranoid Parrot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668041A7438480089FD23 /* Paranoid Parrot.jpg */; };
+		59F668151A7438480089FD23 /* Unpopular Opinion Puffin.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668051A7438480089FD23 /* Unpopular Opinion Puffin.jpeg */; };
+		59F668161A7438480089FD23 /* Redneck Randal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668061A7438480089FD23 /* Redneck Randal.jpg */; };
+		59F668171A7438480089FD23 /* Drunk Baby.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668071A7438480089FD23 /* Drunk Baby.jpeg */; };
+		59F668181A7438480089FD23 /* Shut Up and Take My Money.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668081A7438480089FD23 /* Shut Up and Take My Money.jpeg */; };
+		59F668191A7438480089FD23 /* You're gonna have a Bad Time.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668091A7438480089FD23 /* You're gonna have a Bad Time.jpg */; };
+		59F6681A1A7438480089FD23 /* College Freshman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F6680A1A7438480089FD23 /* College Freshman.jpg */; };
+		59F6681B1A7438480089FD23 /* Successful Black Man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F6680B1A7438480089FD23 /* Successful Black Man.jpg */; };
+		59FE603A1A74EABB00C6F93A /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FE60391A74EABB00C6F93A /* PhotosUI.framework */; };
+		59FE603C1A74EABB00C6F93A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FE603B1A74EABB00C6F93A /* Photos.framework */; };
+		59FE60421A74EABB00C6F93A /* PhotoEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FE60411A74EABB00C6F93A /* PhotoEditingViewController.m */; };
+		59FE60441A74EABB00C6F93A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60431A74EABB00C6F93A /* MainInterface.storyboard */; };
+		59FE60471A74EABB00C6F93A /* Photo Meme.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 59FE60381A74EABB00C6F93A /* Photo Meme.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		59FE60551A74ECF600C6F93A /* AbadiMTBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE604C1A74ECF600C6F93A /* AbadiMTBold.ttf */; };
+		59FE60561A74ECF600C6F93A /* Absender.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE604D1A74ECF600C6F93A /* Absender.ttf */; };
+		59FE60571A74ECF600C6F93A /* Consolas Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE604E1A74ECF600C6F93A /* Consolas Bold.ttf */; };
+		59FE60581A74ECF600C6F93A /* Dead Kansas.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE604F1A74ECF600C6F93A /* Dead Kansas.ttf */; };
+		59FE60591A74ECF600C6F93A /* EtelkaNarrowTextPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60501A74ECF600C6F93A /* EtelkaNarrowTextPro.otf */; };
+		59FE605A1A74ECF600C6F93A /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60511A74ECF600C6F93A /* Impact.ttf */; };
+		59FE605B1A74ECF600C6F93A /* LeagueGothic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60521A74ECF600C6F93A /* LeagueGothic-Italic.otf */; };
+		59FE605C1A74ECF600C6F93A /* LeagueGothic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60531A74ECF600C6F93A /* LeagueGothic-Regular.otf */; };
+		59FE605D1A74ECF600C6F93A /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60541A74ECF600C6F93A /* Righteous-Regular.ttf */; };
+		59FE60601A74ED4F00C6F93A /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FE605F1A74ED4F00C6F93A /* FontTableViewController.m */; };
+		59FE60631A74EDB900C6F93A /* BlackBlurredmage.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60611A74EDB900C6F93A /* BlackBlurredmage.png */; };
+		59FE60641A74EDB900C6F93A /* twoSidedArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60621A74EDB900C6F93A /* twoSidedArrow.png */; };
+		59FE60661A74EDD500C6F93A /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE60651A74EDD500C6F93A /* Settings@3x.png */; };
+		59FE60691A74EF7500C6F93A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FE60681A74EF7500C6F93A /* UIImage+ImageEffects.m */; };
+		59FE606C1A74F1C500C6F93A /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FE606B1A74F1C500C6F93A /* FontTableViewCell.m */; };
+		59FE606E1A74FA6500C6F93A /* tickmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE606D1A74FA6500C6F93A /* tickmark.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		599D0B231A6E902B00A1EB34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 599D0B011A6E902B00A1EB34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 599D0B081A6E902B00A1EB34;
+			remoteInfo = "Meme Maker";
+		};
+		59FE60451A74EABB00C6F93A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 599D0B011A6E902B00A1EB34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59FE60371A74EABB00C6F93A;
+			remoteInfo = "Photo Meme";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		59FE604B1A74EABB00C6F93A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				59FE60471A74EABB00C6F93A /* Photo Meme.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoSidedArrow.png; sourceTree = "<group>"; };
+		59357EB11A765B37003D0245 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
+		596D8FF31A7697850008F060 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		596D8FF51A7697980008F060 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		596D8FF71A76979C0008F060 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		596D8FF91A7697C90008F060 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		596D8FFD1A7697D60008F060 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		596D8FFF1A7697DD0008F060 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5984AE0D1A712A6D009B078F /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
+		5984AE0F1A715405009B078F /* SaveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveIcon.png; sourceTree = "<group>"; };
+		5984AE131A715B78009B078F /* BlackBlurredmage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBlurredmage.png; sourceTree = "<group>"; };
+		5984AE151A715E44009B078F /* FontTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewController.h; sourceTree = "<group>"; };
+		5984AE161A715E44009B078F /* FontTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewController.m; sourceTree = "<group>"; };
+		5984AE181A715E5C009B078F /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
+		5984AE191A715E5C009B078F /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
+		5984AE1B1A716AB4009B078F /* Absender.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Absender.ttf; sourceTree = "<group>"; };
+		5984AE1D1A717DE8009B078F /* I Know Fuck Me Right.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Know Fuck Me Right.jpeg"; sourceTree = "<group>"; };
+		5984AE1E1A717DE8009B078F /* Yo Dawg Heard You.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yo Dawg Heard You.jpeg"; sourceTree = "<group>"; };
+		5984AE1F1A717DE8009B078F /* The Most Interesting Cat in the World.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Most Interesting Cat in the World.jpeg"; sourceTree = "<group>"; };
+		5984AE201A717DE8009B078F /* Engineering Professor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Engineering Professor.jpeg"; sourceTree = "<group>"; };
+		5984AE211A717DE8009B078F /* Dr Evil Laser.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dr Evil Laser.jpeg"; sourceTree = "<group>"; };
+		5984AE221A717DE8009B078F /* Kill Yourself Guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kill Yourself Guy.jpeg"; sourceTree = "<group>"; };
+		5984AE231A717DE8009B078F /* If You Know What I Mean.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "If You Know What I Mean.jpeg"; sourceTree = "<group>"; };
+		5984AE241A717DE8009B078F /* I Too Like To Live Life Dangerously.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Too Like To Live Life Dangerously.jpeg"; sourceTree = "<group>"; };
+		5984AE251A717DE8009B078F /* I Should Buy A Boat Cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Should Buy A Boat Cat.jpeg"; sourceTree = "<group>"; };
+		5984AE261A717DE8009B078F /* Sparta Leonidas.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sparta Leonidas.jpeg"; sourceTree = "<group>"; };
+		5984AE271A717DE8009B078F /* Conspiracy Keanu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Conspiracy Keanu.jpeg"; sourceTree = "<group>"; };
+		5984AE281A717DE8009B078F /* Disaster Girl.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Disaster Girl.jpeg"; sourceTree = "<group>"; };
+		5984AE291A717DE8009B078F /* Angry Baby.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Angry Baby.jpeg"; sourceTree = "<group>"; };
+		5984AE2A1A717DE8009B078F /* Scumbag Parents.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Parents.jpeg"; sourceTree = "<group>"; };
+		5984AE2B1A717DE8009B078F /* Scumbag Stacy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Stacy.jpeg"; sourceTree = "<group>"; };
+		5984AE2C1A717DE8009B078F /* Scumbag Steve.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Steve.jpeg"; sourceTree = "<group>"; };
+		5984AE2D1A717DE8009B078F /* Skeptical Baby.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Skeptical Baby.jpeg"; sourceTree = "<group>"; };
+		5984AE2E1A717DE8009B078F /* Grandma Finds The Internet.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Grandma Finds The Internet.jpeg"; sourceTree = "<group>"; };
+		5984AE2F1A717DE8009B078F /* Say That Again I Dare You.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Say That Again I Dare You.jpeg"; sourceTree = "<group>"; };
+		5984AE301A717DE8009B078F /* Philosoraptor.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Philosoraptor.jpeg; sourceTree = "<group>"; };
+		5984AE311A717DE8009B078F /* Evil Toddler.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Evil Toddler.jpeg"; sourceTree = "<group>"; };
+		5984AE321A717DE8009B078F /* Confession Bear.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Confession Bear.jpeg"; sourceTree = "<group>"; };
+		5984AE341A717DE8009B078F /* Third World Success Kid.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Third World Success Kid.jpeg"; sourceTree = "<group>"; };
+		5984AE361A717DE8009B078F /* Captain Picard Facepalm.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Captain Picard Facepalm.jpeg"; sourceTree = "<group>"; };
+		5984AE371A717DE8009B078F /* Too Damn High.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Too Damn High.jpeg"; sourceTree = "<group>"; };
+		5984AE381A717DE8009B078F /* Picard Wtf.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Picard Wtf.jpeg"; sourceTree = "<group>"; };
+		5984AE391A717DE8009B078F /* Matrix Morpheus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Matrix Morpheus.jpeg"; sourceTree = "<group>"; };
+		5984AE3A1A717DE8009B078F /* X All The Y.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "X All The Y.jpeg"; sourceTree = "<group>"; };
+		5984AE3B1A717DE8009B078F /* Dwight Schrute.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dwight Schrute.jpeg"; sourceTree = "<group>"; };
+		5984AE3C1A717DE8009B078F /* That Would Be Great.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "That Would Be Great.jpeg"; sourceTree = "<group>"; };
+		5984AE3D1A717DE8009B078F /* Third World Skeptical Kid.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Third World Skeptical Kid.jpeg"; sourceTree = "<group>"; };
+		5984AE3E1A717DE8009B078F /* Success Kid.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Success Kid.jpeg"; sourceTree = "<group>"; };
+		5984AE3F1A717DE8009B078F /* Grumpy Cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Grumpy Cat.jpeg"; sourceTree = "<group>"; };
+		5984AE401A717DE8009B078F /* Condescending Wonka.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Condescending Wonka.jpeg"; sourceTree = "<group>"; };
+		5984AE411A717DE8009B078F /* Y U NO.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Y U NO.jpeg"; sourceTree = "<group>"; };
+		5984AE421A717DE8009B078F /* Brace Yourselves X is Coming.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Brace Yourselves X is Coming.jpeg"; sourceTree = "<group>"; };
+		5984AE431A717DE8009B078F /* Bad Luck Brian.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bad Luck Brian.jpeg"; sourceTree = "<group>"; };
+		5984AE441A717DE8009B078F /* Futurama Fry.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Futurama Fry.jpeg"; sourceTree = "<group>"; };
+		5984AE451A717DE8009B078F /* First World Problems.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "First World Problems.jpeg"; sourceTree = "<group>"; };
+		5984AE461A717DE8009B078F /* The Most Interesting Man In The World.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Most Interesting Man In The World.jpeg"; sourceTree = "<group>"; };
+		5984AE471A717DE8009B078F /* Batman Slapping Robin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Batman Slapping Robin.jpeg"; sourceTree = "<group>"; };
+		5984AE481A717DE8009B078F /* One Does Not Simply.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "One Does Not Simply.jpeg"; sourceTree = "<group>"; };
+		5984AE751A717E3D009B078F /* X, X Everywhere.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "X, X Everywhere.jpeg"; sourceTree = "<group>"; };
+		599D0B091A6E902B00A1EB34 /* Meme Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		599D0B0D1A6E902B00A1EB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		599D0B0E1A6E902B00A1EB34 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		599D0B101A6E902B00A1EB34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		599D0B111A6E902B00A1EB34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		599D0B171A6E902B00A1EB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		599D0B191A6E902B00A1EB34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		599D0B1C1A6E902B00A1EB34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		599D0B221A6E902B00A1EB34 /* Meme MakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme MakerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		599D0B271A6E902B00A1EB34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		599D0B281A6E902B00A1EB34 /* Meme_MakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Meme_MakerTests.m; sourceTree = "<group>"; };
+		599D0B321A6E908200A1EB34 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		599D0B341A6E908700A1EB34 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		599D0B361A6E908B00A1EB34 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		599D0B381A6E909200A1EB34 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		599D0B3B1A6E91AC00A1EB34 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		599D0B3C1A6E91AC00A1EB34 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		599D0B3E1A6E91BA00A1EB34 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		599D0B3F1A6E91BA00A1EB34 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		599D0B411A6E91CA00A1EB34 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		599D0B421A6E91CA00A1EB34 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		599D0B451A6E922600A1EB34 /* MemeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemeObject.h; sourceTree = "<group>"; };
+		599D0B461A6E922600A1EB34 /* MemeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemeObject.m; sourceTree = "<group>"; };
+		599D0B481A6E934700A1EB34 /* 1st World Canadian Problems.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1st World Canadian Problems.jpeg"; sourceTree = "<group>"; };
+		599D0B491A6E934700A1EB34 /* 2nd Term Obama.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2nd Term Obama.jpeg"; sourceTree = "<group>"; };
+		599D0B4A1A6E934700A1EB34 /* 3g3xw.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3g3xw.jpeg; sourceTree = "<group>"; };
+		599D0B4B1A6E934700A1EB34 /* 10 Guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10 Guy.jpeg"; sourceTree = "<group>"; };
+		599D0B4C1A6E934700A1EB34 /* 1950s Middle Finger.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1950s Middle Finger.jpeg"; sourceTree = "<group>"; };
+		599D0B4D1A6E934700A1EB34 /* 1990s First World Problems.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1990s First World Problems.jpeg"; sourceTree = "<group>"; };
+		599D0B4E1A6E934700A1EB34 /* Aaaaaand Its Gone.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Aaaaaand Its Gone.jpeg"; sourceTree = "<group>"; };
+		599D0B4F1A6E934700A1EB34 /* Actual Advice Mallard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Actual Advice Mallard.jpeg"; sourceTree = "<group>"; };
+		599D0B501A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Admiral Ackbar Relationship Expert.jpeg"; sourceTree = "<group>"; };
+		599D0B511A6E934700A1EB34 /* Advice Dog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Advice Dog.jpeg"; sourceTree = "<group>"; };
+		599D0B521A6E934700A1EB34 /* Advice God.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Advice God.jpeg"; sourceTree = "<group>"; };
+		599D0B531A6E934700A1EB34 /* Advice Yoda.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Advice Yoda.jpeg"; sourceTree = "<group>"; };
+		599D0B541A6E934700A1EB34 /* Ain't Nobody Got Time For That.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ain't Nobody Got Time For That.jpeg"; sourceTree = "<group>"; };
+		599D0B551A6E934700A1EB34 /* Alan Greenspan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alan Greenspan.jpeg"; sourceTree = "<group>"; };
+		599D0B561A6E934700A1EB34 /* Alarm Clock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alarm Clock.jpeg"; sourceTree = "<group>"; };
+		599D0B571A6E934700A1EB34 /* Albert Cagestein.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Albert Cagestein.jpeg"; sourceTree = "<group>"; };
+		599D0B581A6E934700A1EB34 /* Albert Einstein.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Albert Einstein.jpeg"; sourceTree = "<group>"; };
+		599D0B591A6E934700A1EB34 /* Am I The Only One Around Here.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Am I The Only One Around Here.jpeg"; sourceTree = "<group>"; };
+		599D0B5A1A6E934700A1EB34 /* Ancient Aliens.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ancient Aliens.jpeg"; sourceTree = "<group>"; };
+		599D0B5B1A6E934700A1EB34 /* And everybody loses their minds.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "And everybody loses their minds.jpeg"; sourceTree = "<group>"; };
+		599D0B711A6E9A9100A1EB34 /* MemeList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemeList.json; sourceTree = "<group>"; };
+		599F3C7E1A7964B20056CF5D /* South Park Randy Marsh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "South Park Randy Marsh.jpg"; sourceTree = "<group>"; };
+		599F3C7F1A7964B30056CF5D /* I Would Be So Happy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Would Be So Happy.jpg"; sourceTree = "<group>"; };
+		599F3C801A7964B30056CF5D /* Captain Hindsight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Captain Hindsight.jpg"; sourceTree = "<group>"; };
+		599F3C811A7964B30056CF5D /* You Know What Really Grinds My Gears?.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You Know What Really Grinds My Gears?.jpg"; sourceTree = "<group>"; };
+		599F3C861A79676F0056CF5D /* LithosPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LithosPro-Black.otf"; sourceTree = "<group>"; };
+		599F3C881A7967D60056CF5D /* PoplarStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoplarStd.otf; sourceTree = "<group>"; };
+		599F3C8A1A7968240056CF5D /* StencilStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StencilStd.otf; sourceTree = "<group>"; };
+		59AE79311A77E4E300014735 /* This is Where.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "This is Where.jpg"; sourceTree = "<group>"; };
+		59AE79331A77E67B00014735 /* What Year is It.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "What Year is It.jpeg"; sourceTree = "<group>"; };
+		59AE79351A77E7C500014735 /* Obi Wan Kenobi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Obi Wan Kenobi.jpeg"; sourceTree = "<group>"; };
+		59AE79371A77E85C00014735 /* Look at all these....jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Look at all these....jpg"; sourceTree = "<group>"; };
+		59AE79391A77EB5C00014735 /* Hipster Barista.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hipster Barista.jpg"; sourceTree = "<group>"; };
+		59AE793A1A77EB5C00014735 /* Disappointed Picard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Disappointed Picard.jpg"; sourceTree = "<group>"; };
+		59AE793B1A77EB5C00014735 /* Nobody Cares.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Nobody Cares.jpg"; sourceTree = "<group>"; };
+		59AE793C1A77EB5C00014735 /* Don't You Squidward.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Don't You Squidward.jpeg"; sourceTree = "<group>"; };
+		59AF27811A7D65F800AC5E7F /* topView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topView.h; sourceTree = "<group>"; };
+		59AF27821A7D65F800AC5E7F /* topView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = topView.m; sourceTree = "<group>"; };
+		59AF27841A7D660800AC5E7F /* topView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = topView.xib; sourceTree = "<group>"; };
+		59AF27861A7D673500AC5E7F /* AvenirCondensedHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AvenirCondensedHand.ttf; sourceTree = "<group>"; };
+		59AF27B61A7D6F9D00AC5E7F /* Quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Quotes.json; sourceTree = "<group>"; };
+		59B160E21A7B584A00301E25 /* Hasta La Vista, Baby.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hasta La Vista, Baby.jpg"; sourceTree = "<group>"; };
+		59B160E31A7B584A00301E25 /* Shashawnk Redemption.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Shashawnk Redemption.jpg"; sourceTree = "<group>"; };
+		59B160E41A7B584A00301E25 /* Jim Carrey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jim Carrey.jpg"; sourceTree = "<group>"; };
+		59B160E51A7B584A00301E25 /* Alrighty Then.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alrighty Then.jpg"; sourceTree = "<group>"; };
+		59B160E61A7B584A00301E25 /* Ridiculously Photogenic Guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ridiculously Photogenic Guy.jpg"; sourceTree = "<group>"; };
+		59B160E71A7B584A00301E25 /* Misunderstood Metalhead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Misunderstood Metalhead.jpg"; sourceTree = "<group>"; };
+		59B160E81A7B584A00301E25 /* Ridiculously Photogenic Metalhead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ridiculously Photogenic Metalhead.jpg"; sourceTree = "<group>"; };
+		59B160E91A7B584A00301E25 /* Nyan Cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Nyan Cat.jpeg"; sourceTree = "<group>"; };
+		59B160EA1A7B584A00301E25 /* It's So Fluffy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "It's So Fluffy.jpg"; sourceTree = "<group>"; };
+		59B160EB1A7B584A00301E25 /* Fluffy Unicorn Dash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Fluffy Unicorn Dash.jpg"; sourceTree = "<group>"; };
+		59B160EC1A7B584A00301E25 /* Agnes Despicable Me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Agnes Despicable Me.jpg"; sourceTree = "<group>"; };
+		59B160ED1A7B584A00301E25 /* Impossibru.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Impossibru.jpg; sourceTree = "<group>"; };
+		59B160EE1A7B584A00301E25 /* Foreign Policy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Foreign Policy.jpg"; sourceTree = "<group>"; };
+		59B160EF1A7B584A00301E25 /* Seems Legit.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Seems Legit.jpeg"; sourceTree = "<group>"; };
+		59B160F01A7B584A00301E25 /* Not Bad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Not Bad.jpg"; sourceTree = "<group>"; };
+		59B160F11A7B584A00301E25 /* Yeah, Science!.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Yeah, Science!.jpeg"; sourceTree = "<group>"; };
+		59B160F21A7B584A00301E25 /* I See What You Did There.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I See What You Did There.jpg"; sourceTree = "<group>"; };
+		59B160F31A7B584A00301E25 /* Dafuq Rage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dafuq Rage.jpg"; sourceTree = "<group>"; };
+		59B160F41A7B584A00301E25 /* Scumbag Boss.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Boss.jpeg"; sourceTree = "<group>"; };
+		59B160F51A7B584A00301E25 /* Like a Boss Putin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Like a Boss Putin.jpeg"; sourceTree = "<group>"; };
+		59B160F61A7B584A00301E25 /* Pun Putin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pun Putin.jpeg"; sourceTree = "<group>"; };
+		59B160F71A7B584A00301E25 /* Good Guy Putin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Guy Putin.jpg"; sourceTree = "<group>"; };
+		59B160F81A7B584A00301E25 /* PSY.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PSY.jpeg; sourceTree = "<group>"; };
+		59B160F91A7B584A00301E25 /* Malicious Advice Mallard.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Malicious Advice Mallard.jpeg"; sourceTree = "<group>"; };
+		59B160FA1A7B584A00301E25 /* Actual Revenge Duck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Actual Revenge Duck.jpg"; sourceTree = "<group>"; };
+		59B160FB1A7B584A00301E25 /* Meme Colored Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Meme Colored Background.jpg"; sourceTree = "<group>"; };
+		59B160FC1A7B584A00301E25 /* Jesus Says.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jesus Says.jpg"; sourceTree = "<group>"; };
+		59B160FD1A7B584A00301E25 /* Dafuq.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dafuq.jpg; sourceTree = "<group>"; };
+		59B160FE1A7B584A00301E25 /* Angry Dumbledore.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Angry Dumbledore.jpeg"; sourceTree = "<group>"; };
+		59B160FF1A7B584A00301E25 /* I Will Find You and I Will Kill You.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Will Find You and I Will Kill You.jpg"; sourceTree = "<group>"; };
+		59B161001A7B584A00301E25 /* Krillin Peace.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Krillin Peace.jpg"; sourceTree = "<group>"; };
+		59B161011A7B584A00301E25 /* It's over 9000!!!.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "It's over 9000!!!.jpg"; sourceTree = "<group>"; };
+		59C3ADBD1A7011690046A652 /* AbadiMTBold.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AbadiMTBold.ttf; sourceTree = "<group>"; };
+		59C3ADBF1A7012800046A652 /* Consolas Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Consolas Bold.ttf"; sourceTree = "<group>"; };
+		59C3ADC11A701A310046A652 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		59C3ADC21A701A310046A652 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		59C3ADC41A701E160046A652 /* EtelkaNarrowTextPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EtelkaNarrowTextPro.otf; sourceTree = "<group>"; };
+		59DF1AE91A76A1EB00C49011 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		59DF1AED1A76A27C00C49011 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = "Meme Maker/EventKitUI.framework"; sourceTree = "<group>"; };
+		59DF1AEF1A76AC1400C49011 /* Darth Vader and Luke Skywalker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Darth Vader and Luke Skywalker.jpg"; sourceTree = "<group>"; };
+		59DF1AF01A76AC1400C49011 /* It's a Trap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "It's a Trap.jpg"; sourceTree = "<group>"; };
+		59DF1AF11A76AC1400C49011 /* Pirate Poker Face.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pirate Poker Face.jpg"; sourceTree = "<group>"; };
+		59DF1AF21A76AC1400C49011 /* Jack Sparrow Being Chased.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jack Sparrow Being Chased.jpeg"; sourceTree = "<group>"; };
+		59DF1AF31A76AC1400C49011 /* Confused Jackie Chan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Confused Jackie Chan.jpeg"; sourceTree = "<group>"; };
+		59DF1AF41A76AC1400C49011 /* Jack Nicholson The Shining.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jack Nicholson The Shining.jpeg"; sourceTree = "<group>"; };
+		59DF1AF51A76AC1400C49011 /* Barbosa And Sparrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Barbosa And Sparrow.jpg"; sourceTree = "<group>"; };
+		59DF1AF61A76AC1400C49011 /* Jar of Dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jar of Dirt.jpg"; sourceTree = "<group>"; };
+		59DF1AF71A76AC1400C49011 /* You Were The Chosen One.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You Were The Chosen One.jpg"; sourceTree = "<group>"; };
+		59DF1AF81A76AC1400C49011 /* You Underestimate My Power.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You Underestimate My Power.jpeg"; sourceTree = "<group>"; };
+		59DF1AF91A76AC1400C49011 /* Darth Vader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Darth Vader.jpg"; sourceTree = "<group>"; };
+		59DF1AFA1A76AC1400C49011 /* Darth Sidious.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Darth Sidious.jpg"; sourceTree = "<group>"; };
+		59DF1AFB1A76AC1400C49011 /* So Much Win.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "So Much Win.jpeg"; sourceTree = "<group>"; };
+		59DF1AFC1A76AC1400C49011 /* Spock.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spock.jpeg; sourceTree = "<group>"; };
+		59DF1AFD1A76AC1400C49011 /* Yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yoda.jpg; sourceTree = "<group>"; };
+		59DF1AFE1A76AC1400C49011 /* Morgan Freeman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Morgan Freeman.jpg"; sourceTree = "<group>"; };
+		59DF1AFF1A76AC1400C49011 /* Heisenberg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Heisenberg.jpg; sourceTree = "<group>"; };
+		59DF1B001A76AC1400C49011 /* Confession Tiger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Confession Tiger.jpg"; sourceTree = "<group>"; };
+		59DF1B131A76BDF900C49011 /* Hipster Ariel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hipster Ariel.jpg"; sourceTree = "<group>"; };
+		59DF1B141A76BDF900C49011 /* Thor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Thor.jpg; sourceTree = "<group>"; };
+		59DF1B151A76BDF900C49011 /* Walking Away from an Explosion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Walking Away from an Explosion.jpg"; sourceTree = "<group>"; };
+		59DF1B161A76BDF900C49011 /* Tony Stark Fame.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tony Stark Fame.jpg"; sourceTree = "<group>"; };
+		59DF1B171A76BDF900C49011 /* Legolas Elf Eyes.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Legolas Elf Eyes.jpeg"; sourceTree = "<group>"; };
+		59DF1B181A76BDF900C49011 /* Grumpy Cat Alternate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Grumpy Cat Alternate.jpeg"; sourceTree = "<group>"; };
+		59DF1B191A76BDF900C49011 /* Angry Arnold.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Angry Arnold.jpg"; sourceTree = "<group>"; };
+		59DF1B1A1A76BDF900C49011 /* Unimressed Queen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Unimressed Queen.jpg"; sourceTree = "<group>"; };
+		59DF1B1B1A76BDF900C49011 /* You Don't Say?.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You Don't Say?.jpg"; sourceTree = "<group>"; };
+		59DF1B1C1A76BDF900C49011 /* Oh Lord!.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Oh Lord!.jpg"; sourceTree = "<group>"; };
+		59DF1B1D1A76BDF900C49011 /* Sheldon Cooper Mind Control.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sheldon Cooper Mind Control.jpeg"; sourceTree = "<group>"; };
+		59DF1B1E1A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sheldon - Go Away Spray.jpeg"; sourceTree = "<group>"; };
+		59DF1B1F1A76BDF900C49011 /* Sheldon Logic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sheldon Logic.jpeg"; sourceTree = "<group>"; };
+		59DF1B201A76BDF900C49011 /* Bill Nye the Science Guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bill Nye the Science Guy.jpg"; sourceTree = "<group>"; };
+		59DF1B211A76BDF900C49011 /* Ron Swanson.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ron Swanson.jpeg"; sourceTree = "<group>"; };
+		59DF1B221A76BDF900C49011 /* Ron Burgundy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ron Burgundy.jpg"; sourceTree = "<group>"; };
+		59DF1B231A76BDF900C49011 /* Gordon Ramsay.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Gordon Ramsay.jpeg"; sourceTree = "<group>"; };
+		59DF1B241A76BDF900C49011 /* I'll Just Wait Here.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I'll Just Wait Here.jpeg"; sourceTree = "<group>"; };
+		59DF1B251A76BDF900C49011 /* Imagination.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagination.jpeg; sourceTree = "<group>"; };
+		59DF1B261A76BDF900C49011 /* But Thats None Of My Business.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "But Thats None Of My Business.jpg"; sourceTree = "<group>"; };
+		59DF1B271A76BDF900C49011 /* Frank Underwood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Frank Underwood.jpg"; sourceTree = "<group>"; };
+		59DF1B281A76BDF900C49011 /* Deadpool Pick Up Lines.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Deadpool Pick Up Lines.jpeg"; sourceTree = "<group>"; };
+		59DF1B291A76BDF900C49011 /* Metal Jesus.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Metal Jesus.jpeg"; sourceTree = "<group>"; };
+		59DF1B2A1A76BDF900C49011 /* Kim Jong-Un Lube Factory.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kim Jong-Un Lube Factory.jpg"; sourceTree = "<group>"; };
+		59DF1B2B1A76BDF900C49011 /* Pitbull.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pitbull.jpg; sourceTree = "<group>"; };
+		59DF1B2C1A76BDF900C49011 /* Titanic Jack.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Titanic Jack.jpeg"; sourceTree = "<group>"; };
+		59DF1B2D1A76BDF900C49011 /* Leo Bites his Hand.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leo Bites his Hand.jpg"; sourceTree = "<group>"; };
+		59DF1B2E1A76BDF900C49011 /* Inception.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Inception.jpg; sourceTree = "<group>"; };
+		59DF1B2F1A76BDF900C49011 /* Leonardo Dicaprio Cheers.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Leonardo Dicaprio Cheers.jpeg"; sourceTree = "<group>"; };
+		59DF1B301A76BDF900C49011 /* Surprised Doc Brown and Marty.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Surprised Doc Brown and Marty.jpg"; sourceTree = "<group>"; };
+		59DF1B311A76BDF900C49011 /* Great Scott.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Great Scott.jpg"; sourceTree = "<group>"; };
+		59DF1B321A76BDF900C49011 /* Back To The Future.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Back To The Future.jpg"; sourceTree = "<group>"; };
+		59DF1B331A76BDF900C49011 /* Doc Brown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Doc Brown.jpg"; sourceTree = "<group>"; };
+		59DF1B341A76BDF900C49011 /* Matrix Bullet Evasion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Matrix Bullet Evasion.jpg"; sourceTree = "<group>"; };
+		59DF1B351A76BDF900C49011 /* Morpheus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Morpheus.jpg; sourceTree = "<group>"; };
+		59DF1B361A76BDF900C49011 /* Matrix Neo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Matrix Neo.jpg"; sourceTree = "<group>"; };
+		59DF1B371A76BDF900C49011 /* Batman Smiles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Batman Smiles.jpg"; sourceTree = "<group>"; };
+		59DF1B381A76BDF900C49011 /* Permission Bane.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Permission Bane.jpeg"; sourceTree = "<group>"; };
+		59DF1B391A76BDF900C49011 /* Sad Batman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sad Batman.jpg"; sourceTree = "<group>"; };
+		59DF1B3A1A76BDF900C49011 /* The Joker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "The Joker.jpg"; sourceTree = "<group>"; };
+		59DF1B3B1A76BDF900C49011 /* Why So Serious?.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Why So Serious?.jpeg"; sourceTree = "<group>"; };
+		59DF1B3C1A76BDF900C49011 /* LOL Guy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "LOL Guy.jpeg"; sourceTree = "<group>"; };
+		59DF1B3D1A76BDF900C49011 /* Not Sure If Gusta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Not Sure If Gusta.jpg"; sourceTree = "<group>"; };
+		59DF1B3E1A76BDF900C49011 /* Fap Guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Fap Guy.jpg"; sourceTree = "<group>"; };
+		59DF1B3F1A76BDF900C49011 /* Peter Parker Smile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Peter Parker Smile.jpg"; sourceTree = "<group>"; };
+		59DF1B401A76BDF900C49011 /* Spiderman Hospital.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spiderman Hospital.jpeg"; sourceTree = "<group>"; };
+		59DF1B411A76BDF900C49011 /* Hungover Spiderman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hungover Spiderman.jpg"; sourceTree = "<group>"; };
+		59DF1B421A76BDF900C49011 /* Spiderman Pssssst.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Spiderman Pssssst.jpg"; sourceTree = "<group>"; };
+		59DF1B431A76BDF900C49011 /* And I'm Just Sitting Here.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "And I'm Just Sitting Here.jpg"; sourceTree = "<group>"; };
+		59DF1B441A76BDF900C49011 /* Wolverine Crush.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wolverine Crush.jpg"; sourceTree = "<group>"; };
+		59DF1B451A76BDF900C49011 /* Charles Xavier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Charles Xavier.jpg"; sourceTree = "<group>"; };
+		59DF1B461A76BDF900C49011 /* You Shall Not Pass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You Shall Not Pass.jpg"; sourceTree = "<group>"; };
+		59DF1B471A76BDF900C49011 /* I Have No Memory of This Place.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Have No Memory of This Place.jpeg"; sourceTree = "<group>"; };
+		59DF1B481A76BDF900C49011 /* Heavy Breathing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Heavy Breathing.jpg"; sourceTree = "<group>"; };
+		59DF1B491A76BDF900C49011 /* My Precious.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "My Precious.jpg"; sourceTree = "<group>"; };
+		59DF1B811A76C10300C49011 /* Awwwwww Yeah.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Awwwwww Yeah.jpeg"; sourceTree = "<group>"; };
+		59DF1B821A76C10300C49011 /* Surprise Mo********er.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Surprise Mo********er.jpg"; sourceTree = "<group>"; };
+		59DF1B831A76C10300C49011 /* Incredibles Syndrome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Incredibles Syndrome.jpg"; sourceTree = "<group>"; };
+		59E68E311A75871100D1C0C8 /* Screen3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen3.jpg; sourceTree = "<group>"; };
+		59E68E321A75871100D1C0C8 /* Screen4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen4.jpg; sourceTree = "<group>"; };
+		59E68E331A75871100D1C0C8 /* Screen2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen2.jpg; sourceTree = "<group>"; };
+		59E68E341A75871100D1C0C8 /* Screen1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen1.jpg; sourceTree = "<group>"; };
+		59E68E391A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "So I Got That Goin For Me Which Is Nice.jpeg"; sourceTree = "<group>"; };
+		59E68E3A1A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kim Jong Un Sad.jpeg"; sourceTree = "<group>"; };
+		59E68E3B1A7596AE00D1C0C8 /* Y'all Got Any More.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Y'all Got Any More.jpg"; sourceTree = "<group>"; };
+		59E68E3C1A7596AE00D1C0C8 /* College Liberal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "College Liberal.jpg"; sourceTree = "<group>"; };
+		59E68E3D1A7596AE00D1C0C8 /* Well That Escalated Quickly.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Well That Escalated Quickly.jpg"; sourceTree = "<group>"; };
+		59E68E3E1A7596AE00D1C0C8 /* No Shit Sherock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "No Shit Sherock.jpg"; sourceTree = "<group>"; };
+		59E68E3F1A7596AE00D1C0C8 /* Hannibal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hannibal.jpg; sourceTree = "<group>"; };
+		59E68E401A7596AE00D1C0C8 /* Advice Doge.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Advice Doge.jpeg"; sourceTree = "<group>"; };
+		59E68E411A7596AE00D1C0C8 /* Doge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Doge.jpg; sourceTree = "<group>"; };
+		59E68E421A7596AE00D1C0C8 /* Success Kid : I Hate Sandcastles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Success Kid : I Hate Sandcastles.png"; sourceTree = "<group>"; };
+		59E68E431A7596AE00D1C0C8 /* True Story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "True Story.jpg"; sourceTree = "<group>"; };
+		59E68E441A7596AE00D1C0C8 /* Archer Deal With It.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Archer Deal With It.jpg"; sourceTree = "<group>"; };
+		59E68E451A7596AE00D1C0C8 /* Archer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Archer.jpeg; sourceTree = "<group>"; };
+		59E68E461A7596AE00D1C0C8 /* Darwin Facepalm.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Darwin Facepalm.jpeg"; sourceTree = "<group>"; };
+		59E68E471A7596AE00D1C0C8 /* Minion What!.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Minion What!.jpg"; sourceTree = "<group>"; };
+		59E68E481A7596AE00D1C0C8 /* Minions Bottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Minions Bottom.jpg"; sourceTree = "<group>"; };
+		59E68E491A7596AE00D1C0C8 /* Minion Banana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Minion Banana.jpg"; sourceTree = "<group>"; };
+		59E68E4A1A7596AE00D1C0C8 /* Excited Minions.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Excited Minions.jpeg"; sourceTree = "<group>"; };
+		59E68E4B1A7596AE00D1C0C8 /* Carter the Banana Boy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Carter the Banana Boy.jpg"; sourceTree = "<group>"; };
+		59E68E4C1A7596AE00D1C0C8 /* George RR Martin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "George RR Martin.jpg"; sourceTree = "<group>"; };
+		59E68E4D1A7596AE00D1C0C8 /* Gabe Newell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Gabe Newell.jpg"; sourceTree = "<group>"; };
+		59E68E4E1A7596AE00D1C0C8 /* Rick and Carl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rick and Carl.jpg"; sourceTree = "<group>"; };
+		59E68E4F1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Hail Hydra Will Wonka.jpeg"; sourceTree = "<group>"; };
+		59E68E501A7596AE00D1C0C8 /* House Thumbs Up.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "House Thumbs Up.jpg"; sourceTree = "<group>"; };
+		59E68E511A7596AE00D1C0C8 /* 10 Peeking.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10 Peeking.jpg"; sourceTree = "<group>"; };
+		59E68E521A7596AE00D1C0C8 /* Doctor Who Don't.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Doctor Who Don't.jpeg"; sourceTree = "<group>"; };
+		59E68E531A7596AE00D1C0C8 /* Dr. Evil Pinky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dr. Evil Pinky.jpg"; sourceTree = "<group>"; };
+		59E68E541A7596AE00D1C0C8 /* Neil deGrasse Tyson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neil deGrasse Tyson.png"; sourceTree = "<group>"; };
+		59E68E551A7596AE00D1C0C8 /* Scumbag Body.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Body.jpg"; sourceTree = "<group>"; };
+		59E68E561A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Foul Bachelorette Frog.jpg"; sourceTree = "<group>"; };
+		59E68E571A7596AE00D1C0C8 /* Cereal Guy Spit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cereal Guy Spit.png"; sourceTree = "<group>"; };
+		59E68E581A7596AE00D1C0C8 /* Cereal Guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Cereal Guy.jpg"; sourceTree = "<group>"; };
+		59E68E591A7596AE00D1C0C8 /* Pissed Off Obama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pissed Off Obama.jpg"; sourceTree = "<group>"; };
+		59E68E5A1A7596AE00D1C0C8 /* Vladmir Putin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Vladmir Putin.jpg"; sourceTree = "<group>"; };
+		59E68E5B1A7596AE00D1C0C8 /* Bad Joke Eel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bad Joke Eel.jpg"; sourceTree = "<group>"; };
+		59E68E5C1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Musically Oblivious 8th Grader.jpg"; sourceTree = "<group>"; };
+		59E68E5D1A7596AE00D1C0C8 /* Foul Bachelor Frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Foul Bachelor Frog.jpg"; sourceTree = "<group>"; };
+		59E68E5E1A7596AE00D1C0C8 /* Lame Pun Coon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lame Pun Coon.jpg"; sourceTree = "<group>"; };
+		59E68E5F1A7596AE00D1C0C8 /* Depression Dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Depression Dog.jpg"; sourceTree = "<group>"; };
+		59E68E601A7596AE00D1C0C8 /* Sheltering Suburban Mom.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sheltering Suburban Mom.jpeg"; sourceTree = "<group>"; };
+		59E68E611A7596AE00D1C0C8 /* Art Student Owl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Art Student Owl.jpg"; sourceTree = "<group>"; };
+		59E68E621A7596AE00D1C0C8 /* Technologically Impaired Duck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Technologically Impaired Duck.jpg"; sourceTree = "<group>"; };
+		59E68E631A7596AE00D1C0C8 /* Annoying Gym Newbie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Annoying Gym Newbie.jpg"; sourceTree = "<group>"; };
+		59E68E641A7596AE00D1C0C8 /* Tim Cook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tim Cook.jpg"; sourceTree = "<group>"; };
+		59E68E651A7596AE00D1C0C8 /* Steve Jobs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Steve Jobs.jpeg"; sourceTree = "<group>"; };
+		59E68E661A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I Have Made a Huge Mistake.jpg"; sourceTree = "<group>"; };
+		59EE0A1E1A729ECD009C75DC /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Regular.otf"; sourceTree = "<group>"; };
+		59EE0A201A729EE5009C75DC /* LeagueGothic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Italic.otf"; sourceTree = "<group>"; };
+		59EE0A241A729FA9009C75DC /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
+		59EE0A261A72A530009C75DC /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		59EE0A271A72A530009C75DC /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		59EE0A2C1A72AC3E009C75DC /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		59EE0A2D1A72AC3E009C75DC /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		59F6679E1A740B300089FD23 /* MemeMakerIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MemeMakerIcon.jpg; sourceTree = "<group>"; };
+		59F667A01A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Socially Awkward Awesome Penguin.jpg"; sourceTree = "<group>"; };
+		59F667A11A7431980089FD23 /* Socially Awesome Penguin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Socially Awesome Penguin.jpg"; sourceTree = "<group>"; };
+		59F667A21A7431980089FD23 /* Socially Awesome Awkward Penguin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Socially Awesome Awkward Penguin.jpg"; sourceTree = "<group>"; };
+		59F667A31A7431980089FD23 /* Socially Awkward Penguin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Socially Awkward Penguin.jpg"; sourceTree = "<group>"; };
+		59F667A41A7431980089FD23 /* Scumbag Brain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Scumbag Brain.jpg"; sourceTree = "<group>"; };
+		59F667A51A7431980089FD23 /* Net N00b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Net N00b.jpg"; sourceTree = "<group>"; };
+		59F667A61A7431980089FD23 /* Buisness Cat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Buisness Cat.jpg"; sourceTree = "<group>"; };
+		59F667A71A7431980089FD23 /* Pedobear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Pedobear.jpg; sourceTree = "<group>"; };
+		59F667A81A7431980089FD23 /* Rage Fuuuuu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Rage Fuuuuu.jpg"; sourceTree = "<group>"; };
+		59F667A91A7431980089FD23 /* Pickup Line Panda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Pickup Line Panda.jpg"; sourceTree = "<group>"; };
+		59F667AA1A7431980089FD23 /* Okay Guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Okay Guy.png"; sourceTree = "<group>"; };
+		59F667AB1A7431980089FD23 /* Paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paper.jpg; sourceTree = "<group>"; };
+		59F667AC1A7431980089FD23 /* Sudden Clarity Clarence.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Sudden Clarity Clarence.jpg"; sourceTree = "<group>"; };
+		59F667AD1A7431980089FD23 /* Insanity Wolf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Insanity Wolf.jpg"; sourceTree = "<group>"; };
+		59F667AE1A7431980089FD23 /* Today was a good day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Today was a good day.jpg"; sourceTree = "<group>"; };
+		59F667AF1A7431980089FD23 /* Annoying Facebook Girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Annoying Facebook Girl.jpg"; sourceTree = "<group>"; };
+		59F667B01A7431980089FD23 /* American Pride Eagle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "American Pride Eagle.jpg"; sourceTree = "<group>"; };
+		59F667B11A7431980089FD23 /* I am Not a Smart Man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "I am Not a Smart Man.jpg"; sourceTree = "<group>"; };
+		59F667B21A7431980089FD23 /* Butthurt Dweller.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Butthurt Dweller.jpeg"; sourceTree = "<group>"; };
+		59F667B31A7431980089FD23 /* Dat Ass.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dat Ass.jpg"; sourceTree = "<group>"; };
+		59F667B41A7431980089FD23 /* Bear Grylls.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Bear Grylls.jpeg"; sourceTree = "<group>"; };
+		59F667B51A7431980089FD23 /* Chemistry Cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chemistry Cat.jpeg"; sourceTree = "<group>"; };
+		59F667B61A7431980089FD23 /* Forever Resentful Mother.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Forever Resentful Mother.jpg"; sourceTree = "<group>"; };
+		59F667B71A7431980089FD23 /* Evil Plotting Raccoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Evil Plotting Raccoon.jpg"; sourceTree = "<group>"; };
+		59F667B81A7431980089FD23 /* Internet Husband.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Internet Husband.jpg"; sourceTree = "<group>"; };
+		59F667B91A7431980089FD23 /* Whyyy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Whyyy.jpg; sourceTree = "<group>"; };
+		59F667BA1A7431980089FD23 /* High Expectations Asian Father.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "High Expectations Asian Father.jpg"; sourceTree = "<group>"; };
+		59F667BB1A7431980089FD23 /* Forever Alone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Forever Alone.jpg"; sourceTree = "<group>"; };
+		59F667BC1A7431980089FD23 /* Joseph Ducreux.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Joseph Ducreux.jpeg"; sourceTree = "<group>"; };
+		59F667BD1A7431980089FD23 /* Good Guy Boss.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Guy Boss.jpg"; sourceTree = "<group>"; };
+		59F667BE1A7431980089FD23 /* Overly Attached Boyfriend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Overly Attached Boyfriend.jpg"; sourceTree = "<group>"; };
+		59F667BF1A7431980089FD23 /* Back In My Day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Back In My Day.jpg"; sourceTree = "<group>"; };
+		59F667C01A7431980089FD23 /* Overly Attached Girlfriend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Overly Attached Girlfriend.jpg"; sourceTree = "<group>"; };
+		59F667C11A7431980089FD23 /* Challenge Accepted.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Challenge Accepted.jpg"; sourceTree = "<group>"; };
+		59F667C21A7431980089FD23 /* Trollface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Trollface.jpg; sourceTree = "<group>"; };
+		59F667C31A7431980089FD23 /* Good Girl Gina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Girl Gina.jpg"; sourceTree = "<group>"; };
+		59F667C41A7431980089FD23 /* Good Dog Greg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Dog Greg.jpg"; sourceTree = "<group>"; };
+		59F667C51A7431980089FD23 /* First Day on the Internet Kid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "First Day on the Internet Kid.jpg"; sourceTree = "<group>"; };
+		59F667C61A7431980089FD23 /* Good Guy Greg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Guy Greg.jpg"; sourceTree = "<group>"; };
+		59F667C71A7431980089FD23 /* Lazy College Senior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lazy College Senior.jpg"; sourceTree = "<group>"; };
+		59F667C81A7431980089FD23 /* Surprised Koala.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Surprised Koala.jpeg"; sourceTree = "<group>"; };
+		59F667C91A7431980089FD23 /* Unhelpful Highschool Teacher.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Unhelpful Highschool Teacher.jpg"; sourceTree = "<group>"; };
+		59F667CA1A7431980089FD23 /* Chill Out Lemur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chill Out Lemur.jpg"; sourceTree = "<group>"; };
+		59F667CB1A7431980089FD23 /* Please Guy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Please Guy.jpg"; sourceTree = "<group>"; };
+		59F667CC1A7431980089FD23 /* Awkward Moment Seal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Awkward Moment Seal.jpg"; sourceTree = "<group>"; };
+		59F667CD1A7431980089FD23 /* Overly Manly Man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Overly Manly Man.jpg"; sourceTree = "<group>"; };
+		59F667FC1A7438470089FD23 /* Good Girl Ana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Good Girl Ana.jpg"; sourceTree = "<group>"; };
+		59F667FD1A7438470089FD23 /* Jealous Girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jealous Girl.jpg"; sourceTree = "<group>"; };
+		59F667FE1A7438470089FD23 /* Idiot Nerd Girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Idiot Nerd Girl.jpg"; sourceTree = "<group>"; };
+		59F667FF1A7438470089FD23 /* Vengeance Dad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Vengeance Dad.jpg"; sourceTree = "<group>"; };
+		59F668001A7438470089FD23 /* Anti Joke Chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anti Joke Chicken.jpg"; sourceTree = "<group>"; };
+		59F668011A7438480089FD23 /* Weird Stuff I Do Potoo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Weird Stuff I Do Potoo.jpg"; sourceTree = "<group>"; };
+		59F668021A7438480089FD23 /* Courage Wolf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Courage Wolf.jpg"; sourceTree = "<group>"; };
+		59F668031A7438480089FD23 /* Dating Site Murderer.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dating Site Murderer.jpeg"; sourceTree = "<group>"; };
+		59F668041A7438480089FD23 /* Paranoid Parrot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Paranoid Parrot.jpg"; sourceTree = "<group>"; };
+		59F668051A7438480089FD23 /* Unpopular Opinion Puffin.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Unpopular Opinion Puffin.jpeg"; sourceTree = "<group>"; };
+		59F668061A7438480089FD23 /* Redneck Randal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Redneck Randal.jpg"; sourceTree = "<group>"; };
+		59F668071A7438480089FD23 /* Drunk Baby.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Drunk Baby.jpeg"; sourceTree = "<group>"; };
+		59F668081A7438480089FD23 /* Shut Up and Take My Money.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Shut Up and Take My Money.jpeg"; sourceTree = "<group>"; };
+		59F668091A7438480089FD23 /* You're gonna have a Bad Time.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You're gonna have a Bad Time.jpg"; sourceTree = "<group>"; };
+		59F6680A1A7438480089FD23 /* College Freshman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "College Freshman.jpg"; sourceTree = "<group>"; };
+		59F6680B1A7438480089FD23 /* Successful Black Man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Successful Black Man.jpg"; sourceTree = "<group>"; };
+		59FE60381A74EABB00C6F93A /* Photo Meme.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Photo Meme.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59FE60391A74EABB00C6F93A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		59FE603B1A74EABB00C6F93A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		59FE603F1A74EABB00C6F93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59FE60401A74EABB00C6F93A /* PhotoEditingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoEditingViewController.h; sourceTree = "<group>"; };
+		59FE60411A74EABB00C6F93A /* PhotoEditingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoEditingViewController.m; sourceTree = "<group>"; };
+		59FE60431A74EABB00C6F93A /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		59FE604C1A74ECF600C6F93A /* AbadiMTBold.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AbadiMTBold.ttf; sourceTree = "<group>"; };
+		59FE604D1A74ECF600C6F93A /* Absender.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Absender.ttf; sourceTree = "<group>"; };
+		59FE604E1A74ECF600C6F93A /* Consolas Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Consolas Bold.ttf"; sourceTree = "<group>"; };
+		59FE604F1A74ECF600C6F93A /* Dead Kansas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dead Kansas.ttf"; sourceTree = "<group>"; };
+		59FE60501A74ECF600C6F93A /* EtelkaNarrowTextPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EtelkaNarrowTextPro.otf; sourceTree = "<group>"; };
+		59FE60511A74ECF600C6F93A /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
+		59FE60521A74ECF600C6F93A /* LeagueGothic-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Italic.otf"; sourceTree = "<group>"; };
+		59FE60531A74ECF600C6F93A /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LeagueGothic-Regular.otf"; sourceTree = "<group>"; };
+		59FE60541A74ECF600C6F93A /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
+		59FE605E1A74ED4F00C6F93A /* FontTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewController.h; sourceTree = "<group>"; };
+		59FE605F1A74ED4F00C6F93A /* FontTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewController.m; sourceTree = "<group>"; };
+		59FE60611A74EDB900C6F93A /* BlackBlurredmage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBlurredmage.png; sourceTree = "<group>"; };
+		59FE60621A74EDB900C6F93A /* twoSidedArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoSidedArrow.png; sourceTree = "<group>"; };
+		59FE60651A74EDD500C6F93A /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
+		59FE60671A74EF7500C6F93A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		59FE60681A74EF7500C6F93A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		59FE606A1A74F1C500C6F93A /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
+		59FE606B1A74F1C500C6F93A /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
+		59FE606D1A74FA6500C6F93A /* tickmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tickmark.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		599D0B061A6E902B00A1EB34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596D8FF81A76979C0008F060 /* CoreGraphics.framework in Frameworks */,
+				599D0B351A6E908700A1EB34 /* AVFoundation.framework in Frameworks */,
+				596D8FF41A7697850008F060 /* AdSupport.framework in Frameworks */,
+				599D0B391A6E909200A1EB34 /* Social.framework in Frameworks */,
+				599D0B371A6E908B00A1EB34 /* MessageUI.framework in Frameworks */,
+				599D0B331A6E908200A1EB34 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		599D0B1F1A6E902B00A1EB34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FE60351A74EABB00C6F93A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FE603A1A74EABB00C6F93A /* PhotosUI.framework in Frameworks */,
+				59FE603C1A74EABB00C6F93A /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		599D0B001A6E902B00A1EB34 = {
+			isa = PBXGroup;
+			children = (
+				599D0B3A1A6E909800A1EB34 /* Frameworks */,
+				599D0B0B1A6E902B00A1EB34 /* Meme Maker */,
+				599D0B251A6E902B00A1EB34 /* Meme MakerTests */,
+				599D0B0A1A6E902B00A1EB34 /* Products */,
+				59FE603D1A74EABB00C6F93A /* Photo Meme */,
+			);
+			sourceTree = "<group>";
+		};
+		599D0B0A1A6E902B00A1EB34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				599D0B091A6E902B00A1EB34 /* Meme Maker.app */,
+				599D0B221A6E902B00A1EB34 /* Meme MakerTests.xctest */,
+				59FE60381A74EABB00C6F93A /* Photo Meme.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		599D0B0B1A6E902B00A1EB34 /* Meme Maker */ = {
+			isa = PBXGroup;
+			children = (
+				599D0B101A6E902B00A1EB34 /* AppDelegate.h */,
+				599D0B111A6E902B00A1EB34 /* AppDelegate.m */,
+				599D0B161A6E902B00A1EB34 /* Main.storyboard */,
+				599D0B451A6E922600A1EB34 /* MemeObject.h */,
+				599D0B461A6E922600A1EB34 /* MemeObject.m */,
+				599D0B3E1A6E91BA00A1EB34 /* TableViewController.h */,
+				599D0B3F1A6E91BA00A1EB34 /* TableViewController.m */,
+				599D0B3B1A6E91AC00A1EB34 /* TableCell.h */,
+				599D0B3C1A6E91AC00A1EB34 /* TableCell.m */,
+				599D0B411A6E91CA00A1EB34 /* DetailViewController.h */,
+				599D0B421A6E91CA00A1EB34 /* DetailViewController.m */,
+				59EE0A261A72A530009C75DC /* CollectionViewController.h */,
+				59EE0A271A72A530009C75DC /* CollectionViewController.m */,
+				59EE0A2C1A72AC3E009C75DC /* CustomCollectionViewCell.h */,
+				59EE0A2D1A72AC3E009C75DC /* CustomCollectionViewCell.m */,
+				5984AE151A715E44009B078F /* FontTableViewController.h */,
+				5984AE161A715E44009B078F /* FontTableViewController.m */,
+				5984AE181A715E5C009B078F /* FontTableViewCell.h */,
+				5984AE191A715E5C009B078F /* FontTableViewCell.m */,
+				59AF27811A7D65F800AC5E7F /* topView.h */,
+				59AF27821A7D65F800AC5E7F /* topView.m */,
+				59AF27841A7D660800AC5E7F /* topView.xib */,
+				599D0B191A6E902B00A1EB34 /* Images.xcassets */,
+				599D0B1B1A6E902B00A1EB34 /* LaunchScreen.xib */,
+				59C3ADC11A701A310046A652 /* UIImage+ImageEffects.h */,
+				59C3ADC21A701A310046A652 /* UIImage+ImageEffects.m */,
+				599D0B0C1A6E902B00A1EB34 /* Supporting Files */,
+			);
+			path = "Meme Maker";
+			sourceTree = "<group>";
+		};
+		599D0B0C1A6E902B00A1EB34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				599D0B711A6E9A9100A1EB34 /* MemeList.json */,
+				59AF27B61A7D6F9D00AC5E7F /* Quotes.json */,
+				5984AE0F1A715405009B078F /* SaveIcon.png */,
+				59F6679E1A740B300089FD23 /* MemeMakerIcon.jpg */,
+				591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */,
+				5984AE131A715B78009B078F /* BlackBlurredmage.png */,
+				59E68E311A75871100D1C0C8 /* Screen3.jpg */,
+				59E68E321A75871100D1C0C8 /* Screen4.jpg */,
+				59E68E331A75871100D1C0C8 /* Screen2.jpg */,
+				59357EB11A765B37003D0245 /* Settings@3x.png */,
+				59E68E341A75871100D1C0C8 /* Screen1.jpg */,
+				599D0B701A6E935000A1EB34 /* Images */,
+				599D0B0D1A6E902B00A1EB34 /* Info.plist */,
+				59EE0A241A729FA9009C75DC /* Righteous-Regular.ttf */,
+				599F3C881A7967D60056CF5D /* PoplarStd.otf */,
+				599F3C8A1A7968240056CF5D /* StencilStd.otf */,
+				5984AE1B1A716AB4009B078F /* Absender.ttf */,
+				59EE0A1E1A729ECD009C75DC /* LeagueGothic-Regular.otf */,
+				59EE0A201A729EE5009C75DC /* LeagueGothic-Italic.otf */,
+				59C3ADC41A701E160046A652 /* EtelkaNarrowTextPro.otf */,
+				59C3ADBF1A7012800046A652 /* Consolas Bold.ttf */,
+				59AF27861A7D673500AC5E7F /* AvenirCondensedHand.ttf */,
+				5984AE0D1A712A6D009B078F /* Impact.ttf */,
+				599F3C861A79676F0056CF5D /* LithosPro-Black.otf */,
+				59C3ADBD1A7011690046A652 /* AbadiMTBold.ttf */,
+				599D0B0E1A6E902B00A1EB34 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		599D0B251A6E902B00A1EB34 /* Meme MakerTests */ = {
+			isa = PBXGroup;
+			children = (
+				599D0B281A6E902B00A1EB34 /* Meme_MakerTests.m */,
+				599D0B261A6E902B00A1EB34 /* Supporting Files */,
+			);
+			path = "Meme MakerTests";
+			sourceTree = "<group>";
+		};
+		599D0B261A6E902B00A1EB34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				599D0B271A6E902B00A1EB34 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		599D0B3A1A6E909800A1EB34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DF1AED1A76A27C00C49011 /* EventKitUI.framework */,
+				59DF1AE91A76A1EB00C49011 /* Accelerate.framework */,
+				596D8FFF1A7697DD0008F060 /* SystemConfiguration.framework */,
+				596D8FFD1A7697D60008F060 /* StoreKit.framework */,
+				596D8FF91A7697C90008F060 /* EventKit.framework */,
+				596D8FF71A76979C0008F060 /* CoreGraphics.framework */,
+				596D8FF51A7697980008F060 /* CoreTelephony.framework */,
+				596D8FF31A7697850008F060 /* AdSupport.framework */,
+				599D0B381A6E909200A1EB34 /* Social.framework */,
+				599D0B361A6E908B00A1EB34 /* MessageUI.framework */,
+				599D0B341A6E908700A1EB34 /* AVFoundation.framework */,
+				599D0B321A6E908200A1EB34 /* AudioToolbox.framework */,
+				59FE60391A74EABB00C6F93A /* PhotosUI.framework */,
+				59FE603B1A74EABB00C6F93A /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		599D0B701A6E935000A1EB34 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				59B160E21A7B584A00301E25 /* Hasta La Vista, Baby.jpg */,
+				59B160E31A7B584A00301E25 /* Shashawnk Redemption.jpg */,
+				59B160E41A7B584A00301E25 /* Jim Carrey.jpg */,
+				59B160E51A7B584A00301E25 /* Alrighty Then.jpg */,
+				59B160E61A7B584A00301E25 /* Ridiculously Photogenic Guy.jpg */,
+				59B160E71A7B584A00301E25 /* Misunderstood Metalhead.jpg */,
+				59B160E81A7B584A00301E25 /* Ridiculously Photogenic Metalhead.jpg */,
+				59B160E91A7B584A00301E25 /* Nyan Cat.jpeg */,
+				59B160EA1A7B584A00301E25 /* It's So Fluffy.jpg */,
+				59B160EB1A7B584A00301E25 /* Fluffy Unicorn Dash.jpg */,
+				59B160EC1A7B584A00301E25 /* Agnes Despicable Me.jpg */,
+				59B160ED1A7B584A00301E25 /* Impossibru.jpg */,
+				59B160EE1A7B584A00301E25 /* Foreign Policy.jpg */,
+				59B160EF1A7B584A00301E25 /* Seems Legit.jpeg */,
+				59B160F01A7B584A00301E25 /* Not Bad.jpg */,
+				59B160F11A7B584A00301E25 /* Yeah, Science!.jpeg */,
+				59B160F21A7B584A00301E25 /* I See What You Did There.jpg */,
+				59B160F31A7B584A00301E25 /* Dafuq Rage.jpg */,
+				59B160F41A7B584A00301E25 /* Scumbag Boss.jpeg */,
+				59B160F51A7B584A00301E25 /* Like a Boss Putin.jpeg */,
+				59B160F61A7B584A00301E25 /* Pun Putin.jpeg */,
+				59B160F71A7B584A00301E25 /* Good Guy Putin.jpg */,
+				59B160F81A7B584A00301E25 /* PSY.jpeg */,
+				59B160F91A7B584A00301E25 /* Malicious Advice Mallard.jpeg */,
+				59B160FA1A7B584A00301E25 /* Actual Revenge Duck.jpg */,
+				59B160FB1A7B584A00301E25 /* Meme Colored Background.jpg */,
+				59B160FC1A7B584A00301E25 /* Jesus Says.jpg */,
+				59B160FD1A7B584A00301E25 /* Dafuq.jpg */,
+				59B160FE1A7B584A00301E25 /* Angry Dumbledore.jpeg */,
+				59B160FF1A7B584A00301E25 /* I Will Find You and I Will Kill You.jpg */,
+				59B161001A7B584A00301E25 /* Krillin Peace.jpg */,
+				59B161011A7B584A00301E25 /* It's over 9000!!!.jpg */,
+				59AE79391A77EB5C00014735 /* Hipster Barista.jpg */,
+				599F3C7E1A7964B20056CF5D /* South Park Randy Marsh.jpg */,
+				599F3C7F1A7964B30056CF5D /* I Would Be So Happy.jpg */,
+				599F3C801A7964B30056CF5D /* Captain Hindsight.jpg */,
+				599F3C811A7964B30056CF5D /* You Know What Really Grinds My Gears?.jpg */,
+				59AE793A1A77EB5C00014735 /* Disappointed Picard.jpg */,
+				59AE793B1A77EB5C00014735 /* Nobody Cares.jpg */,
+				59AE793C1A77EB5C00014735 /* Don't You Squidward.jpeg */,
+				59DF1B811A76C10300C49011 /* Awwwwww Yeah.jpeg */,
+				59DF1B821A76C10300C49011 /* Surprise Mo********er.jpg */,
+				59AE79331A77E67B00014735 /* What Year is It.jpeg */,
+				59AE79311A77E4E300014735 /* This is Where.jpg */,
+				59DF1B831A76C10300C49011 /* Incredibles Syndrome.jpg */,
+				59DF1AEF1A76AC1400C49011 /* Darth Vader and Luke Skywalker.jpg */,
+				59AE79351A77E7C500014735 /* Obi Wan Kenobi.jpeg */,
+				59AE79371A77E85C00014735 /* Look at all these....jpg */,
+				59DF1B131A76BDF900C49011 /* Hipster Ariel.jpg */,
+				59DF1B141A76BDF900C49011 /* Thor.jpg */,
+				59DF1B151A76BDF900C49011 /* Walking Away from an Explosion.jpg */,
+				59DF1B161A76BDF900C49011 /* Tony Stark Fame.jpg */,
+				59DF1B171A76BDF900C49011 /* Legolas Elf Eyes.jpeg */,
+				59DF1B181A76BDF900C49011 /* Grumpy Cat Alternate.jpeg */,
+				59DF1B191A76BDF900C49011 /* Angry Arnold.jpg */,
+				59DF1B1A1A76BDF900C49011 /* Unimressed Queen.jpg */,
+				59DF1B1B1A76BDF900C49011 /* You Don't Say?.jpg */,
+				59DF1B1C1A76BDF900C49011 /* Oh Lord!.jpg */,
+				59DF1B1D1A76BDF900C49011 /* Sheldon Cooper Mind Control.jpeg */,
+				59DF1B1E1A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg */,
+				59DF1B1F1A76BDF900C49011 /* Sheldon Logic.jpeg */,
+				59DF1B201A76BDF900C49011 /* Bill Nye the Science Guy.jpg */,
+				59DF1B211A76BDF900C49011 /* Ron Swanson.jpeg */,
+				59DF1B221A76BDF900C49011 /* Ron Burgundy.jpg */,
+				59DF1B231A76BDF900C49011 /* Gordon Ramsay.jpeg */,
+				59DF1B241A76BDF900C49011 /* I'll Just Wait Here.jpeg */,
+				59DF1B251A76BDF900C49011 /* Imagination.jpeg */,
+				59DF1B261A76BDF900C49011 /* But Thats None Of My Business.jpg */,
+				59DF1B271A76BDF900C49011 /* Frank Underwood.jpg */,
+				59DF1B281A76BDF900C49011 /* Deadpool Pick Up Lines.jpeg */,
+				59DF1B291A76BDF900C49011 /* Metal Jesus.jpeg */,
+				59DF1B2A1A76BDF900C49011 /* Kim Jong-Un Lube Factory.jpg */,
+				59DF1B2B1A76BDF900C49011 /* Pitbull.jpg */,
+				59DF1B2C1A76BDF900C49011 /* Titanic Jack.jpeg */,
+				59DF1B2D1A76BDF900C49011 /* Leo Bites his Hand.jpg */,
+				59DF1B2E1A76BDF900C49011 /* Inception.jpg */,
+				59DF1B2F1A76BDF900C49011 /* Leonardo Dicaprio Cheers.jpeg */,
+				59DF1B301A76BDF900C49011 /* Surprised Doc Brown and Marty.jpg */,
+				59DF1B311A76BDF900C49011 /* Great Scott.jpg */,
+				59DF1B321A76BDF900C49011 /* Back To The Future.jpg */,
+				59DF1B331A76BDF900C49011 /* Doc Brown.jpg */,
+				59DF1B341A76BDF900C49011 /* Matrix Bullet Evasion.jpg */,
+				59DF1B351A76BDF900C49011 /* Morpheus.jpg */,
+				59DF1B361A76BDF900C49011 /* Matrix Neo.jpg */,
+				59DF1B371A76BDF900C49011 /* Batman Smiles.jpg */,
+				59DF1B381A76BDF900C49011 /* Permission Bane.jpeg */,
+				59DF1B391A76BDF900C49011 /* Sad Batman.jpg */,
+				59DF1B3A1A76BDF900C49011 /* The Joker.jpg */,
+				59DF1B3B1A76BDF900C49011 /* Why So Serious?.jpeg */,
+				59DF1B3C1A76BDF900C49011 /* LOL Guy.jpeg */,
+				59DF1B3D1A76BDF900C49011 /* Not Sure If Gusta.jpg */,
+				59DF1B3E1A76BDF900C49011 /* Fap Guy.jpg */,
+				59DF1B3F1A76BDF900C49011 /* Peter Parker Smile.jpg */,
+				59DF1B401A76BDF900C49011 /* Spiderman Hospital.jpeg */,
+				59DF1B411A76BDF900C49011 /* Hungover Spiderman.jpg */,
+				59DF1B421A76BDF900C49011 /* Spiderman Pssssst.jpg */,
+				59DF1B431A76BDF900C49011 /* And I'm Just Sitting Here.jpg */,
+				59DF1B441A76BDF900C49011 /* Wolverine Crush.jpg */,
+				59DF1B451A76BDF900C49011 /* Charles Xavier.jpg */,
+				59DF1B461A76BDF900C49011 /* You Shall Not Pass.jpg */,
+				59DF1B471A76BDF900C49011 /* I Have No Memory of This Place.jpeg */,
+				59DF1B481A76BDF900C49011 /* Heavy Breathing.jpg */,
+				59DF1B491A76BDF900C49011 /* My Precious.jpg */,
+				59DF1AF01A76AC1400C49011 /* It's a Trap.jpg */,
+				59DF1AF11A76AC1400C49011 /* Pirate Poker Face.jpg */,
+				59DF1AF21A76AC1400C49011 /* Jack Sparrow Being Chased.jpeg */,
+				59DF1AF31A76AC1400C49011 /* Confused Jackie Chan.jpeg */,
+				59DF1AF41A76AC1400C49011 /* Jack Nicholson The Shining.jpeg */,
+				59DF1AF51A76AC1400C49011 /* Barbosa And Sparrow.jpg */,
+				59DF1AF61A76AC1400C49011 /* Jar of Dirt.jpg */,
+				59DF1AF71A76AC1400C49011 /* You Were The Chosen One.jpg */,
+				59DF1AF81A76AC1400C49011 /* You Underestimate My Power.jpeg */,
+				59DF1AF91A76AC1400C49011 /* Darth Vader.jpg */,
+				59DF1AFA1A76AC1400C49011 /* Darth Sidious.jpg */,
+				59DF1AFB1A76AC1400C49011 /* So Much Win.jpeg */,
+				59DF1AFC1A76AC1400C49011 /* Spock.jpeg */,
+				59DF1AFD1A76AC1400C49011 /* Yoda.jpg */,
+				59DF1AFE1A76AC1400C49011 /* Morgan Freeman.jpg */,
+				59DF1AFF1A76AC1400C49011 /* Heisenberg.jpg */,
+				59DF1B001A76AC1400C49011 /* Confession Tiger.jpg */,
+				59E68E391A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg */,
+				59E68E3A1A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg */,
+				59E68E3B1A7596AE00D1C0C8 /* Y'all Got Any More.jpg */,
+				59E68E3C1A7596AE00D1C0C8 /* College Liberal.jpg */,
+				59E68E3D1A7596AE00D1C0C8 /* Well That Escalated Quickly.jpg */,
+				59E68E3E1A7596AE00D1C0C8 /* No Shit Sherock.jpg */,
+				59E68E3F1A7596AE00D1C0C8 /* Hannibal.jpg */,
+				59E68E401A7596AE00D1C0C8 /* Advice Doge.jpeg */,
+				59E68E411A7596AE00D1C0C8 /* Doge.jpg */,
+				59E68E421A7596AE00D1C0C8 /* Success Kid : I Hate Sandcastles.png */,
+				59E68E431A7596AE00D1C0C8 /* True Story.jpg */,
+				59E68E441A7596AE00D1C0C8 /* Archer Deal With It.jpg */,
+				59E68E451A7596AE00D1C0C8 /* Archer.jpeg */,
+				59E68E461A7596AE00D1C0C8 /* Darwin Facepalm.jpeg */,
+				59E68E471A7596AE00D1C0C8 /* Minion What!.jpg */,
+				59E68E481A7596AE00D1C0C8 /* Minions Bottom.jpg */,
+				59E68E491A7596AE00D1C0C8 /* Minion Banana.jpg */,
+				59E68E4A1A7596AE00D1C0C8 /* Excited Minions.jpeg */,
+				59E68E4B1A7596AE00D1C0C8 /* Carter the Banana Boy.jpg */,
+				59E68E4C1A7596AE00D1C0C8 /* George RR Martin.jpg */,
+				59E68E4D1A7596AE00D1C0C8 /* Gabe Newell.jpg */,
+				59E68E4E1A7596AE00D1C0C8 /* Rick and Carl.jpg */,
+				59E68E4F1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg */,
+				59E68E501A7596AE00D1C0C8 /* House Thumbs Up.jpg */,
+				59E68E511A7596AE00D1C0C8 /* 10 Peeking.jpg */,
+				59E68E521A7596AE00D1C0C8 /* Doctor Who Don't.jpeg */,
+				59E68E531A7596AE00D1C0C8 /* Dr. Evil Pinky.jpg */,
+				59E68E541A7596AE00D1C0C8 /* Neil deGrasse Tyson.png */,
+				59E68E551A7596AE00D1C0C8 /* Scumbag Body.jpg */,
+				59E68E561A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg */,
+				59E68E571A7596AE00D1C0C8 /* Cereal Guy Spit.png */,
+				59E68E581A7596AE00D1C0C8 /* Cereal Guy.jpg */,
+				59E68E591A7596AE00D1C0C8 /* Pissed Off Obama.jpg */,
+				59E68E5A1A7596AE00D1C0C8 /* Vladmir Putin.jpg */,
+				59E68E5B1A7596AE00D1C0C8 /* Bad Joke Eel.jpg */,
+				59E68E5C1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg */,
+				59E68E5D1A7596AE00D1C0C8 /* Foul Bachelor Frog.jpg */,
+				59E68E5E1A7596AE00D1C0C8 /* Lame Pun Coon.jpg */,
+				59E68E5F1A7596AE00D1C0C8 /* Depression Dog.jpg */,
+				59E68E601A7596AE00D1C0C8 /* Sheltering Suburban Mom.jpeg */,
+				59E68E611A7596AE00D1C0C8 /* Art Student Owl.jpg */,
+				59E68E621A7596AE00D1C0C8 /* Technologically Impaired Duck.jpg */,
+				59E68E631A7596AE00D1C0C8 /* Annoying Gym Newbie.jpg */,
+				59E68E641A7596AE00D1C0C8 /* Tim Cook.jpg */,
+				59E68E651A7596AE00D1C0C8 /* Steve Jobs.jpeg */,
+				59E68E661A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg */,
+				59F667FC1A7438470089FD23 /* Good Girl Ana.jpg */,
+				59F667FD1A7438470089FD23 /* Jealous Girl.jpg */,
+				59F667FE1A7438470089FD23 /* Idiot Nerd Girl.jpg */,
+				59F667FF1A7438470089FD23 /* Vengeance Dad.jpg */,
+				59F668001A7438470089FD23 /* Anti Joke Chicken.jpg */,
+				59F668011A7438480089FD23 /* Weird Stuff I Do Potoo.jpg */,
+				59F668021A7438480089FD23 /* Courage Wolf.jpg */,
+				59F668031A7438480089FD23 /* Dating Site Murderer.jpeg */,
+				59F668041A7438480089FD23 /* Paranoid Parrot.jpg */,
+				59F668051A7438480089FD23 /* Unpopular Opinion Puffin.jpeg */,
+				59F668061A7438480089FD23 /* Redneck Randal.jpg */,
+				59F668071A7438480089FD23 /* Drunk Baby.jpeg */,
+				59F668081A7438480089FD23 /* Shut Up and Take My Money.jpeg */,
+				59F668091A7438480089FD23 /* You're gonna have a Bad Time.jpg */,
+				59F6680A1A7438480089FD23 /* College Freshman.jpg */,
+				59F6680B1A7438480089FD23 /* Successful Black Man.jpg */,
+				59F667A01A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg */,
+				59F667A11A7431980089FD23 /* Socially Awesome Penguin.jpg */,
+				59F667A21A7431980089FD23 /* Socially Awesome Awkward Penguin.jpg */,
+				59F667A31A7431980089FD23 /* Socially Awkward Penguin.jpg */,
+				59F667A41A7431980089FD23 /* Scumbag Brain.jpg */,
+				59F667A51A7431980089FD23 /* Net N00b.jpg */,
+				59F667A61A7431980089FD23 /* Buisness Cat.jpg */,
+				59F667A71A7431980089FD23 /* Pedobear.jpg */,
+				59F667A81A7431980089FD23 /* Rage Fuuuuu.jpg */,
+				59F667A91A7431980089FD23 /* Pickup Line Panda.jpg */,
+				59F667AA1A7431980089FD23 /* Okay Guy.png */,
+				59F667AB1A7431980089FD23 /* Paper.jpg */,
+				59F667AC1A7431980089FD23 /* Sudden Clarity Clarence.jpg */,
+				59F667AD1A7431980089FD23 /* Insanity Wolf.jpg */,
+				59F667AE1A7431980089FD23 /* Today was a good day.jpg */,
+				59F667AF1A7431980089FD23 /* Annoying Facebook Girl.jpg */,
+				59F667B01A7431980089FD23 /* American Pride Eagle.jpg */,
+				59F667B11A7431980089FD23 /* I am Not a Smart Man.jpg */,
+				59F667B21A7431980089FD23 /* Butthurt Dweller.jpeg */,
+				59F667B31A7431980089FD23 /* Dat Ass.jpg */,
+				59F667B41A7431980089FD23 /* Bear Grylls.jpeg */,
+				59F667B51A7431980089FD23 /* Chemistry Cat.jpeg */,
+				59F667B61A7431980089FD23 /* Forever Resentful Mother.jpg */,
+				59F667B71A7431980089FD23 /* Evil Plotting Raccoon.jpg */,
+				59F667B81A7431980089FD23 /* Internet Husband.jpg */,
+				59F667B91A7431980089FD23 /* Whyyy.jpg */,
+				59F667BA1A7431980089FD23 /* High Expectations Asian Father.jpg */,
+				59F667BB1A7431980089FD23 /* Forever Alone.jpg */,
+				59F667BC1A7431980089FD23 /* Joseph Ducreux.jpeg */,
+				59F667BD1A7431980089FD23 /* Good Guy Boss.jpg */,
+				59F667BE1A7431980089FD23 /* Overly Attached Boyfriend.jpg */,
+				59F667BF1A7431980089FD23 /* Back In My Day.jpg */,
+				59F667C01A7431980089FD23 /* Overly Attached Girlfriend.jpg */,
+				59F667C11A7431980089FD23 /* Challenge Accepted.jpg */,
+				59F667C21A7431980089FD23 /* Trollface.jpg */,
+				59F667C31A7431980089FD23 /* Good Girl Gina.jpg */,
+				59F667C41A7431980089FD23 /* Good Dog Greg.jpg */,
+				59F667C51A7431980089FD23 /* First Day on the Internet Kid.jpg */,
+				59F667C61A7431980089FD23 /* Good Guy Greg.jpg */,
+				59F667C71A7431980089FD23 /* Lazy College Senior.jpg */,
+				59F667C81A7431980089FD23 /* Surprised Koala.jpeg */,
+				59F667C91A7431980089FD23 /* Unhelpful Highschool Teacher.jpg */,
+				59F667CA1A7431980089FD23 /* Chill Out Lemur.jpg */,
+				59F667CB1A7431980089FD23 /* Please Guy.jpg */,
+				59F667CC1A7431980089FD23 /* Awkward Moment Seal.jpg */,
+				59F667CD1A7431980089FD23 /* Overly Manly Man.jpg */,
+				5984AE751A717E3D009B078F /* X, X Everywhere.jpeg */,
+				5984AE1D1A717DE8009B078F /* I Know Fuck Me Right.jpeg */,
+				5984AE1E1A717DE8009B078F /* Yo Dawg Heard You.jpeg */,
+				5984AE1F1A717DE8009B078F /* The Most Interesting Cat in the World.jpeg */,
+				5984AE201A717DE8009B078F /* Engineering Professor.jpeg */,
+				5984AE211A717DE8009B078F /* Dr Evil Laser.jpeg */,
+				5984AE221A717DE8009B078F /* Kill Yourself Guy.jpeg */,
+				5984AE231A717DE8009B078F /* If You Know What I Mean.jpeg */,
+				5984AE241A717DE8009B078F /* I Too Like To Live Life Dangerously.jpeg */,
+				5984AE251A717DE8009B078F /* I Should Buy A Boat Cat.jpeg */,
+				5984AE261A717DE8009B078F /* Sparta Leonidas.jpeg */,
+				5984AE271A717DE8009B078F /* Conspiracy Keanu.jpeg */,
+				5984AE281A717DE8009B078F /* Disaster Girl.jpeg */,
+				5984AE291A717DE8009B078F /* Angry Baby.jpeg */,
+				5984AE2A1A717DE8009B078F /* Scumbag Parents.jpeg */,
+				5984AE2B1A717DE8009B078F /* Scumbag Stacy.jpeg */,
+				5984AE2C1A717DE8009B078F /* Scumbag Steve.jpeg */,
+				5984AE2D1A717DE8009B078F /* Skeptical Baby.jpeg */,
+				5984AE2E1A717DE8009B078F /* Grandma Finds The Internet.jpeg */,
+				5984AE2F1A717DE8009B078F /* Say That Again I Dare You.jpeg */,
+				5984AE301A717DE8009B078F /* Philosoraptor.jpeg */,
+				5984AE311A717DE8009B078F /* Evil Toddler.jpeg */,
+				5984AE321A717DE8009B078F /* Confession Bear.jpeg */,
+				5984AE341A717DE8009B078F /* Third World Success Kid.jpeg */,
+				5984AE361A717DE8009B078F /* Captain Picard Facepalm.jpeg */,
+				5984AE371A717DE8009B078F /* Too Damn High.jpeg */,
+				5984AE381A717DE8009B078F /* Picard Wtf.jpeg */,
+				5984AE391A717DE8009B078F /* Matrix Morpheus.jpeg */,
+				5984AE3A1A717DE8009B078F /* X All The Y.jpeg */,
+				5984AE3B1A717DE8009B078F /* Dwight Schrute.jpeg */,
+				5984AE3C1A717DE8009B078F /* That Would Be Great.jpeg */,
+				5984AE3D1A717DE8009B078F /* Third World Skeptical Kid.jpeg */,
+				5984AE3E1A717DE8009B078F /* Success Kid.jpeg */,
+				5984AE3F1A717DE8009B078F /* Grumpy Cat.jpeg */,
+				5984AE401A717DE8009B078F /* Condescending Wonka.jpeg */,
+				5984AE411A717DE8009B078F /* Y U NO.jpeg */,
+				5984AE421A717DE8009B078F /* Brace Yourselves X is Coming.jpeg */,
+				5984AE431A717DE8009B078F /* Bad Luck Brian.jpeg */,
+				5984AE441A717DE8009B078F /* Futurama Fry.jpeg */,
+				5984AE451A717DE8009B078F /* First World Problems.jpeg */,
+				5984AE461A717DE8009B078F /* The Most Interesting Man In The World.jpeg */,
+				5984AE471A717DE8009B078F /* Batman Slapping Robin.jpeg */,
+				5984AE481A717DE8009B078F /* One Does Not Simply.jpeg */,
+				599D0B481A6E934700A1EB34 /* 1st World Canadian Problems.jpeg */,
+				599D0B491A6E934700A1EB34 /* 2nd Term Obama.jpeg */,
+				599D0B4A1A6E934700A1EB34 /* 3g3xw.jpeg */,
+				599D0B4B1A6E934700A1EB34 /* 10 Guy.jpeg */,
+				599D0B4C1A6E934700A1EB34 /* 1950s Middle Finger.jpeg */,
+				599D0B4D1A6E934700A1EB34 /* 1990s First World Problems.jpeg */,
+				599D0B4E1A6E934700A1EB34 /* Aaaaaand Its Gone.jpeg */,
+				599D0B4F1A6E934700A1EB34 /* Actual Advice Mallard.jpeg */,
+				599D0B501A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg */,
+				599D0B511A6E934700A1EB34 /* Advice Dog.jpeg */,
+				599D0B521A6E934700A1EB34 /* Advice God.jpeg */,
+				599D0B531A6E934700A1EB34 /* Advice Yoda.jpeg */,
+				599D0B541A6E934700A1EB34 /* Ain't Nobody Got Time For That.jpeg */,
+				599D0B551A6E934700A1EB34 /* Alan Greenspan.jpeg */,
+				599D0B561A6E934700A1EB34 /* Alarm Clock.jpeg */,
+				599D0B571A6E934700A1EB34 /* Albert Cagestein.jpeg */,
+				599D0B581A6E934700A1EB34 /* Albert Einstein.jpeg */,
+				599D0B591A6E934700A1EB34 /* Am I The Only One Around Here.jpeg */,
+				599D0B5A1A6E934700A1EB34 /* Ancient Aliens.jpeg */,
+				599D0B5B1A6E934700A1EB34 /* And everybody loses their minds.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		59FE603D1A74EABB00C6F93A /* Photo Meme */ = {
+			isa = PBXGroup;
+			children = (
+				59FE60401A74EABB00C6F93A /* PhotoEditingViewController.h */,
+				59FE60411A74EABB00C6F93A /* PhotoEditingViewController.m */,
+				59FE60431A74EABB00C6F93A /* MainInterface.storyboard */,
+				59FE605E1A74ED4F00C6F93A /* FontTableViewController.h */,
+				59FE605F1A74ED4F00C6F93A /* FontTableViewController.m */,
+				59FE606A1A74F1C500C6F93A /* FontTableViewCell.h */,
+				59FE606B1A74F1C500C6F93A /* FontTableViewCell.m */,
+				59FE60671A74EF7500C6F93A /* UIImage+ImageEffects.h */,
+				59FE60681A74EF7500C6F93A /* UIImage+ImageEffects.m */,
+				59FE603E1A74EABB00C6F93A /* Supporting Files */,
+			);
+			path = "Photo Meme";
+			sourceTree = "<group>";
+		};
+		59FE603E1A74EABB00C6F93A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59FE603F1A74EABB00C6F93A /* Info.plist */,
+				59FE604C1A74ECF600C6F93A /* AbadiMTBold.ttf */,
+				59FE606D1A74FA6500C6F93A /* tickmark.png */,
+				59FE604D1A74ECF600C6F93A /* Absender.ttf */,
+				59FE604E1A74ECF600C6F93A /* Consolas Bold.ttf */,
+				59FE604F1A74ECF600C6F93A /* Dead Kansas.ttf */,
+				59FE60501A74ECF600C6F93A /* EtelkaNarrowTextPro.otf */,
+				59FE60511A74ECF600C6F93A /* Impact.ttf */,
+				59FE60521A74ECF600C6F93A /* LeagueGothic-Italic.otf */,
+				59FE60531A74ECF600C6F93A /* LeagueGothic-Regular.otf */,
+				59FE60541A74ECF600C6F93A /* Righteous-Regular.ttf */,
+				59FE60611A74EDB900C6F93A /* BlackBlurredmage.png */,
+				59FE60621A74EDB900C6F93A /* twoSidedArrow.png */,
+				59FE60651A74EDD500C6F93A /* Settings@3x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		599D0B081A6E902B00A1EB34 /* Meme Maker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 599D0B2C1A6E902B00A1EB34 /* Build configuration list for PBXNativeTarget "Meme Maker" */;
+			buildPhases = (
+				599D0B051A6E902B00A1EB34 /* Sources */,
+				599D0B061A6E902B00A1EB34 /* Frameworks */,
+				599D0B071A6E902B00A1EB34 /* Resources */,
+				59FE604B1A74EABB00C6F93A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59FE60461A74EABB00C6F93A /* PBXTargetDependency */,
+			);
+			name = "Meme Maker";
+			productName = "Meme Maker";
+			productReference = 599D0B091A6E902B00A1EB34 /* Meme Maker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		599D0B211A6E902B00A1EB34 /* Meme MakerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 599D0B2F1A6E902B00A1EB34 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */;
+			buildPhases = (
+				599D0B1E1A6E902B00A1EB34 /* Sources */,
+				599D0B1F1A6E902B00A1EB34 /* Frameworks */,
+				599D0B201A6E902B00A1EB34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				599D0B241A6E902B00A1EB34 /* PBXTargetDependency */,
+			);
+			name = "Meme MakerTests";
+			productName = "Meme MakerTests";
+			productReference = 599D0B221A6E902B00A1EB34 /* Meme MakerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59FE60371A74EABB00C6F93A /* Photo Meme */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59FE604A1A74EABB00C6F93A /* Build configuration list for PBXNativeTarget "Photo Meme" */;
+			buildPhases = (
+				59FE60341A74EABB00C6F93A /* Sources */,
+				59FE60351A74EABB00C6F93A /* Frameworks */,
+				59FE60361A74EABB00C6F93A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Photo Meme";
+			productName = "Photo Meme";
+			productReference = 59FE60381A74EABB00C6F93A /* Photo Meme.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		599D0B011A6E902B00A1EB34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = avikantz;
+				TargetAttributes = {
+					599D0B081A6E902B00A1EB34 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = HN3SCP8A52;
+					};
+					599D0B211A6E902B00A1EB34 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 599D0B081A6E902B00A1EB34;
+					};
+					59FE60371A74EABB00C6F93A = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 599D0B041A6E902B00A1EB34 /* Build configuration list for PBXProject "Meme Maker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 599D0B001A6E902B00A1EB34;
+			productRefGroup = 599D0B0A1A6E902B00A1EB34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				599D0B081A6E902B00A1EB34 /* Meme Maker */,
+				599D0B211A6E902B00A1EB34 /* Meme MakerTests */,
+				59FE60371A74EABB00C6F93A /* Photo Meme */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		599D0B071A6E902B00A1EB34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59E68E6A1A7596AE00D1C0C8 /* College Liberal.jpg in Resources */,
+				59DF1B4C1A76BDF900C49011 /* Walking Away from an Explosion.jpg in Resources */,
+				59F667D71A7431980089FD23 /* Pickup Line Panda.jpg in Resources */,
+				59E68E8F1A7596AE00D1C0C8 /* Art Student Owl.jpg in Resources */,
+				59DF1B531A76BDF900C49011 /* Oh Lord!.jpg in Resources */,
+				5984AE721A717DE9009B078F /* The Most Interesting Man In The World.jpeg in Resources */,
+				59E68E751A7596AE00D1C0C8 /* Minion What!.jpg in Resources */,
+				59B161151A7B584A00301E25 /* Like a Boss Putin.jpeg in Resources */,
+				59E68E801A7596AE00D1C0C8 /* Doctor Who Don't.jpeg in Resources */,
+				59F667E01A7431980089FD23 /* Butthurt Dweller.jpeg in Resources */,
+				5984AE6C1A717DE9009B078F /* Condescending Wonka.jpeg in Resources */,
+				59F667F41A7431980089FD23 /* Good Guy Greg.jpg in Resources */,
+				59F667DA1A7431980089FD23 /* Sudden Clarity Clarence.jpg in Resources */,
+				59F667EB1A7431980089FD23 /* Good Guy Boss.jpg in Resources */,
+				599D0B611A6E934700A1EB34 /* 1990s First World Problems.jpeg in Resources */,
+				59AE79361A77E7C500014735 /* Obi Wan Kenobi.jpeg in Resources */,
+				59DF1B4F1A76BDF900C49011 /* Grumpy Cat Alternate.jpeg in Resources */,
+				59DF1B7F1A76BDFA00C49011 /* Heavy Breathing.jpg in Resources */,
+				59DF1B7E1A76BDFA00C49011 /* I Have No Memory of This Place.jpeg in Resources */,
+				59F668161A7438480089FD23 /* Redneck Randal.jpg in Resources */,
+				59F667F11A7431980089FD23 /* Good Girl Gina.jpg in Resources */,
+				59E68E871A7596AE00D1C0C8 /* Pissed Off Obama.jpg in Resources */,
+				59DF1B081A76AC1400C49011 /* Jar of Dirt.jpg in Resources */,
+				5984AE6E1A717DE9009B078F /* Brace Yourselves X is Coming.jpeg in Resources */,
+				59F667EE1A7431980089FD23 /* Overly Attached Girlfriend.jpg in Resources */,
+				59E68E921A7596AE00D1C0C8 /* Tim Cook.jpg in Resources */,
+				59DF1B681A76BDFA00C49011 /* Great Scott.jpg in Resources */,
+				599F3C8B1A7968240056CF5D /* StencilStd.otf in Resources */,
+				59F667EA1A7431980089FD23 /* Joseph Ducreux.jpeg in Resources */,
+				59DF1B4B1A76BDF900C49011 /* Thor.jpg in Resources */,
+				599D0B601A6E934700A1EB34 /* 1950s Middle Finger.jpeg in Resources */,
+				59DF1B861A76C10300C49011 /* Incredibles Syndrome.jpg in Resources */,
+				59F667DB1A7431980089FD23 /* Insanity Wolf.jpg in Resources */,
+				5984AE681A717DE9009B078F /* That Would Be Great.jpeg in Resources */,
+				59DF1B731A76BDFA00C49011 /* LOL Guy.jpeg in Resources */,
+				59AE79401A77EB5C00014735 /* Don't You Squidward.jpeg in Resources */,
+				59DF1B0A1A76AC1400C49011 /* You Underestimate My Power.jpeg in Resources */,
+				59E68E361A75871100D1C0C8 /* Screen4.jpg in Resources */,
+				59AF27851A7D660800AC5E7F /* topView.xib in Resources */,
+				5984AE711A717DE9009B078F /* First World Problems.jpeg in Resources */,
+				5984AE621A717DE9009B078F /* Captain Picard Facepalm.jpeg in Resources */,
+				59DF1B761A76BDFA00C49011 /* Peter Parker Smile.jpg in Resources */,
+				59AE793F1A77EB5C00014735 /* Nobody Cares.jpg in Resources */,
+				599D0B5F1A6E934700A1EB34 /* 10 Guy.jpeg in Resources */,
+				59DF1B701A76BDFA00C49011 /* Sad Batman.jpg in Resources */,
+				5984AE101A715405009B078F /* SaveIcon.png in Resources */,
+				5984AE4C1A717DE8009B078F /* Engineering Professor.jpeg in Resources */,
+				59DF1B611A76BDFA00C49011 /* Kim Jong-Un Lube Factory.jpg in Resources */,
+				59E68E371A75871100D1C0C8 /* Screen2.jpg in Resources */,
+				59DF1B5B1A76BDFA00C49011 /* I'll Just Wait Here.jpeg in Resources */,
+				59DF1B551A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg in Resources */,
+				59B161131A7B584A00301E25 /* Dafuq Rage.jpg in Resources */,
+				59F667E81A7431980089FD23 /* High Expectations Asian Father.jpg in Resources */,
+				599D0B6A1A6E934700A1EB34 /* Alarm Clock.jpeg in Resources */,
+				59F667E91A7431980089FD23 /* Forever Alone.jpg in Resources */,
+				59DF1B4E1A76BDF900C49011 /* Legolas Elf Eyes.jpeg in Resources */,
+				59E68E711A7596AE00D1C0C8 /* True Story.jpg in Resources */,
+				59B1610B1A7B584A00301E25 /* Fluffy Unicorn Dash.jpg in Resources */,
+				59F667D01A7431980089FD23 /* Socially Awesome Awkward Penguin.jpg in Resources */,
+				59F667EC1A7431980089FD23 /* Overly Attached Boyfriend.jpg in Resources */,
+				59F667E71A7431980089FD23 /* Whyyy.jpg in Resources */,
+				5984AE6A1A717DE9009B078F /* Success Kid.jpeg in Resources */,
+				5984AE731A717DE9009B078F /* Batman Slapping Robin.jpeg in Resources */,
+				59B161041A7B584A00301E25 /* Jim Carrey.jpg in Resources */,
+				599D0B661A6E934700A1EB34 /* Advice God.jpeg in Resources */,
+				59DF1B801A76BDFA00C49011 /* My Precious.jpg in Resources */,
+				5984AE741A717DE9009B078F /* One Does Not Simply.jpeg in Resources */,
+				59B161091A7B584A00301E25 /* Nyan Cat.jpeg in Resources */,
+				59B161161A7B584A00301E25 /* Pun Putin.jpeg in Resources */,
+				59DF1B121A76AC1400C49011 /* Confession Tiger.jpg in Resources */,
+				599F3C841A7964B30056CF5D /* Captain Hindsight.jpg in Resources */,
+				59DF1B011A76AC1400C49011 /* Darth Vader and Luke Skywalker.jpg in Resources */,
+				59E68E931A7596AE00D1C0C8 /* Steve Jobs.jpeg in Resources */,
+				59E68E691A7596AE00D1C0C8 /* Y'all Got Any More.jpg in Resources */,
+				59F667EF1A7431980089FD23 /* Challenge Accepted.jpg in Resources */,
+				59F6680E1A7438480089FD23 /* Idiot Nerd Girl.jpg in Resources */,
+				59DF1B4D1A76BDF900C49011 /* Tony Stark Fame.jpg in Resources */,
+				59F6680F1A7438480089FD23 /* Vengeance Dad.jpg in Resources */,
+				59F6680C1A7438480089FD23 /* Good Girl Ana.jpg in Resources */,
+				59F667F31A7431980089FD23 /* First Day on the Internet Kid.jpg in Resources */,
+				59EE0A1F1A729ECD009C75DC /* LeagueGothic-Regular.otf in Resources */,
+				59DF1B021A76AC1400C49011 /* It's a Trap.jpg in Resources */,
+				59E68E6D1A7596AE00D1C0C8 /* Hannibal.jpg in Resources */,
+				59E68E671A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg in Resources */,
+				59DF1B851A76C10300C49011 /* Surprise Mo********er.jpg in Resources */,
+				599D0B6B1A6E934700A1EB34 /* Albert Cagestein.jpeg in Resources */,
+				59E68E6F1A7596AE00D1C0C8 /* Doge.jpg in Resources */,
+				5984AE5C1A717DE9009B078F /* Philosoraptor.jpeg in Resources */,
+				59DF1B6E1A76BDFA00C49011 /* Batman Smiles.jpg in Resources */,
+				59B1611F1A7B584A00301E25 /* I Will Find You and I Will Kill You.jpg in Resources */,
+				59F667E61A7431980089FD23 /* Internet Husband.jpg in Resources */,
+				59E68E831A7596AE00D1C0C8 /* Scumbag Body.jpg in Resources */,
+				59DF1B0D1A76AC1400C49011 /* So Much Win.jpeg in Resources */,
+				5984AE691A717DE9009B078F /* Third World Skeptical Kid.jpeg in Resources */,
+				5984AE591A717DE9009B078F /* Skeptical Baby.jpeg in Resources */,
+				591F26EE1A73DB5600F508D5 /* twoSidedArrow.png in Resources */,
+				59F668121A7438480089FD23 /* Courage Wolf.jpg in Resources */,
+				59B161141A7B584A00301E25 /* Scumbag Boss.jpeg in Resources */,
+				59DF1B501A76BDF900C49011 /* Angry Arnold.jpg in Resources */,
+				59F668181A7438480089FD23 /* Shut Up and Take My Money.jpeg in Resources */,
+				59E68E791A7596AE00D1C0C8 /* Carter the Banana Boy.jpg in Resources */,
+				59DF1B6D1A76BDFA00C49011 /* Matrix Neo.jpg in Resources */,
+				59E68E731A7596AE00D1C0C8 /* Archer.jpeg in Resources */,
+				5984AE6D1A717DE9009B078F /* Y U NO.jpeg in Resources */,
+				599D0B651A6E934700A1EB34 /* Advice Dog.jpeg in Resources */,
+				59E68E7A1A7596AE00D1C0C8 /* George RR Martin.jpg in Resources */,
+				59F6681B1A7438480089FD23 /* Successful Black Man.jpg in Resources */,
+				59E68E761A7596AE00D1C0C8 /* Minions Bottom.jpg in Resources */,
+				59E68E681A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg in Resources */,
+				59E68E941A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg in Resources */,
+				599D0B181A6E902B00A1EB34 /* Main.storyboard in Resources */,
+				59B161111A7B584A00301E25 /* Yeah, Science!.jpeg in Resources */,
+				59DF1B061A76AC1400C49011 /* Jack Nicholson The Shining.jpeg in Resources */,
+				59DF1B541A76BDF900C49011 /* Sheldon Cooper Mind Control.jpeg in Resources */,
+				59F667DD1A7431980089FD23 /* Annoying Facebook Girl.jpg in Resources */,
+				5984AE671A717DE9009B078F /* Dwight Schrute.jpeg in Resources */,
+				59DF1B571A76BDFA00C49011 /* Bill Nye the Science Guy.jpg in Resources */,
+				59DF1B5D1A76BDFA00C49011 /* But Thats None Of My Business.jpg in Resources */,
+				5984AE5A1A717DE9009B078F /* Grandma Finds The Internet.jpeg in Resources */,
+				5984AE661A717DE9009B078F /* X All The Y.jpeg in Resources */,
+				5984AE641A717DE9009B078F /* Picard Wtf.jpeg in Resources */,
+				59E68E7D1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg in Resources */,
+				59DF1B7A1A76BDFA00C49011 /* And I'm Just Sitting Here.jpg in Resources */,
+				59E68E7B1A7596AE00D1C0C8 /* Gabe Newell.jpg in Resources */,
+				59F667ED1A7431980089FD23 /* Back In My Day.jpg in Resources */,
+				59F667DE1A7431980089FD23 /* American Pride Eagle.jpg in Resources */,
+				59DF1B7D1A76BDFA00C49011 /* You Shall Not Pass.jpg in Resources */,
+				599D0B681A6E934700A1EB34 /* Ain't Nobody Got Time For That.jpeg in Resources */,
+				59DF1B581A76BDFA00C49011 /* Ron Swanson.jpeg in Resources */,
+				59AE79381A77E85C00014735 /* Look at all these....jpg in Resources */,
+				59DF1B651A76BDFA00C49011 /* Inception.jpg in Resources */,
+				59DF1B6C1A76BDFA00C49011 /* Morpheus.jpg in Resources */,
+				59E68E701A7596AE00D1C0C8 /* Success Kid : I Hate Sandcastles.png in Resources */,
+				59F667DC1A7431980089FD23 /* Today was a good day.jpg in Resources */,
+				59E68E741A7596AE00D1C0C8 /* Darwin Facepalm.jpeg in Resources */,
+				59DF1B841A76C10300C49011 /* Awwwwww Yeah.jpeg in Resources */,
+				59F667D11A7431980089FD23 /* Socially Awkward Penguin.jpg in Resources */,
+				5984AE6F1A717DE9009B078F /* Bad Luck Brian.jpeg in Resources */,
+				599D0B6C1A6E934700A1EB34 /* Albert Einstein.jpeg in Resources */,
+				59E68E351A75871100D1C0C8 /* Screen3.jpg in Resources */,
+				59B1610C1A7B584A00301E25 /* Agnes Despicable Me.jpg in Resources */,
+				5984AE521A717DE8009B078F /* Sparta Leonidas.jpeg in Resources */,
+				59DF1B691A76BDFA00C49011 /* Back To The Future.jpg in Resources */,
+				59E68E8A1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg in Resources */,
+				59B161101A7B584A00301E25 /* Not Bad.jpg in Resources */,
+				59E68E721A7596AE00D1C0C8 /* Archer Deal With It.jpg in Resources */,
+				599D0B1D1A6E902B00A1EB34 /* LaunchScreen.xib in Resources */,
+				599F3C821A7964B30056CF5D /* South Park Randy Marsh.jpg in Resources */,
+				5984AE1C1A716AB4009B078F /* Absender.ttf in Resources */,
+				59B161181A7B584A00301E25 /* PSY.jpeg in Resources */,
+				59DF1B0C1A76AC1400C49011 /* Darth Sidious.jpg in Resources */,
+				59DF1B671A76BDFA00C49011 /* Surprised Doc Brown and Marty.jpg in Resources */,
+				5984AE531A717DE8009B078F /* Conspiracy Keanu.jpeg in Resources */,
+				59F668141A7438480089FD23 /* Paranoid Parrot.jpg in Resources */,
+				599F3C891A7967D60056CF5D /* PoplarStd.otf in Resources */,
+				599D0B6D1A6E934700A1EB34 /* Am I The Only One Around Here.jpeg in Resources */,
+				599F3C831A7964B30056CF5D /* I Would Be So Happy.jpg in Resources */,
+				599D0B621A6E934700A1EB34 /* Aaaaaand Its Gone.jpeg in Resources */,
+				59E68E7C1A7596AE00D1C0C8 /* Rick and Carl.jpg in Resources */,
+				5984AE491A717DE8009B078F /* I Know Fuck Me Right.jpeg in Resources */,
+				59DF1B631A76BDFA00C49011 /* Titanic Jack.jpeg in Resources */,
+				59F667D31A7431980089FD23 /* Net N00b.jpg in Resources */,
+				59F667D51A7431980089FD23 /* Pedobear.jpg in Resources */,
+				59F668101A7438480089FD23 /* Anti Joke Chicken.jpg in Resources */,
+				599D0B721A6E9A9100A1EB34 /* MemeList.json in Resources */,
+				59F6679F1A740B300089FD23 /* MemeMakerIcon.jpg in Resources */,
+				599F3C851A7964B30056CF5D /* You Know What Really Grinds My Gears?.jpg in Resources */,
+				59B1610F1A7B584A00301E25 /* Seems Legit.jpeg in Resources */,
+				59DF1B031A76AC1400C49011 /* Pirate Poker Face.jpg in Resources */,
+				59E68E811A7596AE00D1C0C8 /* Dr. Evil Pinky.jpg in Resources */,
+				59B1611E1A7B584A00301E25 /* Angry Dumbledore.jpeg in Resources */,
+				59DF1B741A76BDFA00C49011 /* Not Sure If Gusta.jpg in Resources */,
+				599D0B5E1A6E934700A1EB34 /* 3g3xw.jpeg in Resources */,
+				59DF1B111A76AC1400C49011 /* Heisenberg.jpg in Resources */,
+				59AE793E1A77EB5C00014735 /* Disappointed Picard.jpg in Resources */,
+				59E68E891A7596AE00D1C0C8 /* Bad Joke Eel.jpg in Resources */,
+				5984AE0E1A712A6D009B078F /* Impact.ttf in Resources */,
+				59F667F61A7431980089FD23 /* Surprised Koala.jpeg in Resources */,
+				59F667CE1A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg in Resources */,
+				59F667DF1A7431980089FD23 /* I am Not a Smart Man.jpg in Resources */,
+				59F667D61A7431980089FD23 /* Rage Fuuuuu.jpg in Resources */,
+				59DF1B601A76BDFA00C49011 /* Metal Jesus.jpeg in Resources */,
+				59E68E781A7596AE00D1C0C8 /* Excited Minions.jpeg in Resources */,
+				59EE0A211A729EE5009C75DC /* LeagueGothic-Italic.otf in Resources */,
+				5984AE501A717DE8009B078F /* I Too Like To Live Life Dangerously.jpeg in Resources */,
+				59F667F21A7431980089FD23 /* Good Dog Greg.jpg in Resources */,
+				59E68E7E1A7596AE00D1C0C8 /* House Thumbs Up.jpg in Resources */,
+				5984AE511A717DE8009B078F /* I Should Buy A Boat Cat.jpeg in Resources */,
+				59E68E911A7596AE00D1C0C8 /* Annoying Gym Newbie.jpg in Resources */,
+				59DF1B7C1A76BDFA00C49011 /* Charles Xavier.jpg in Resources */,
+				59F667F91A7431980089FD23 /* Please Guy.jpg in Resources */,
+				59DF1B791A76BDFA00C49011 /* Spiderman Pssssst.jpg in Resources */,
+				5984AE4D1A717DE8009B078F /* Dr Evil Laser.jpeg in Resources */,
+				59B1611A1A7B584A00301E25 /* Actual Revenge Duck.jpg in Resources */,
+				59F667E11A7431980089FD23 /* Dat Ass.jpg in Resources */,
+				59DF1B5F1A76BDFA00C49011 /* Deadpool Pick Up Lines.jpeg in Resources */,
+				59B161211A7B584A00301E25 /* It's over 9000!!!.jpg in Resources */,
+				59F6680D1A7438480089FD23 /* Jealous Girl.jpg in Resources */,
+				59F667D41A7431980089FD23 /* Buisness Cat.jpg in Resources */,
+				59C3ADC01A7012800046A652 /* Consolas Bold.ttf in Resources */,
+				59F668171A7438480089FD23 /* Drunk Baby.jpeg in Resources */,
+				59F667CF1A7431980089FD23 /* Socially Awesome Penguin.jpg in Resources */,
+				599D0B6F1A6E934700A1EB34 /* And everybody loses their minds.jpeg in Resources */,
+				59DF1B751A76BDFA00C49011 /* Fap Guy.jpg in Resources */,
+				5984AE561A717DE8009B078F /* Scumbag Parents.jpeg in Resources */,
+				59F668111A7438480089FD23 /* Weird Stuff I Do Potoo.jpg in Resources */,
+				59E68E861A7596AE00D1C0C8 /* Cereal Guy.jpg in Resources */,
+				59F6681A1A7438480089FD23 /* College Freshman.jpg in Resources */,
+				59F667D81A7431980089FD23 /* Okay Guy.png in Resources */,
+				59B1611C1A7B584A00301E25 /* Jesus Says.jpg in Resources */,
+				59B161191A7B584A00301E25 /* Malicious Advice Mallard.jpeg in Resources */,
+				59F667E21A7431980089FD23 /* Bear Grylls.jpeg in Resources */,
+				599D0B691A6E934700A1EB34 /* Alan Greenspan.jpeg in Resources */,
+				59B1611D1A7B584A00301E25 /* Dafuq.jpg in Resources */,
+				59E68E771A7596AE00D1C0C8 /* Minion Banana.jpg in Resources */,
+				59DF1B4A1A76BDF900C49011 /* Hipster Ariel.jpg in Resources */,
+				59DF1B0F1A76AC1400C49011 /* Yoda.jpg in Resources */,
+				59F668131A7438480089FD23 /* Dating Site Murderer.jpeg in Resources */,
+				5984AE5B1A717DE9009B078F /* Say That Again I Dare You.jpeg in Resources */,
+				59F667F71A7431980089FD23 /* Unhelpful Highschool Teacher.jpg in Resources */,
+				5984AE571A717DE8009B078F /* Scumbag Stacy.jpeg in Resources */,
+				59357EB21A765B37003D0245 /* Settings@3x.png in Resources */,
+				59F667E41A7431980089FD23 /* Forever Resentful Mother.jpg in Resources */,
+				5984AE5D1A717DE9009B078F /* Evil Toddler.jpeg in Resources */,
+				5984AE601A717DE9009B078F /* Third World Success Kid.jpeg in Resources */,
+				59B1610D1A7B584A00301E25 /* Impossibru.jpg in Resources */,
+				59AF27B71A7D6F9D00AC5E7F /* Quotes.json in Resources */,
+				59B161021A7B584A00301E25 /* Hasta La Vista, Baby.jpg in Resources */,
+				59E68E881A7596AE00D1C0C8 /* Vladmir Putin.jpg in Resources */,
+				59DF1B041A76AC1400C49011 /* Jack Sparrow Being Chased.jpeg in Resources */,
+				59DF1B661A76BDFA00C49011 /* Leonardo Dicaprio Cheers.jpeg in Resources */,
+				59B161051A7B584A00301E25 /* Alrighty Then.jpg in Resources */,
+				5984AE6B1A717DE9009B078F /* Grumpy Cat.jpeg in Resources */,
+				59DF1B5E1A76BDFA00C49011 /* Frank Underwood.jpg in Resources */,
+				59C3ADBE1A7011690046A652 /* AbadiMTBold.ttf in Resources */,
+				59DF1B561A76BDF900C49011 /* Sheldon Logic.jpeg in Resources */,
+				59E68E8B1A7596AE00D1C0C8 /* Foul Bachelor Frog.jpg in Resources */,
+				599D0B6E1A6E934700A1EB34 /* Ancient Aliens.jpeg in Resources */,
+				59E68E8E1A7596AE00D1C0C8 /* Sheltering Suburban Mom.jpeg in Resources */,
+				59F667FB1A7431980089FD23 /* Overly Manly Man.jpg in Resources */,
+				59DF1B0E1A76AC1400C49011 /* Spock.jpeg in Resources */,
+				59DF1B071A76AC1400C49011 /* Barbosa And Sparrow.jpg in Resources */,
+				59F668151A7438480089FD23 /* Unpopular Opinion Puffin.jpeg in Resources */,
+				5984AE631A717DE9009B078F /* Too Damn High.jpeg in Resources */,
+				59DF1B051A76AC1400C49011 /* Confused Jackie Chan.jpeg in Resources */,
+				5984AE541A717DE8009B078F /* Disaster Girl.jpeg in Resources */,
+				59E68E851A7596AE00D1C0C8 /* Cereal Guy Spit.png in Resources */,
+				59E68E821A7596AE00D1C0C8 /* Neil deGrasse Tyson.png in Resources */,
+				59F667D21A7431980089FD23 /* Scumbag Brain.jpg in Resources */,
+				5984AE5E1A717DE9009B078F /* Confession Bear.jpeg in Resources */,
+				59B161171A7B584A00301E25 /* Good Guy Putin.jpg in Resources */,
+				59DF1B7B1A76BDFA00C49011 /* Wolverine Crush.jpg in Resources */,
+				59F667E51A7431980089FD23 /* Evil Plotting Raccoon.jpg in Resources */,
+				59F667D91A7431980089FD23 /* Paper.jpg in Resources */,
+				59DF1B591A76BDFA00C49011 /* Ron Burgundy.jpg in Resources */,
+				59B1610E1A7B584A00301E25 /* Foreign Policy.jpg in Resources */,
+				59DF1B091A76AC1400C49011 /* You Were The Chosen One.jpg in Resources */,
+				59AE79321A77E4E300014735 /* This is Where.jpg in Resources */,
+				59E68E841A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg in Resources */,
+				599D0B5C1A6E934700A1EB34 /* 1st World Canadian Problems.jpeg in Resources */,
+				59E68E381A75871100D1C0C8 /* Screen1.jpg in Resources */,
+				59E68E8C1A7596AE00D1C0C8 /* Lame Pun Coon.jpg in Resources */,
+				59DF1B0B1A76AC1400C49011 /* Darth Vader.jpg in Resources */,
+				59E68E6C1A7596AE00D1C0C8 /* No Shit Sherock.jpg in Resources */,
+				599D0B1A1A6E902B00A1EB34 /* Images.xcassets in Resources */,
+				59B161081A7B584A00301E25 /* Ridiculously Photogenic Metalhead.jpg in Resources */,
+				59DF1B101A76AC1400C49011 /* Morgan Freeman.jpg in Resources */,
+				59E68E6B1A7596AE00D1C0C8 /* Well That Escalated Quickly.jpg in Resources */,
+				59DF1B6A1A76BDFA00C49011 /* Doc Brown.jpg in Resources */,
+				59DF1B721A76BDFA00C49011 /* Why So Serious?.jpeg in Resources */,
+				59F667E31A7431980089FD23 /* Chemistry Cat.jpeg in Resources */,
+				59F668191A7438480089FD23 /* You're gonna have a Bad Time.jpg in Resources */,
+				599D0B631A6E934700A1EB34 /* Actual Advice Mallard.jpeg in Resources */,
+				59AF27871A7D673500AC5E7F /* AvenirCondensedHand.ttf in Resources */,
+				59DF1B5C1A76BDFA00C49011 /* Imagination.jpeg in Resources */,
+				59F667F01A7431980089FD23 /* Trollface.jpg in Resources */,
+				5984AE4F1A717DE8009B078F /* If You Know What I Mean.jpeg in Resources */,
+				5984AE141A715B78009B078F /* BlackBlurredmage.png in Resources */,
+				59EE0A251A729FA9009C75DC /* Righteous-Regular.ttf in Resources */,
+				59B1611B1A7B584A00301E25 /* Meme Colored Background.jpg in Resources */,
+				59B1610A1A7B584A00301E25 /* It's So Fluffy.jpg in Resources */,
+				59B161071A7B584A00301E25 /* Misunderstood Metalhead.jpg in Resources */,
+				599D0B5D1A6E934700A1EB34 /* 2nd Term Obama.jpeg in Resources */,
+				59DF1B641A76BDFA00C49011 /* Leo Bites his Hand.jpg in Resources */,
+				59B161121A7B584A00301E25 /* I See What You Did There.jpg in Resources */,
+				5984AE551A717DE8009B078F /* Angry Baby.jpeg in Resources */,
+				59DF1B771A76BDFA00C49011 /* Spiderman Hospital.jpeg in Resources */,
+				59AE793D1A77EB5C00014735 /* Hipster Barista.jpg in Resources */,
+				5984AE4E1A717DE8009B078F /* Kill Yourself Guy.jpeg in Resources */,
+				59AE79341A77E67B00014735 /* What Year is It.jpeg in Resources */,
+				59DF1B711A76BDFA00C49011 /* The Joker.jpg in Resources */,
+				5984AE651A717DE9009B078F /* Matrix Morpheus.jpeg in Resources */,
+				59E68E7F1A7596AE00D1C0C8 /* 10 Peeking.jpg in Resources */,
+				59E68E6E1A7596AE00D1C0C8 /* Advice Doge.jpeg in Resources */,
+				59B161031A7B584A00301E25 /* Shashawnk Redemption.jpg in Resources */,
+				59F667FA1A7431980089FD23 /* Awkward Moment Seal.jpg in Resources */,
+				599F3C871A79676F0056CF5D /* LithosPro-Black.otf in Resources */,
+				599D0B671A6E934700A1EB34 /* Advice Yoda.jpeg in Resources */,
+				599D0B641A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg in Resources */,
+				59DF1B781A76BDFA00C49011 /* Hungover Spiderman.jpg in Resources */,
+				59DF1B511A76BDF900C49011 /* Unimressed Queen.jpg in Resources */,
+				59DF1B521A76BDF900C49011 /* You Don't Say?.jpg in Resources */,
+				59DF1B6B1A76BDFA00C49011 /* Matrix Bullet Evasion.jpg in Resources */,
+				59F667F51A7431980089FD23 /* Lazy College Senior.jpg in Resources */,
+				59E68E8D1A7596AE00D1C0C8 /* Depression Dog.jpg in Resources */,
+				5984AE701A717DE9009B078F /* Futurama Fry.jpeg in Resources */,
+				5984AE4A1A717DE8009B078F /* Yo Dawg Heard You.jpeg in Resources */,
+				59DF1B6F1A76BDFA00C49011 /* Permission Bane.jpeg in Resources */,
+				59DF1B5A1A76BDFA00C49011 /* Gordon Ramsay.jpeg in Resources */,
+				5984AE4B1A717DE8009B078F /* The Most Interesting Cat in the World.jpeg in Resources */,
+				59DF1B621A76BDFA00C49011 /* Pitbull.jpg in Resources */,
+				59B161061A7B584A00301E25 /* Ridiculously Photogenic Guy.jpg in Resources */,
+				5984AE761A717E3D009B078F /* X, X Everywhere.jpeg in Resources */,
+				59C3ADC51A701E160046A652 /* EtelkaNarrowTextPro.otf in Resources */,
+				59F667F81A7431980089FD23 /* Chill Out Lemur.jpg in Resources */,
+				5984AE581A717DE8009B078F /* Scumbag Steve.jpeg in Resources */,
+				59E68E901A7596AE00D1C0C8 /* Technologically Impaired Duck.jpg in Resources */,
+				59B161201A7B584A00301E25 /* Krillin Peace.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		599D0B201A6E902B00A1EB34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FE60361A74EABB00C6F93A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FE60571A74ECF600C6F93A /* Consolas Bold.ttf in Resources */,
+				59FE606E1A74FA6500C6F93A /* tickmark.png in Resources */,
+				59FE60631A74EDB900C6F93A /* BlackBlurredmage.png in Resources */,
+				59FE60561A74ECF600C6F93A /* Absender.ttf in Resources */,
+				59FE605D1A74ECF600C6F93A /* Righteous-Regular.ttf in Resources */,
+				59FE605C1A74ECF600C6F93A /* LeagueGothic-Regular.otf in Resources */,
+				59FE605B1A74ECF600C6F93A /* LeagueGothic-Italic.otf in Resources */,
+				59FE60581A74ECF600C6F93A /* Dead Kansas.ttf in Resources */,
+				59FE60591A74ECF600C6F93A /* EtelkaNarrowTextPro.otf in Resources */,
+				59FE60551A74ECF600C6F93A /* AbadiMTBold.ttf in Resources */,
+				59FE60441A74EABB00C6F93A /* MainInterface.storyboard in Resources */,
+				59FE60641A74EDB900C6F93A /* twoSidedArrow.png in Resources */,
+				59FE605A1A74ECF600C6F93A /* Impact.ttf in Resources */,
+				59FE60661A74EDD500C6F93A /* Settings@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		599D0B051A6E902B00A1EB34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				599D0B431A6E91CA00A1EB34 /* DetailViewController.m in Sources */,
+				599D0B3D1A6E91AC00A1EB34 /* TableCell.m in Sources */,
+				59AF27831A7D65F800AC5E7F /* topView.m in Sources */,
+				5984AE171A715E44009B078F /* FontTableViewController.m in Sources */,
+				59EE0A2E1A72AC3E009C75DC /* CustomCollectionViewCell.m in Sources */,
+				5984AE1A1A715E5C009B078F /* FontTableViewCell.m in Sources */,
+				59C3ADC31A701A310046A652 /* UIImage+ImageEffects.m in Sources */,
+				599D0B471A6E922600A1EB34 /* MemeObject.m in Sources */,
+				599D0B121A6E902B00A1EB34 /* AppDelegate.m in Sources */,
+				599D0B0F1A6E902B00A1EB34 /* main.m in Sources */,
+				59EE0A281A72A530009C75DC /* CollectionViewController.m in Sources */,
+				599D0B401A6E91BA00A1EB34 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		599D0B1E1A6E902B00A1EB34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				599D0B291A6E902B00A1EB34 /* Meme_MakerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FE60341A74EABB00C6F93A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59FE606C1A74F1C500C6F93A /* FontTableViewCell.m in Sources */,
+				59FE60601A74ED4F00C6F93A /* FontTableViewController.m in Sources */,
+				59FE60421A74EABB00C6F93A /* PhotoEditingViewController.m in Sources */,
+				59FE60691A74EF7500C6F93A /* UIImage+ImageEffects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		599D0B241A6E902B00A1EB34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 599D0B081A6E902B00A1EB34 /* Meme Maker */;
+			targetProxy = 599D0B231A6E902B00A1EB34 /* PBXContainerItemProxy */;
+		};
+		59FE60461A74EABB00C6F93A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59FE60371A74EABB00C6F93A /* Photo Meme */;
+			targetProxy = 59FE60451A74EABB00C6F93A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		599D0B161A6E902B00A1EB34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				599D0B171A6E902B00A1EB34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		599D0B1B1A6E902B00A1EB34 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				599D0B1C1A6E902B00A1EB34 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		599D0B2A1A6E902B00A1EB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		599D0B2B1A6E902B00A1EB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		599D0B2D1A6E902B00A1EB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Meme Maker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		599D0B2E1A6E902B00A1EB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Meme Maker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		599D0B301A6E902B00A1EB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meme MakerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Meme Maker";
+			};
+			name = Debug;
+		};
+		599D0B311A6E902B00A1EB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Meme MakerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Meme Maker";
+			};
+			name = Release;
+		};
+		59FE60481A74EABB00C6F93A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Photo Meme/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		59FE60491A74EABB00C6F93A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Photo Meme/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		599D0B041A6E902B00A1EB34 /* Build configuration list for PBXProject "Meme Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599D0B2A1A6E902B00A1EB34 /* Debug */,
+				599D0B2B1A6E902B00A1EB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		599D0B2C1A6E902B00A1EB34 /* Build configuration list for PBXNativeTarget "Meme Maker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599D0B2D1A6E902B00A1EB34 /* Debug */,
+				599D0B2E1A6E902B00A1EB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		599D0B2F1A6E902B00A1EB34 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				599D0B301A6E902B00A1EB34 /* Debug */,
+				599D0B311A6E902B00A1EB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59FE604A1A74EABB00C6F93A /* Build configuration list for PBXNativeTarget "Photo Meme" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59FE60481A74EABB00C6F93A /* Debug */,
+				59FE60491A74EABB00C6F93A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 599D0B011A6E902B00A1EB34 /* Project object */;
+}
