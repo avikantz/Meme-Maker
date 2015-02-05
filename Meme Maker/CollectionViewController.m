@@ -153,7 +153,7 @@
 	CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
 	
 	UIImage *cropped = [UIImage imageWithCGImage:imageRef];
-	cropped = [self imageToScale:cropped Size:CGSizeMake(64, 64)];
+//	cropped = [self imageToScale:cropped Size:CGSizeMake(64, 64)];
 	CGImageRelease(imageRef);
 	
 	return cropped;

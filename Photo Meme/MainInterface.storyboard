@@ -54,7 +54,7 @@
                                 </connections>
                             </textField>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000596046448" contentMode="scaleAspectFit" image="twoSidedArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fbf-pa-p23">
-                                <rect key="frame" x="100" y="206" width="400" height="100"/>
+                                <rect key="frame" x="100" y="186" width="400" height="120"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-BV-iH0">
                                 <rect key="frame" x="556" y="516" width="28" height="30"/>
@@ -201,6 +201,6 @@
         <image name="BlackBlurredmage.png" width="700" height="200"/>
         <image name="Settings@3x.png" width="60" height="60"/>
         <image name="tickmark.png" width="200" height="200"/>
-        <image name="twoSidedArrow.png" width="800" height="100"/>
+        <image name="twoSidedArrow.png" width="962" height="120"/>
     </resources>
 </document>
