@@ -434,18 +434,23 @@
 	else
 		meme = [AllMemes objectAtIndex:indexPath.row];
 	cell.cellTitle.text = [NSString stringWithFormat:@"%@", meme.Name];
-	UIImage *image = [UIImage imageNamed:[NSString stringWithFormat: @"%@", meme.Image]];
-	cell.cellImage.image = [self imageByCroppingImage:image toSize:CGSizeMake(MIN(image.size.width, image.size.height), MIN(image.size.width, image.size.height))];
+	
+	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
+	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+	NSString *imageKey = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"I%@", meme.Image]];
+	
+	UIImage *image;
+	if (imageKey)
+		image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+	else {
+		image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", meme.Image]];
+		image = [self imageByCroppingImage:image toSize:CGSizeMake(MIN(image.size.width, image.size.height), MIN(image.size.width, image.size.height))];
+	}
+	cell.cellImage.image = image;
 	
 	cell.cellTitle.textColor = TextColor;
 	cell.backgroundColor = DefColor;
 	cell.backgroundView.backgroundColor = DefColor;
-	
-	NSData *dataOfImage = UIImageJPEGRepresentation(cell.cellImage.image, 0.7);
-	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
-	[dataOfImage writeToFile:imagePath atomically:YES];
-	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
-	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	return cell;
 }
