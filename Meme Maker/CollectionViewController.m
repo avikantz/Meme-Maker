@@ -153,9 +153,18 @@
 	CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
 	
 	UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+	cropped = [self imageToScale:cropped Size:CGSizeMake(64, 64)];
 	CGImageRelease(imageRef);
 	
 	return cropped;
+}
+
+-(UIImage *)imageToScale:(UIImage *)image Size:(CGSize)size {
+	UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return newImage;
 }
 
 //-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

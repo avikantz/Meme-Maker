@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59096EC11A83C6C20089562D /* CaptainAmericaCivilWar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59096EC01A83C6C20089562D /* CaptainAmericaCivilWar.jpg */; };
+		59096EC31A83CB370089562D /* CaptainAmericaCivilWar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */; };
 		591F26EE1A73DB5600F508D5 /* twoSidedArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */; };
 		59357EB21A765B37003D0245 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59357EB11A765B37003D0245 /* Settings@3x.png */; };
 		596D8FF41A7697850008F060 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596D8FF31A7697850008F060 /* AdSupport.framework */; };
@@ -399,6 +401,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59096EC01A83C6C20089562D /* CaptainAmericaCivilWar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CaptainAmericaCivilWar.jpg; sourceTree = "<group>"; };
+		59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CaptainAmericaCivilWar2.jpg; sourceTree = "<group>"; };
 		591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoSidedArrow.png; sourceTree = "<group>"; };
 		59357EB11A765B37003D0245 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
 		596D8FF31A7697850008F060 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -947,6 +951,8 @@
 		599D0B701A6E935000A1EB34 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */,
+				59096EC01A83C6C20089562D /* CaptainAmericaCivilWar.jpg */,
 				59B160E21A7B584A00301E25 /* Hasta La Vista, Baby.jpg */,
 				59B160E31A7B584A00301E25 /* Shashawnk Redemption.jpg */,
 				59B160E41A7B584A00301E25 /* Jim Carrey.jpg */,
@@ -1527,6 +1533,7 @@
 				59B1610C1A7B584A00301E25 /* Agnes Despicable Me.jpg in Resources */,
 				5984AE521A717DE8009B078F /* Sparta Leonidas.jpeg in Resources */,
 				59DF1B691A76BDFA00C49011 /* Back To The Future.jpg in Resources */,
+				59096EC31A83CB370089562D /* CaptainAmericaCivilWar2.jpg in Resources */,
 				59E68E8A1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg in Resources */,
 				59B161101A7B584A00301E25 /* Not Bad.jpg in Resources */,
 				59E68E721A7596AE00D1C0C8 /* Archer Deal With It.jpg in Resources */,
@@ -1588,6 +1595,7 @@
 				59F667CF1A7431980089FD23 /* Socially Awesome Penguin.jpg in Resources */,
 				599D0B6F1A6E934700A1EB34 /* And everybody loses their minds.jpeg in Resources */,
 				59DF1B751A76BDFA00C49011 /* Fap Guy.jpg in Resources */,
+				59096EC11A83C6C20089562D /* CaptainAmericaCivilWar.jpg in Resources */,
 				5984AE561A717DE8009B078F /* Scumbag Parents.jpeg in Resources */,
 				59F668111A7438480089FD23 /* Weird Stuff I Do Potoo.jpg in Resources */,
 				59E68E861A7596AE00D1C0C8 /* Cereal Guy.jpg in Resources */,

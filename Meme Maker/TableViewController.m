@@ -127,7 +127,7 @@
 	autoDismissSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60, 249, 51, 31)];
 	[autoDismissSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AutoDismiss"]];
 	[autoDismissSwitch setOnTintColor:TextColor];
-	[autoDismissSwitch addTarget:self action:@selector(AutoDismissAction) forControlEvents:UIControlEventTouchUpInside];
+	[autoDismissSwitch addTarget:self action:@selector(AutoDismissAction) forControlEvents:UIControlEventValueChanged];
 	[footer addSubview:autoDismissSwitch];
 	
 	UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(0, 293, self.view.frame.size.width, 1)];
@@ -147,7 +147,7 @@
 	resetSettingsOnLaunchSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60, 312, 51, 31)];
 	[resetSettingsOnLaunchSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"ResetSettingsOnLaunch"]];
 	[resetSettingsOnLaunchSwitch setOnTintColor:TextColor];
-	[resetSettingsOnLaunchSwitch addTarget:self action:@selector(ResetSettingsOnLaunchAction) forControlEvents:UIControlEventTouchUpInside];
+	[resetSettingsOnLaunchSwitch addTarget:self action:@selector(ResetSettingsOnLaunchAction) forControlEvents:UIControlEventValueChanged];
 	[footer addSubview:resetSettingsOnLaunchSwitch];
 	
 	UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(0, 362, self.view.frame.size.width, 1)];
@@ -167,7 +167,7 @@
 	continuousEditingSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60, 381, 51, 31)];
 	[continuousEditingSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"ContinuousEditing"]];
 	[continuousEditingSwitch setOnTintColor:TextColor];
-	[continuousEditingSwitch addTarget:self action:@selector(ContinuousEditingAction) forControlEvents:UIControlEventTouchUpInside];
+	[continuousEditingSwitch addTarget:self action:@selector(ContinuousEditingAction) forControlEvents:UIControlEventValueChanged];
 	[footer addSubview:continuousEditingSwitch];
 	
 	UIView *line4 = [[UIView alloc] initWithFrame:CGRectMake(0, 433, self.view.frame.size.width, 1)];
@@ -187,7 +187,7 @@
 	darkModeSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 60, 440, 51, 31)];
 	[darkModeSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"]];
 	[darkModeSwitch setOnTintColor:TextColor];
-	[darkModeSwitch addTarget:self action:@selector(DarkModeAction) forControlEvents:UIControlEventTouchUpInside];
+	[darkModeSwitch addTarget:self action:@selector(DarkModeAction) forControlEvents:UIControlEventValueChanged];
 	[footer addSubview:darkModeSwitch];
 	
 	UIView *line5 = [[UIView alloc] initWithFrame:CGRectMake(0, 478, self.view.frame.size.width, 1)];
@@ -209,7 +209,7 @@
 	UIButton *mailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 490, 20, 20)];
 	[mailButton setImage:[UIImage imageNamed:@"Mail"] forState:UIControlStateNormal];
 	[mailButton setAlpha:0.5];
-	[mailButton addTarget:self action:@selector(Contact) forControlEvents:UIControlEventTouchUpInside];
+	[mailButton addTarget:self action:@selector(Contact) forControlEvents:UIControlEventValueChanged];
 	[footer addSubview:mailButton];
 	
 	UILabel *lbl3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 585, self.view.frame.size.width , 20)];
@@ -254,8 +254,6 @@
 		TextColor = [UIColor colorWithRed:170/255.0 green:250/255.0 blue:120.0/255 alpha:0.7];
 		MeGusta = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MeGustaW"]];
 	}
-	tapMeGusta = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ScrollToTop)];
-	[self.navigationController.navigationBar addGestureRecognizer:tapMeGusta];
 	
 	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:_photoGalleryButton, _cameraButton, _lastEditButton, nil];
 	self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:_collectionViewButton, _menuButton, _searchButton, nil];
@@ -375,11 +373,6 @@
     [super didReceiveMemoryWarning];
 }
 
--(void)ScrollToTop {
-//	CGPoint offset = CGPointMake(0, 44);
-//	[self.tableView setContentOffset:offset animated:YES];
-}
-
 #pragma mark - Search display results
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
@@ -436,7 +429,7 @@
 	return cell;
 }
 
-- (UIImage *)imageByCroppingImage:(UIImage *)image toSize:(CGSize)size{
+-(UIImage *)imageByCroppingImage:(UIImage *)image toSize:(CGSize)size{
 	double x = (image.size.width - size.width) / 2.0;
 	double y = (image.size.height - size.height) / 2.0;
 	
@@ -444,9 +437,18 @@
 	CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
 	
 	UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+	cropped = [self imageToScale:cropped Size:CGSizeMake(64, 64)];
 	CGImageRelease(imageRef);
 	
 	return cropped;
+}
+
+-(UIImage *)imageToScale:(UIImage *)image Size:(CGSize)size {
+	UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return newImage;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
