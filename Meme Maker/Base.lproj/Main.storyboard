@@ -36,7 +36,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X6U-rl-r7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="59" height="59"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="X6U-rl-r7w" secondAttribute="height" multiplier="1:1" id="A45-zO-60L"/>
                                                 <constraint firstAttribute="height" constant="60" id="cSF-xF-JaN"/>
@@ -54,7 +54,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="wc0-Wr-XQK">
-                                            <rect key="frame" x="68" y="19" width="499" height="22"/>
+                                            <rect key="frame" x="67" y="19" width="500" height="22"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <color key="textColor" red="0.1964530109" green="0.3938184307" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                         <constraint firstItem="X6U-rl-r7w" firstAttribute="top" secondItem="PMj-HC-nVI" secondAttribute="topMargin" constant="-8" id="M2V-tg-srH"/>
                                         <constraint firstItem="X6U-rl-r7w" firstAttribute="top" secondItem="PMj-HC-nVI" secondAttribute="topMargin" constant="-8" id="SOV-d4-GFk"/>
                                         <constraint firstItem="wc0-Wr-XQK" firstAttribute="centerY" secondItem="X6U-rl-r7w" secondAttribute="centerY" constant="-0.5" id="U4b-Wi-6hT"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="X6U-rl-r7w" secondAttribute="bottom" constant="-9" id="WAb-bE-gSP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="X6U-rl-r7w" secondAttribute="bottom" constant="-8" id="WAb-bE-gSP"/>
                                         <constraint firstItem="wc0-Wr-XQK" firstAttribute="centerX" secondItem="X6U-rl-r7w" secondAttribute="centerX" constant="59" id="XwH-V5-QlW"/>
                                         <constraint firstItem="X6U-rl-r7w" firstAttribute="leading" secondItem="PMj-HC-nVI" secondAttribute="leadingMargin" constant="-8" id="ZZI-xg-8qh"/>
                                         <constraint firstItem="wc0-Wr-XQK" firstAttribute="leading" secondItem="X6U-rl-r7w" secondAttribute="trailing" constant="8" id="a0g-xe-21b"/>

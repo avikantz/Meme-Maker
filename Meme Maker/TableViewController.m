@@ -39,7 +39,7 @@
 	UIView *footer;
 }
 
--(void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
 	if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil)
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
 	
@@ -299,7 +299,8 @@
 	}
 	
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"SmallSizeLoadedOnce"]) {
+		if ((![[NSUserDefaults standardUserDefaults] boolForKey:@"SmallSizeLoadedOnce"]) || ([AllMemes count] > [[NSUserDefaults standardUserDefaults] integerForKey:@"NumberOfMemes"])) {
+			NSLog(@"Reloading Thumbnail Images...");
 			for (MemeObject *meme in AllMemes) {
 				UIImage *imagey = [UIImage imageNamed:meme.Image];
 				imagey = [self imageByCroppingImage:imagey toSize:CGSizeMake(MIN(imagey.size.width, imagey.size.height), MIN(imagey.size.width, imagey.size.height))];
@@ -309,6 +310,7 @@
 				[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
 				[[NSUserDefaults standardUserDefaults] synchronize];
 				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SmallSizeLoadedOnce"];
+				[[NSUserDefaults standardUserDefaults] setInteger:[AllMemes count] forKey:@"NumberOfMemes"];
 			}
 		}
 	});
@@ -379,7 +381,7 @@
 		DefColor = [UIColor colorWithWhite:0.12 alpha:1.0];
 		TextColor = [UIColor colorWithRed:170/255.0 green:250/255.0 blue:120.0/255 alpha:0.7];
 	}
-	[self viewDidAppear:YES];
+	[self viewWillAppear:YES];
 	CGPoint offset = CGPointMake(0, 64*[ArrayOfMemeObjects count] + 620 - self.view.frame.size.height);
 	[self.tableView setContentOffset:offset animated:NO];
 }
