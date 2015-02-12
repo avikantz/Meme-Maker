@@ -136,7 +136,7 @@
 	
 	UILabel *resetSettingsLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 305, self.view.frame.size.width - 65, 45)];
 	resetSettingsLabel.backgroundColor = [UIColor clearColor];
-	resetSettingsLabel.text = [NSString stringWithFormat:@"Reset Settings on launch (Enabling this function will reset the text editing settings on launch, i.e. no preservations in settings, what was yellow will remain yellow.)"];
+	resetSettingsLabel.text = [NSString stringWithFormat:@"Reset Settings on launch (Enabling this function will reset the text editing settings on launch, i.e. no preservations in settings.)"];
 	resetSettingsLabel.alpha = 0.9;
 	[resetSettingsLabel setNumberOfLines:3];
 	[resetSettingsLabel setTextAlignment:NSTextAlignmentJustified];
@@ -156,7 +156,7 @@
 	
 	UILabel *continuousEditingLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 374, self.view.frame.size.width - 65, 45)];
 	continuousEditingLabel.backgroundColor = [UIColor clearColor];
-	continuousEditingLabel.text = [NSString stringWithFormat:@"Continuous Editing (Turning this off will prevent generation of text on image as you enter it, but may help in saving battery as it uses slightly more CPU than non continuous)"];
+	continuousEditingLabel.text = [NSString stringWithFormat:@"Continuous Editing (Turning this off will prevent generation of text on image as you enter it, but may help in saving battery life.)"];
 	continuousEditingLabel.alpha = 0.9;
 	[continuousEditingLabel setNumberOfLines:3];
 	[continuousEditingLabel setTextAlignment:NSTextAlignmentJustified];
@@ -241,7 +241,7 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LibCamPickUp"];
 	
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"]) {
@@ -255,8 +255,14 @@
 		MeGusta = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MeGustaW"]];
 	}
 	
-	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:_photoGalleryButton, _cameraButton, _lastEditButton, nil];
-	self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:_collectionViewButton, _menuButton, _searchButton, nil];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:_photoGalleryButton, _cameraButton, nil];
+		self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects: _menuButton, _searchButton, nil];
+	}
+	else {
+		self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:_photoGalleryButton, _cameraButton, _lastEditButton, nil];
+		self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:_collectionViewButton, _menuButton, _searchButton, nil];
+	}
 	
 	self.navigationController.navigationBar.translucent = NO;
 	self.navigationController.navigationBar.backgroundColor = DefColor;
@@ -586,8 +592,27 @@
 	}completion:nil];
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	MemeObject *meme = nil;
+	if(self.searchDisplayController.active)
+		meme = [SearchResults objectAtIndex:indexPath.row];
+	else
+		meme = [AllMemes objectAtIndex:indexPath.row];
+	
+	[[NSUserDefaults standardUserDefaults] setObject:@"Recent Edit Last" forKey:@"LastEditedMemeTags"];
+	
+	dataOfLastEditedImage = UIImageJPEGRepresentation([UIImage imageNamed:[NSString stringWithFormat:@"%@", meme.Image]], 0.7);
+	imagePathOfLastEditedImage = [self documentsPathForFileName:[NSString stringWithFormat:@"lastEditedImage.jpg"]];
+	[dataOfLastEditedImage writeToFile:imagePathOfLastEditedImage atomically:YES];
+	[[NSUserDefaults standardUserDefaults] setObject:imagePathOfLastEditedImage forKey:@"lastEditedImagePath"];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LibCamPickUp"];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	if (self.delegate)
+		[self.delegate selectedMeme:meme];
+	
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -624,6 +649,11 @@
 	}
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		return NO;
+	return YES;
+}
 
 - (IBAction)MenuAction:(id)sender {
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"By Popularity", @"Alphabetically", nil];
@@ -655,11 +685,21 @@
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LibCamPickUp"];
 	UIImagePickerController *pick = [[UIImagePickerController alloc] init];
 	pick.delegate = self;
-	pick.allowsEditing = YES;
+	pick.allowsEditing = NO;
 	[pick.navigationItem setLeftBarButtonItem:_cameraButton];
 	[pick.navigationItem setTitle:@"Choose Image"];
 	pick.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-	[self presentViewController:pick animated:YES completion:NULL];
+	
+	UIView *targetView = (UIView *)[_photoGalleryButton performSelector:@selector(view)];
+	CGRect rect = targetView.frame;
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:pick];
+//		[popup presentPopoverFromBarButtonItem:_photoGalleryButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		[popup presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+	}
+	else
+		[self presentViewController:pick animated:YES completion:NULL];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -696,7 +736,7 @@
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		UIImagePickerController *pick = [[UIImagePickerController alloc] init];
 		pick.delegate = self;
-		pick.allowsEditing = YES;
+		pick.allowsEditing = NO;
 		[pick setSourceType:UIImagePickerControllerSourceTypeCamera];
 		[self presentViewController:pick animated: YES completion: NULL];
 	}
@@ -711,14 +751,26 @@
 }
 
 - (IBAction)lastEditAction:(id)sender {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
-	if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
-		DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
-		[self.navigationController pushViewController:dvc animated:YES];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
+		if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
+			
+		}
+		else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
+			[alert show];
+		}
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
-		[alert show];
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
+		if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
+			DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+			[self.navigationController pushViewController:dvc animated:YES];
+		}
+		else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
+			[alert show];
+		}
 	}
 }
 
@@ -727,22 +779,38 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)pick didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	NSData *dataOfImage = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 0.8);
+	UIImage *image = info[UIImagePickerControllerOriginalImage];
+	if (MAX(image.size.height, image.size.width) > 512.0) {
+		if (image.size.width > image.size.height)
+			image = [self imageToScale:image Size:CGSizeMake(512.0, 512.0*image.size.height/image.size.width)];
+		else
+			image = [self imageToScale:image Size:CGSizeMake(512.0*image.size.width/image.size.height, 512.0)];
+	}
+	
+	NSData *dataOfImage = UIImageJPEGRepresentation(image, 0.8);
 	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"image.jpg"]];
 	[dataOfImage writeToFile:imagePath atomically:YES];
 	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:@"ImagePath"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 
-	dataOfLastEditedImage = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 0.7);
+	dataOfLastEditedImage = UIImageJPEGRepresentation(image, 0.7);
 	imagePathOfLastEditedImage = [self documentsPathForFileName:[NSString stringWithFormat:@"lastEditedImage.jpg"]];
 	[dataOfLastEditedImage writeToFile:imagePathOfLastEditedImage atomically:YES];
 	[[NSUserDefaults standardUserDefaults] setObject:imagePathOfLastEditedImage forKey:@"lastEditedImagePath"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LibCamPickUp"];
-	DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+		[pick dismissViewControllerAnimated:YES completion:NULL];
+		[self.navigationController pushViewController:dvc animated:YES];
+	}
+	else {
+		MemeObject *meme = [[MemeObject alloc] initWithName:@"Custom Image" image:@"Image" tags:@"" url:@""];
+		if (self.delegate)
+			[self.delegate selectedMeme:meme];
+	}
 	[pick dismissViewControllerAnimated:YES completion:NULL];
-	[self.navigationController pushViewController:dvc animated:YES];
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
 }
 

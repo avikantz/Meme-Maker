@@ -11,6 +11,7 @@
 #import "TableCell.h"
 #import "DetailViewController.h"
 #import "MemeObject.h"
+#import "MemeProtocol.h"
 //#import "PageContentViewController.h" 
 
 @interface TableViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate>
@@ -26,6 +27,8 @@
 
 //@property (strong, nonatomic) NSArray *pageImages;
 //@property (strong, nonatomic) UIPageViewController *pageViewController;
+
+@property (nonatomic, assign) id<MemeProtocol> delegate;
 
 - (IBAction)MenuAction:(id)sender;
 - (IBAction)SearchAction:(id)sender;

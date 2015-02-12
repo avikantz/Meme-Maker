@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TableViewController.h"
 #import "DetailViewController.h"
 
 @interface AppDelegate ()
@@ -45,10 +46,25 @@
 		[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
 	}
 	
-	UIPageControl *pageControl = [UIPageControl appearance];
-	pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-	pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-	pageControl.backgroundColor = [UIColor whiteColor];
+//	UIPageControl *pageControl = [UIPageControl appearance];
+//	pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+//	pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+//	pageControl.backgroundColor = [UIColor whiteColor];
+	
+	UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	UIViewController *initViewController;
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		initViewController = [storyBoard instantiateViewControllerWithIdentifier:@"NavController"];
+		[self.window setRootViewController:initViewController];
+	}
+	else {
+		UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+		UINavigationController *leftNavController = [splitViewController.viewControllers objectAtIndex:0];
+		TableViewController *tableVC = (TableViewController *)[leftNavController topViewController];
+		DetailViewController *detailVC = [splitViewController.viewControllers objectAtIndex:1];
+		tableVC.delegate = detailVC;
+	}
 	
 	return YES;
 }

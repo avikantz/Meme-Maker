@@ -11,6 +11,18 @@
 		59096EC31A83CB370089562D /* CaptainAmericaCivilWar2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */; };
 		591F26EE1A73DB5600F508D5 /* twoSidedArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */; };
 		59357EB21A765B37003D0245 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59357EB11A765B37003D0245 /* Settings@3x.png */; };
+		593D396C1A8D1D8F00C36250 /* Luke Skywalker No.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39641A8D1D8F00C36250 /* Luke Skywalker No.jpg */; };
+		593D396D1A8D1D8F00C36250 /* Nikola Tesla.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39651A8D1D8F00C36250 /* Nikola Tesla.jpg */; };
+		593D396E1A8D1D8F00C36250 /* Saul Goodman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39661A8D1D8F00C36250 /* Saul Goodman.jpg */; };
+		593D396F1A8D1D8F00C36250 /* Are You Nor Entertained.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39671A8D1D8F00C36250 /* Are You Nor Entertained.jpg */; };
+		593D39701A8D1D8F00C36250 /* Satan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39681A8D1D8F00C36250 /* Satan.jpg */; };
+		593D39711A8D1D8F00C36250 /* Suit Up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39691A8D1D8F00C36250 /* Suit Up.jpg */; };
+		593D39721A8D1D8F00C36250 /* Top Gear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D396A1A8D1D8F00C36250 /* Top Gear.jpg */; };
+		593D39731A8D1D8F00C36250 /* Malcolm Tucker.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D396B1A8D1D8F00C36250 /* Malcolm Tucker.jpg */; };
+		593D39771A8D1FB900C36250 /* Polar Bear Facepalm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39741A8D1FB900C36250 /* Polar Bear Facepalm.jpg */; };
+		593D39781A8D1FB900C36250 /* Triple Facepalm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39751A8D1FB900C36250 /* Triple Facepalm.jpg */; };
+		593D39791A8D1FB900C36250 /* Jesus Facepalm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D39761A8D1FB900C36250 /* Jesus Facepalm.jpg */; };
+		593D397B1A8D24CA00C36250 /* Thomas Edison.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593D397A1A8D24CA00C36250 /* Thomas Edison.jpg */; };
 		5943A8E81A867DBC007156E6 /* Annoying Childhood Friend.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5943A8D61A867DBC007156E6 /* Annoying Childhood Friend.jpg */; };
 		5943A8E91A867DBC007156E6 /* Crazy Girlfriend Praying Mantis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5943A8D71A867DBC007156E6 /* Crazy Girlfriend Praying Mantis.jpg */; };
 		5943A8EA1A867DBC007156E6 /* Downvoting Roman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5943A8D81A867DBC007156E6 /* Downvoting Roman.jpg */; };
@@ -248,10 +260,6 @@
 		59DF1B841A76C10300C49011 /* Awwwwww Yeah.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B811A76C10300C49011 /* Awwwwww Yeah.jpeg */; };
 		59DF1B851A76C10300C49011 /* Surprise Mo********er.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B821A76C10300C49011 /* Surprise Mo********er.jpg */; };
 		59DF1B861A76C10300C49011 /* Incredibles Syndrome.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59DF1B831A76C10300C49011 /* Incredibles Syndrome.jpg */; };
-		59E68E351A75871100D1C0C8 /* Screen3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E311A75871100D1C0C8 /* Screen3.jpg */; };
-		59E68E361A75871100D1C0C8 /* Screen4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E321A75871100D1C0C8 /* Screen4.jpg */; };
-		59E68E371A75871100D1C0C8 /* Screen2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E331A75871100D1C0C8 /* Screen2.jpg */; };
-		59E68E381A75871100D1C0C8 /* Screen1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E341A75871100D1C0C8 /* Screen1.jpg */; };
 		59E68E671A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E391A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg */; };
 		59E68E681A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3A1A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg */; };
 		59E68E691A7596AE00D1C0C8 /* Y'all Got Any More.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59E68E3B1A7596AE00D1C0C8 /* Y'all Got Any More.jpg */; };
@@ -425,6 +433,19 @@
 		59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CaptainAmericaCivilWar2.jpg; sourceTree = "<group>"; };
 		591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twoSidedArrow.png; sourceTree = "<group>"; };
 		59357EB11A765B37003D0245 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@3x.png"; sourceTree = "<group>"; };
+		593D39631A8CADB800C36250 /* MemeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemeProtocol.h; sourceTree = "<group>"; };
+		593D39641A8D1D8F00C36250 /* Luke Skywalker No.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Luke Skywalker No.jpg"; sourceTree = "<group>"; };
+		593D39651A8D1D8F00C36250 /* Nikola Tesla.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Nikola Tesla.jpg"; sourceTree = "<group>"; };
+		593D39661A8D1D8F00C36250 /* Saul Goodman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Saul Goodman.jpg"; sourceTree = "<group>"; };
+		593D39671A8D1D8F00C36250 /* Are You Nor Entertained.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Are You Nor Entertained.jpg"; sourceTree = "<group>"; };
+		593D39681A8D1D8F00C36250 /* Satan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Satan.jpg; sourceTree = "<group>"; };
+		593D39691A8D1D8F00C36250 /* Suit Up.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Suit Up.jpg"; sourceTree = "<group>"; };
+		593D396A1A8D1D8F00C36250 /* Top Gear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Top Gear.jpg"; sourceTree = "<group>"; };
+		593D396B1A8D1D8F00C36250 /* Malcolm Tucker.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Malcolm Tucker.jpg"; sourceTree = "<group>"; };
+		593D39741A8D1FB900C36250 /* Polar Bear Facepalm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Polar Bear Facepalm.jpg"; sourceTree = "<group>"; };
+		593D39751A8D1FB900C36250 /* Triple Facepalm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Triple Facepalm.jpg"; sourceTree = "<group>"; };
+		593D39761A8D1FB900C36250 /* Jesus Facepalm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Jesus Facepalm.jpg"; sourceTree = "<group>"; };
+		593D397A1A8D24CA00C36250 /* Thomas Edison.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Thomas Edison.jpg"; sourceTree = "<group>"; };
 		5943A8D61A867DBC007156E6 /* Annoying Childhood Friend.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Annoying Childhood Friend.jpg"; sourceTree = "<group>"; };
 		5943A8D71A867DBC007156E6 /* Crazy Girlfriend Praying Mantis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Crazy Girlfriend Praying Mantis.jpg"; sourceTree = "<group>"; };
 		5943A8D81A867DBC007156E6 /* Downvoting Roman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Downvoting Roman.jpg"; sourceTree = "<group>"; };
@@ -681,10 +702,6 @@
 		59DF1B811A76C10300C49011 /* Awwwwww Yeah.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Awwwwww Yeah.jpeg"; sourceTree = "<group>"; };
 		59DF1B821A76C10300C49011 /* Surprise Mo********er.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Surprise Mo********er.jpg"; sourceTree = "<group>"; };
 		59DF1B831A76C10300C49011 /* Incredibles Syndrome.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Incredibles Syndrome.jpg"; sourceTree = "<group>"; };
-		59E68E311A75871100D1C0C8 /* Screen3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen3.jpg; sourceTree = "<group>"; };
-		59E68E321A75871100D1C0C8 /* Screen4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen4.jpg; sourceTree = "<group>"; };
-		59E68E331A75871100D1C0C8 /* Screen2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen2.jpg; sourceTree = "<group>"; };
-		59E68E341A75871100D1C0C8 /* Screen1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Screen1.jpg; sourceTree = "<group>"; };
 		59E68E391A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "So I Got That Goin For Me Which Is Nice.jpeg"; sourceTree = "<group>"; };
 		59E68E3A1A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kim Jong Un Sad.jpeg"; sourceTree = "<group>"; };
 		59E68E3B1A7596AE00D1C0C8 /* Y'all Got Any More.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Y'all Got Any More.jpg"; sourceTree = "<group>"; };
@@ -934,6 +951,7 @@
 			children = (
 				599D0B451A6E922600A1EB34 /* MemeObject.h */,
 				599D0B461A6E922600A1EB34 /* MemeObject.m */,
+				593D39631A8CADB800C36250 /* MemeProtocol.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -974,11 +992,7 @@
 				59F6679E1A740B300089FD23 /* MemeMakerIcon.jpg */,
 				591F26ED1A73DB5600F508D5 /* twoSidedArrow.png */,
 				5984AE131A715B78009B078F /* BlackBlurredmage.png */,
-				59E68E311A75871100D1C0C8 /* Screen3.jpg */,
-				59E68E321A75871100D1C0C8 /* Screen4.jpg */,
-				59E68E331A75871100D1C0C8 /* Screen2.jpg */,
 				59357EB11A765B37003D0245 /* Settings@3x.png */,
-				59E68E341A75871100D1C0C8 /* Screen1.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -1071,6 +1085,18 @@
 		599D0B701A6E935000A1EB34 /* Memes */ = {
 			isa = PBXGroup;
 			children = (
+				593D39641A8D1D8F00C36250 /* Luke Skywalker No.jpg */,
+				593D39651A8D1D8F00C36250 /* Nikola Tesla.jpg */,
+				593D39741A8D1FB900C36250 /* Polar Bear Facepalm.jpg */,
+				593D39751A8D1FB900C36250 /* Triple Facepalm.jpg */,
+				593D397A1A8D24CA00C36250 /* Thomas Edison.jpg */,
+				593D39761A8D1FB900C36250 /* Jesus Facepalm.jpg */,
+				593D39661A8D1D8F00C36250 /* Saul Goodman.jpg */,
+				593D39671A8D1D8F00C36250 /* Are You Nor Entertained.jpg */,
+				593D39681A8D1D8F00C36250 /* Satan.jpg */,
+				593D39691A8D1D8F00C36250 /* Suit Up.jpg */,
+				593D396A1A8D1D8F00C36250 /* Top Gear.jpg */,
+				593D396B1A8D1D8F00C36250 /* Malcolm Tucker.jpg */,
 				59B634D11A87637700E1CC9C /* Computer Guy Meme.jpg */,
 				59B634CF1A8762C400E1CC9C /* And at this point I'm too afraid to ask.jpg */,
 				59096EC21A83CB370089562D /* CaptainAmericaCivilWar2.jpg */,
@@ -1553,6 +1579,7 @@
 				59DF1B7E1A76BDFA00C49011 /* I Have No Memory of This Place.jpeg in Resources */,
 				5943A8E91A867DBC007156E6 /* Crazy Girlfriend Praying Mantis.jpg in Resources */,
 				59F668161A7438480089FD23 /* Redneck Randal.jpg in Resources */,
+				593D39781A8D1FB900C36250 /* Triple Facepalm.jpg in Resources */,
 				59F667F11A7431980089FD23 /* Good Girl Gina.jpg in Resources */,
 				59E68E871A7596AE00D1C0C8 /* Pissed Off Obama.jpg in Resources */,
 				59DF1B081A76AC1400C49011 /* Jar of Dirt.jpg in Resources */,
@@ -1562,6 +1589,7 @@
 				59DF1B681A76BDFA00C49011 /* Great Scott.jpg in Resources */,
 				599F3C8B1A7968240056CF5D /* StencilStd.otf in Resources */,
 				5943A8ED1A867DBC007156E6 /* Family Tech Support Guy.jpg in Resources */,
+				593D39771A8D1FB900C36250 /* Polar Bear Facepalm.jpg in Resources */,
 				59F667EA1A7431980089FD23 /* Joseph Ducreux.jpeg in Resources */,
 				59DF1B4B1A76BDF900C49011 /* Thor.jpg in Resources */,
 				599D0B601A6E934700A1EB34 /* 1950s Middle Finger.jpeg in Resources */,
@@ -1571,7 +1599,6 @@
 				59DF1B731A76BDFA00C49011 /* LOL Guy.jpeg in Resources */,
 				59AE79401A77EB5C00014735 /* Don't You Squidward.jpeg in Resources */,
 				59DF1B0A1A76AC1400C49011 /* You Underestimate My Power.jpeg in Resources */,
-				59E68E361A75871100D1C0C8 /* Screen4.jpg in Resources */,
 				5943A8F01A867DBC007156E6 /* Hell No.jpg in Resources */,
 				59AF27851A7D660800AC5E7F /* topView.xib in Resources */,
 				5984AE711A717DE9009B078F /* First World Problems.jpeg in Resources */,
@@ -1583,11 +1610,11 @@
 				5984AE101A715405009B078F /* SaveIcon.png in Resources */,
 				5984AE4C1A717DE8009B078F /* Engineering Professor.jpeg in Resources */,
 				59DF1B611A76BDFA00C49011 /* Kim Jong-Un Lube Factory.jpg in Resources */,
-				59E68E371A75871100D1C0C8 /* Screen2.jpg in Resources */,
 				59DF1B5B1A76BDFA00C49011 /* I'll Just Wait Here.jpeg in Resources */,
 				59DF1B551A76BDF900C49011 /* Sheldon - Go Away Spray.jpeg in Resources */,
 				59B161131A7B584A00301E25 /* Dafuq Rage.jpg in Resources */,
 				59F667E81A7431980089FD23 /* High Expectations Asian Father.jpg in Resources */,
+				593D39701A8D1D8F00C36250 /* Satan.jpg in Resources */,
 				599D0B6A1A6E934700A1EB34 /* Alarm Clock.jpeg in Resources */,
 				59F667E91A7431980089FD23 /* Forever Alone.jpg in Resources */,
 				59DF1B4E1A76BDF900C49011 /* Legolas Elf Eyes.jpeg in Resources */,
@@ -1666,8 +1693,10 @@
 				5984AE661A717DE9009B078F /* X All The Y.jpeg in Resources */,
 				5984AE641A717DE9009B078F /* Picard Wtf.jpeg in Resources */,
 				59E68E7D1A7596AE00D1C0C8 /* Hail Hydra Will Wonka.jpeg in Resources */,
+				593D396E1A8D1D8F00C36250 /* Saul Goodman.jpg in Resources */,
 				59DF1B7A1A76BDFA00C49011 /* And I'm Just Sitting Here.jpg in Resources */,
 				59E68E7B1A7596AE00D1C0C8 /* Gabe Newell.jpg in Resources */,
+				593D396F1A8D1D8F00C36250 /* Are You Nor Entertained.jpg in Resources */,
 				59F667ED1A7431980089FD23 /* Back In My Day.jpg in Resources */,
 				59F667DE1A7431980089FD23 /* American Pride Eagle.jpg in Resources */,
 				59DF1B7D1A76BDFA00C49011 /* You Shall Not Pass.jpg in Resources */,
@@ -1683,9 +1712,9 @@
 				59F667D11A7431980089FD23 /* Socially Awkward Penguin.jpg in Resources */,
 				5984AE6F1A717DE9009B078F /* Bad Luck Brian.jpeg in Resources */,
 				599D0B6C1A6E934700A1EB34 /* Albert Einstein.jpeg in Resources */,
-				59E68E351A75871100D1C0C8 /* Screen3.jpg in Resources */,
 				59B1610C1A7B584A00301E25 /* Agnes Despicable Me.jpg in Resources */,
 				5984AE521A717DE8009B078F /* Sparta Leonidas.jpeg in Resources */,
+				593D397B1A8D24CA00C36250 /* Thomas Edison.jpg in Resources */,
 				59DF1B691A76BDFA00C49011 /* Back To The Future.jpg in Resources */,
 				59096EC31A83CB370089562D /* CaptainAmericaCivilWar2.jpg in Resources */,
 				59E68E8A1A7596AE00D1C0C8 /* Musically Oblivious 8th Grader.jpg in Resources */,
@@ -1726,6 +1755,7 @@
 				59F667F61A7431980089FD23 /* Surprised Koala.jpeg in Resources */,
 				59F667CE1A7431980089FD23 /* Socially Awkward Awesome Penguin.jpg in Resources */,
 				59F667DF1A7431980089FD23 /* I am Not a Smart Man.jpg in Resources */,
+				593D39731A8D1D8F00C36250 /* Malcolm Tucker.jpg in Resources */,
 				59F667D61A7431980089FD23 /* Rage Fuuuuu.jpg in Resources */,
 				59DF1B601A76BDFA00C49011 /* Metal Jesus.jpeg in Resources */,
 				59E68E781A7596AE00D1C0C8 /* Excited Minions.jpeg in Resources */,
@@ -1739,6 +1769,7 @@
 				59F667F91A7431980089FD23 /* Please Guy.jpg in Resources */,
 				59DF1B791A76BDFA00C49011 /* Spiderman Pssssst.jpg in Resources */,
 				5984AE4D1A717DE8009B078F /* Dr Evil Laser.jpeg in Resources */,
+				593D396D1A8D1D8F00C36250 /* Nikola Tesla.jpg in Resources */,
 				59B1611A1A7B584A00301E25 /* Actual Revenge Duck.jpg in Resources */,
 				59F667E11A7431980089FD23 /* Dat Ass.jpg in Resources */,
 				59DF1B5F1A76BDFA00C49011 /* Deadpool Pick Up Lines.jpeg in Resources */,
@@ -1747,6 +1778,7 @@
 				59F667D41A7431980089FD23 /* Buisness Cat.jpg in Resources */,
 				5943A8F51A867DBC007156E6 /* PTSD Clarinet Boy.jpg in Resources */,
 				59C3ADC01A7012800046A652 /* Consolas Bold.ttf in Resources */,
+				593D39721A8D1D8F00C36250 /* Top Gear.jpg in Resources */,
 				59F668171A7438480089FD23 /* Drunk Baby.jpeg in Resources */,
 				59F667CF1A7431980089FD23 /* Socially Awesome Penguin.jpg in Resources */,
 				599D0B6F1A6E934700A1EB34 /* And everybody loses their minds.jpeg in Resources */,
@@ -1810,7 +1842,6 @@
 				59E68E841A7596AE00D1C0C8 /* Foul Bachelorette Frog.jpg in Resources */,
 				599D0B5C1A6E934700A1EB34 /* 1st World Canadian Problems.jpeg in Resources */,
 				5943A8EC1A867DBC007156E6 /* Evil Cows.jpg in Resources */,
-				59E68E381A75871100D1C0C8 /* Screen1.jpg in Resources */,
 				59E68E8C1A7596AE00D1C0C8 /* Lame Pun Coon.jpg in Resources */,
 				59DF1B0B1A76AC1400C49011 /* Darth Vader.jpg in Resources */,
 				59E68E6C1A7596AE00D1C0C8 /* No Shit Sherock.jpg in Resources */,
@@ -1839,14 +1870,17 @@
 				5984AE551A717DE8009B078F /* Angry Baby.jpeg in Resources */,
 				59DF1B771A76BDFA00C49011 /* Spiderman Hospital.jpeg in Resources */,
 				59AE793D1A77EB5C00014735 /* Hipster Barista.jpg in Resources */,
+				593D396C1A8D1D8F00C36250 /* Luke Skywalker No.jpg in Resources */,
 				5984AE4E1A717DE8009B078F /* Kill Yourself Guy.jpeg in Resources */,
 				59AE79341A77E67B00014735 /* What Year is It.jpeg in Resources */,
 				59DF1B711A76BDFA00C49011 /* The Joker.jpg in Resources */,
 				5984AE651A717DE9009B078F /* Matrix Morpheus.jpeg in Resources */,
+				593D39791A8D1FB900C36250 /* Jesus Facepalm.jpg in Resources */,
 				59E68E7F1A7596AE00D1C0C8 /* 10 Peeking.jpg in Resources */,
 				59E68E6E1A7596AE00D1C0C8 /* Advice Doge.jpeg in Resources */,
 				59B161031A7B584A00301E25 /* Shashawnk Redemption.jpg in Resources */,
 				59F667FA1A7431980089FD23 /* Awkward Moment Seal.jpg in Resources */,
+				593D39711A8D1D8F00C36250 /* Suit Up.jpg in Resources */,
 				599F3C871A79676F0056CF5D /* LithosPro-Black.otf in Resources */,
 				599D0B671A6E934700A1EB34 /* Advice Yoda.jpeg in Resources */,
 				599D0B641A6E934700A1EB34 /* Admiral Ackbar Relationship Expert.jpeg in Resources */,
@@ -2056,7 +2090,7 @@
 		599D0B2D1A6E902B00A1EB34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Meme Maker/Info.plist";
@@ -2064,13 +2098,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		599D0B2E1A6E902B00A1EB34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Meme Maker/Info.plist";
@@ -2078,6 +2113,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -46,6 +46,8 @@
     [super viewDidLoad];
 	
 	sizeOfCells = CGSizeMake(self.view.frame.size.width/3 - 9, self.view.frame.size.width/3 - 9);
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		sizeOfCells = CGSizeMake(self.view.frame.size.width/6 - 15, self.view.frame.size.width/6 - 15);
 	
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"]) {
 		DefColor = [UIColor colorWithRed:239/255.0 green:240/255.0 blue:239/255.0 alpha:1];

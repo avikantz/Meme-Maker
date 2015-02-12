@@ -185,6 +185,9 @@
 		[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
 	}
 	
+	[_topField setPlaceholder:@"TOP TEXT"];
+	[_bottomField setPlaceholder:@"BOTTOM TEXT"];
+	
 	self.view.backgroundColor = [UIColor blackColor];
 	self.BlackBlurredImage.alpha = 0;	
 	
@@ -202,6 +205,15 @@
 		[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
 		[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
 	}
+	else if (_meme == nil) {
+		self.navigationItem.title = [NSString stringWithFormat:@"Pick an Image..."];
+		self.imageView.image = [UIImage imageNamed:@"Meme Colored Background.jpg"];
+		self.backgroundImage.image = [self blur:self.imageView.image];
+		[_topField setText: @""];
+		[_bottomField setText: @""];
+		[_topField setPlaceholder:@"<--- Pick an Image"];
+		[_bottomField setPlaceholder:@"<--- Pick an Image"];
+	}
 	else {
 		self.navigationItem.title = [NSString stringWithFormat:@"%@", self.meme.Name];
 		self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.meme.Image]];
@@ -215,15 +227,24 @@
 	
 	imagex = self.imageView.image;
 	
-	UIInterpolatingMotionEffect* horinzontalMotionEffectBg = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horinzontalMotionEffectBg.minimumRelativeValue = @(20);
-	horinzontalMotionEffectBg.maximumRelativeValue = @(-20);
-	[self.backgroundImage addMotionEffect:horinzontalMotionEffectBg];
-	
-	UIInterpolatingMotionEffect* verticalMotionEffectBg = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	verticalMotionEffectBg.minimumRelativeValue = @(20);
-	verticalMotionEffectBg.maximumRelativeValue = @(-20);
-	[self.backgroundImage addMotionEffect:verticalMotionEffectBg];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		_backgroundImage.frame = CGRectMake(0, 0, self.view.frame.size.width - 16, self.view.frame.size.height - 16);
+		_topOrBottomButtonPad.hidden = NO;
+		_shareButtonPad.hidden = NO;
+	}
+	else {
+		_topOrBottomButtonPad.hidden = YES;
+		_shareButtonPad.hidden = YES;
+		UIInterpolatingMotionEffect* horinzontalMotionEffectBg = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+		horinzontalMotionEffectBg.minimumRelativeValue = @(20);
+		horinzontalMotionEffectBg.maximumRelativeValue = @(-20);
+		[self.backgroundImage addMotionEffect:horinzontalMotionEffectBg];
+		
+		UIInterpolatingMotionEffect* verticalMotionEffectBg = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+		verticalMotionEffectBg.minimumRelativeValue = @(20);
+		verticalMotionEffectBg.maximumRelativeValue = @(-20);
+		[self.backgroundImage addMotionEffect:verticalMotionEffectBg];
+	}
 	
 	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
 												  forBarMetrics:UIBarMetricsDefault];
@@ -292,19 +313,18 @@
 												 name:UIKeyboardDidShowNotification
 											   object:nil];
 	
-	self.topField.alpha = 0;
-	self.bottomField.alpha = 0;
-	self.topField.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
-	self.bottomField.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
-	
-	[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		self.topField.alpha = 1;
-		self.bottomField.alpha = 1;
-		self.topField.layer.transform = CATransform3DIdentity;
-		self.bottomField.layer.transform = CATransform3DIdentity;
-	}completion:nil];
-	
-	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		self.topField.alpha = 0;
+		self.bottomField.alpha = 0;
+		self.topField.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+		self.bottomField.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5);
+		[UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			self.topField.alpha = 1;
+			self.bottomField.alpha = 1;
+			self.topField.layer.transform = CATransform3DIdentity;
+			self.bottomField.layer.transform = CATransform3DIdentity;
+		}completion:nil];
+	}
 	
 	panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
 	[panGesture setMinimumNumberOfTouches:2];
@@ -328,6 +348,12 @@
 	[self.view addSubview:bannerView];
 	*/
 	
+}
+
+-(void)selectedMeme:(MemeObject *)meme {
+	self.meme = meme;
+	[self viewDidLoad];
+	[self viewDidAppear:YES];
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
@@ -637,11 +663,15 @@
 - (IBAction)fontAction:(id)sender {
 	if (shouldDisplayFontView) {
 		fontTableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FontView"];
-		[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height, self.view.frame.size.width - 200, 390)];
+		else
+			[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
 		
 		[self addChildViewController:fontTableVC];
 		[self.view addSubview:fontTableVC.view];
 		
+		[fontTableVC.view.superview setAutoresizesSubviews:YES];
 		
 		[fontTableVC didMoveToParentViewController:self];
 		
@@ -649,11 +679,26 @@
 		[self.twoSidedArrow setAlpha:0.0];
 		
 		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-			[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+				[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
+			else {
+				[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+				[self.twoSidedArrow setAlpha:0.5];
+				_twoSidedArrow.layer.transform = CATransform3DIdentity;
+			}
 			fontTableVC.view.alpha = 0.5;
-			_twoSidedArrow.layer.transform = CATransform3DIdentity;
-			[self.twoSidedArrow setAlpha:0.5];
 		}completion:nil];
+		
+		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+		[[NSNotificationCenter defaultCenter] addObserverForName:UIDeviceOrientationDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+				[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
+			else
+				[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+			
+			[fontTableVC.tableView reloadData];
+			
+		}];
 		
 		shouldDisplayFontView = NO;
 	}
@@ -661,7 +706,10 @@
 
 -(void)dismissChild :(UIGestureRecognizer *)gestureRecognizer {
 	[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-		[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height, self.view.frame.size.width - 200, 390)];
+		else
+			[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
 		fontTableVC.view.alpha = 0.0;
 		_twoSidedArrow.layer.transform = CATransform3DMakeScale(0.0, 0.8, 0.8);
 		[self.twoSidedArrow setAlpha:0.0];
@@ -689,7 +737,13 @@
 	UIImage *imagetoshare = _imageView.image;
 	NSArray *activityItems = @[texttoshare, imagetoshare];
 	UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-	[self presentViewController:activityVC animated:TRUE completion:nil];
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:activityVC];
+		[popup presentPopoverFromRect:_shareButtonPad.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+	}
+	else
+		[self presentViewController:activityVC animated:TRUE completion:nil];
 }
 
 - (IBAction)saveAction:(id)sender {
@@ -760,10 +814,12 @@
 	if (moveTop) {
 		moveTop = NO;
 		_topOrBottomButton.image = [UIImage imageNamed:@"BottomEdit"];
+		[_topOrBottomButtonPad setImage:[UIImage imageNamed:@"BottomEdit"] forState:UIControlStateNormal];
 	}
 	else {
 		moveTop = YES;
 		_topOrBottomButton.image = [UIImage imageNamed:@"TopEdit"];
+		[_topOrBottomButtonPad setImage:[UIImage imageNamed:@"TopEdit"] forState:UIControlStateNormal];
 		
 	}
 }

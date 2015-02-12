@@ -11,10 +11,11 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "TableViewController.h"
 #import "MemeObject.h"
+#import "MemeProtocol.h"
 //#import "GADBannerView.h"
 //#import "GADRequest.h"
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIDocumentInteractionControllerDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIDocumentInteractionControllerDelegate, MemeProtocol>
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -38,5 +39,9 @@
 - (IBAction)openInAction:(id)sender;
 
 - (IBAction)topOrBottom:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *topOrBottomButtonPad;
+@property (weak, nonatomic) IBOutlet UIButton *shareButtonPad;
+
 
 @end
