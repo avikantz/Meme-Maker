@@ -780,11 +780,21 @@
 
 - (void)imagePickerController:(UIImagePickerController *)pick didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *image = info[UIImagePickerControllerOriginalImage];
-	if (MAX(image.size.height, image.size.width) > 512.0) {
-		if (image.size.width > image.size.height)
-			image = [self imageToScale:image Size:CGSizeMake(512.0, 512.0*image.size.height/image.size.width)];
-		else
-			image = [self imageToScale:image Size:CGSizeMake(512.0*image.size.width/image.size.height, 512.0)];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		if (MAX(image.size.height, image.size.width) > 1024.0) {
+			if (image.size.width > image.size.height)
+				image = [self imageToScale:image Size:CGSizeMake(1024.0, 1024.0*image.size.height/image.size.width)];
+			else
+				image = [self imageToScale:image Size:CGSizeMake(1024.0*image.size.width/image.size.height, 1024.0)];
+		}
+	}
+	else {
+		if (MAX(image.size.height, image.size.width) > 512.0) {
+			if (image.size.width > image.size.height)
+				image = [self imageToScale:image Size:CGSizeMake(512.0, 512.0*image.size.height/image.size.width)];
+			else
+				image = [self imageToScale:image Size:CGSizeMake(512.0*image.size.width/image.size.height, 512.0)];
+		}
 	}
 	
 	NSData *dataOfImage = UIImageJPEGRepresentation(image, 0.8);

@@ -191,7 +191,28 @@
 	self.view.backgroundColor = [UIColor blackColor];
 	self.BlackBlurredImage.alpha = 0;	
 	
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
+	if (_meme == nil) {
+		self.navigationItem.title = [NSString stringWithFormat:@"Pick an Image..."];
+		self.imageView.image = [UIImage imageNamed:@"Meme Colored Background.jpg"];
+		self.backgroundImage.image = [self blur:self.imageView.image];
+		[_topField setText: @""];
+		[_bottomField setText: @""];
+		[_topField setPlaceholder:@"<--- Pick an Image"];
+		[_bottomField setPlaceholder:@"<--- Pick an Image"];
+		
+		NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"];
+		if ([NSData dataWithContentsOfFile:imagePath]) {
+			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+			self.navigationItem.title = [NSString stringWithFormat:@"Custom Image"];
+			self.backgroundImage.image = [self blur:self.imageView.image];
+			self.navigationItem.title = @"Last Edit";
+			[_topField setPlaceholder:@""];
+			[_bottomField setPlaceholder:@""];
+			[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
+			[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+		}
+	}
+	else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
 		NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"ImagePath"];
 		if (imagePath)
 			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
@@ -204,15 +225,6 @@
 		self.navigationItem.title = @"Last Edit";
 		[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
 		[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
-	}
-	else if (_meme == nil) {
-		self.navigationItem.title = [NSString stringWithFormat:@"Pick an Image..."];
-		self.imageView.image = [UIImage imageNamed:@"Meme Colored Background.jpg"];
-		self.backgroundImage.image = [self blur:self.imageView.image];
-		[_topField setText: @""];
-		[_bottomField setText: @""];
-		[_topField setPlaceholder:@"<--- Pick an Image"];
-		[_bottomField setPlaceholder:@"<--- Pick an Image"];
 	}
 	else {
 		self.navigationItem.title = [NSString stringWithFormat:@"%@", self.meme.Name];
