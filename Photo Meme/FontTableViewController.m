@@ -53,6 +53,10 @@
 				@"LeagueGothic-Regular",
 				@"LeagueGothic-Italic",
 				@"MarkerFelt-Wide",
+				@"Menlo-Bold",
+				@"LithosPro-Black",
+				@"PoplarStd",
+				@"StencilStd",
 				nil];
 	
 	fontNames = [[NSMutableArray alloc] initWithObjects:
@@ -71,7 +75,11 @@
 				 @"League Gothic",
 				 @"League Gothic Italic",
 				 @"Marker Felt",
-				nil];
+				 @"Menlo",
+				 @"Lithos Pro",
+				 @"Poplar",
+				 @"Stencil",
+				 nil];
 	
 	alignmentNames = [[NSMutableArray alloc] initWithObjects:
 					  @"Center (Default)",
@@ -549,11 +557,11 @@
 	}
 	
 	[self.parentViewController performSelector:@selector(viewDidAppear:)];
-	[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, self.view.frame.size.width, self.view.frame.size.height);
-	}completion:^(BOOL finished) {
-		[self.view removeFromSuperview];
-	}];
+//	[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//		self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, self.view.frame.size.width, self.view.frame.size.height);
+//	}completion:^(BOOL finished) {
+//		[self.view removeFromSuperview];
+//	}];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

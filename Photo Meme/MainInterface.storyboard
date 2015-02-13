@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="128" width="600" height="378"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackBlurredmage.png" translatesAutoresizingMaskIntoConstraints="NO" id="E3r-uS-7FW">
-                                <rect key="frame" x="-20" y="-44" width="640" height="200"/>
+                                <rect key="frame" x="-20" y="20" width="640" height="200"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pRe-9I-a1K">
                                 <rect key="frame" x="16" y="32" width="568" height="40"/>
@@ -37,6 +37,7 @@
                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                 <connections>
+                                    <action selector="textFieldTextChanged:" destination="wEh-Qd-5CL" eventType="editingChanged" id="8ih-78-G71"/>
                                     <action selector="textFieldTextChanged:" destination="wEh-Qd-5CL" eventType="valueChanged" id="MvL-GW-Gdw"/>
                                 </connections>
                             </textField>
@@ -51,6 +52,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
                                 <connections>
                                     <action selector="textFieldTextChanged:" destination="wEh-Qd-5CL" eventType="valueChanged" id="fqL-gU-kas"/>
+                                    <action selector="textFieldTextChanged:" destination="wEh-Qd-5CL" eventType="editingChanged" id="kmf-zH-gN5"/>
                                 </connections>
                             </textField>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000596046448" contentMode="scaleAspectFit" image="twoSidedArrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fbf-pa-p23">
@@ -91,7 +93,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fbf-pa-p23" secondAttribute="trailing" constant="84" id="Ti7-c3-BKN"/>
                             <constraint firstItem="pRe-9I-a1K" firstAttribute="top" secondItem="1fg-hy-E8X" secondAttribute="bottom" constant="12" id="VBq-96-0I1"/>
                             <constraint firstItem="1ic-iB-u1c" firstAttribute="trailing" secondItem="8Bu-aw-6VA" secondAttribute="trailingMargin" id="Wli-dP-2Ba"/>
-                            <constraint firstItem="E3r-uS-7FW" firstAttribute="top" secondItem="1fg-hy-E8X" secondAttribute="bottom" constant="-64" id="XVt-9y-GZy"/>
+                            <constraint firstItem="E3r-uS-7FW" firstAttribute="top" secondItem="1fg-hy-E8X" secondAttribute="bottom" id="XVt-9y-GZy"/>
                             <constraint firstItem="jim-si-f5d" firstAttribute="top" secondItem="1ic-iB-u1c" secondAttribute="bottom" constant="8" id="Y5R-xG-XWa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FaM-gV-a0w" secondAttribute="trailing" constant="-36" id="YIY-YZ-s3G"/>
                             <constraint firstItem="jim-si-f5d" firstAttribute="top" secondItem="1fg-hy-E8X" secondAttribute="bottom" constant="80" id="Zwy-ga-g6G"/>

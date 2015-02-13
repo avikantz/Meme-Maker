@@ -43,6 +43,9 @@
 		5943A8F91A867DBC007156E6 /* Stoner Dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5943A8E71A867DBC007156E6 /* Stoner Dog.jpg */; };
 		596D8FF41A7697850008F060 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596D8FF31A7697850008F060 /* AdSupport.framework */; };
 		596D8FF81A76979C0008F060 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596D8FF71A76979C0008F060 /* CoreGraphics.framework */; };
+		597971401A8E4DAC008D014A /* LithosPro-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5979713D1A8E4DAC008D014A /* LithosPro-Black.otf */; };
+		597971411A8E4DAC008D014A /* PoplarStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5979713E1A8E4DAC008D014A /* PoplarStd.otf */; };
+		597971421A8E4DAC008D014A /* StencilStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5979713F1A8E4DAC008D014A /* StencilStd.otf */; };
 		5984AE0E1A712A6D009B078F /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE0D1A712A6D009B078F /* Impact.ttf */; };
 		5984AE101A715405009B078F /* SaveIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE0F1A715405009B078F /* SaveIcon.png */; };
 		5984AE141A715B78009B078F /* BlackBlurredmage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5984AE131A715B78009B078F /* BlackBlurredmage.png */; };
@@ -470,6 +473,9 @@
 		596D8FF91A7697C90008F060 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		596D8FFD1A7697D60008F060 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		596D8FFF1A7697DD0008F060 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5979713D1A8E4DAC008D014A /* LithosPro-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LithosPro-Black.otf"; sourceTree = "<group>"; };
+		5979713E1A8E4DAC008D014A /* PoplarStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoplarStd.otf; sourceTree = "<group>"; };
+		5979713F1A8E4DAC008D014A /* StencilStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StencilStd.otf; sourceTree = "<group>"; };
 		5984AE0D1A712A6D009B078F /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		5984AE0F1A715405009B078F /* SaveIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveIcon.png; sourceTree = "<group>"; };
 		5984AE131A715B78009B078F /* BlackBlurredmage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackBlurredmage.png; sourceTree = "<group>"; };
@@ -1439,6 +1445,9 @@
 				59FE606D1A74FA6500C6F93A /* tickmark.png */,
 				59FE604D1A74ECF600C6F93A /* Absender.ttf */,
 				59FE604E1A74ECF600C6F93A /* Consolas Bold.ttf */,
+				5979713D1A8E4DAC008D014A /* LithosPro-Black.otf */,
+				5979713E1A8E4DAC008D014A /* PoplarStd.otf */,
+				5979713F1A8E4DAC008D014A /* StencilStd.otf */,
 				59FE604F1A74ECF600C6F93A /* Dead Kansas.ttf */,
 				59FE60501A74ECF600C6F93A /* EtelkaNarrowTextPro.otf */,
 				59FE60511A74ECF600C6F93A /* Impact.ttf */,
@@ -1919,6 +1928,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59FE60571A74ECF600C6F93A /* Consolas Bold.ttf in Resources */,
+				597971401A8E4DAC008D014A /* LithosPro-Black.otf in Resources */,
 				59FE606E1A74FA6500C6F93A /* tickmark.png in Resources */,
 				59FE60631A74EDB900C6F93A /* BlackBlurredmage.png in Resources */,
 				59FE60561A74ECF600C6F93A /* Absender.ttf in Resources */,
@@ -1930,6 +1940,8 @@
 				59FE60551A74ECF600C6F93A /* AbadiMTBold.ttf in Resources */,
 				59FE60441A74EABB00C6F93A /* MainInterface.storyboard in Resources */,
 				59FE60641A74EDB900C6F93A /* twoSidedArrow.png in Resources */,
+				597971421A8E4DAC008D014A /* StencilStd.otf in Resources */,
+				597971411A8E4DAC008D014A /* PoplarStd.otf in Resources */,
 				59FE605A1A74ECF600C6F93A /* Impact.ttf in Resources */,
 				59FE60661A74EDD500C6F93A /* Settings@3x.png in Resources */,
 			);

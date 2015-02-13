@@ -18,7 +18,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wjq-VZ-0pC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-442"/>
+            <point key="canvasLocation" x="1364" y="-452"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="3CQ-3I-3yO">
@@ -272,7 +272,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HHY-xN-UAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069" y="1051"/>
+            <point key="canvasLocation" x="1069" y="1163"/>
         </scene>
         <!--Detail View-->
         <scene sceneID="s9c-JC-dNy">
@@ -287,16 +287,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JUC-Mf-A0k">
-                                <rect key="frame" x="-20" y="-20" width="640" height="612"/>
+                                <rect key="frame" x="-20" y="-36" width="640" height="672"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vK7-7d-QP7">
-                                <rect key="frame" x="0.0" y="164" width="600" height="342"/>
+                                <rect key="frame" x="0.0" y="120" width="600" height="430"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlackBlurredmage.png" translatesAutoresizingMaskIntoConstraints="NO" id="5dr-e3-JQz">
-                                <rect key="frame" x="-20" y="0.0" width="640" height="200"/>
+                                <rect key="frame" x="-20" y="-44" width="640" height="200"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="TOP TEXT" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pMY-a1-iMK">
-                                <rect key="frame" x="16" y="68" width="568" height="40"/>
+                                <rect key="frame" x="16" y="24" width="568" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kMi-t5-RrO"/>
@@ -309,7 +309,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="BOTTOM TEXT" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="My0-TX-mGt">
-                                <rect key="frame" x="16" y="116" width="568" height="40"/>
+                                <rect key="frame" x="16" y="72" width="568" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.33000000000000002" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hrE-zK-4Fd"/>
@@ -322,7 +322,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBM-MI-wnh">
-                                <rect key="frame" x="288" y="521" width="25" height="25"/>
+                                <rect key="frame" x="288" y="565" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="FtG-zv-PIY"/>
                                     <constraint firstAttribute="width" secondItem="qBM-MI-wnh" secondAttribute="height" multiplier="45:49" id="gBk-My-4cQ"/>
@@ -341,7 +341,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IG-KU-MAY">
-                                <rect key="frame" x="559" y="521" width="25" height="25"/>
+                                <rect key="frame" x="559" y="565" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="dKS-C2-YUF"/>
                                     <constraint firstAttribute="width" constant="25" id="vKD-Qr-zo9"/>
@@ -354,7 +354,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTf-TS-hae">
-                                <rect key="frame" x="16" y="521" width="25" height="25"/>
+                                <rect key="frame" x="16" y="565" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="0g0-D0-9it"/>
                                     <constraint firstAttribute="width" constant="25" id="wmc-ai-9TY"/>
@@ -367,7 +367,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSE-va-Vh3">
-                                <rect key="frame" x="463" y="521" width="25" height="25"/>
+                                <rect key="frame" x="463" y="565" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="FJ0-9j-pTj"/>
                                     <constraint firstAttribute="height" constant="25" id="gpA-DV-MNM"/>
@@ -386,7 +386,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLO-S5-VAB">
-                                <rect key="frame" x="113" y="521" width="25" height="25"/>
+                                <rect key="frame" x="113" y="565" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="G7J-Eb-WJW"/>
                                     <constraint firstAttribute="width" secondItem="YLO-S5-VAB" secondAttribute="height" multiplier="45:49" id="PDy-yl-j78"/>
@@ -438,7 +438,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="9IG-KU-MAY" secondAttribute="trailing" id="Y4f-s8-XIC"/>
                             <constraint firstItem="5dr-e3-JQz" firstAttribute="top" secondItem="KlC-jS-O5G" secondAttribute="bottom" constant="-64" id="aoh-IL-tux"/>
                             <constraint firstItem="MTf-TS-hae" firstAttribute="leading" secondItem="71c-20-eo0" secondAttribute="leadingMargin" id="dWR-Dl-TmL"/>
-                            <constraint firstItem="JUC-Mf-A0k" firstAttribute="top" secondItem="71c-20-eo0" secondAttribute="topMargin" constant="-20" id="fGS-fc-btr"/>
+                            <constraint firstItem="JUC-Mf-A0k" firstAttribute="top" secondItem="71c-20-eo0" secondAttribute="topMargin" constant="-36" id="fGS-fc-btr"/>
                             <constraint firstAttribute="centerX" secondItem="vK7-7d-QP7" secondAttribute="centerX" constant="-0.5" id="hff-ct-esX"/>
                             <constraint firstAttribute="centerX" secondItem="qBM-MI-wnh" secondAttribute="centerX" id="idM-0p-APn"/>
                             <constraint firstItem="vK7-7d-QP7" firstAttribute="centerY" secondItem="JUC-Mf-A0k" secondAttribute="centerY" id="jFf-B6-6Ep"/>
@@ -589,7 +589,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xaq-pT-ebW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="295"/>
+            <point key="canvasLocation" x="283" y="295"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3g5-FH-otu">
@@ -608,7 +608,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XR-as-m1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="415" y="1045"/>
+            <point key="canvasLocation" x="283" y="1163"/>
         </scene>
     </scenes>
     <resources>
@@ -628,7 +628,7 @@
         <image name="twoSidedArrow.png" width="962" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="joS-is-IKS"/>
-        <segue reference="CIh-Wf-bAw"/>
+        <segue reference="6Bw-X1-oH4"/>
+        <segue reference="4Tb-11-u3z"/>
     </inferredMetricsTieBreakers>
 </document>

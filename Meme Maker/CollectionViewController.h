@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TableViewController.h"
 #import "CustomCollectionViewCell.h"
+#import "MemeProtocol.h"
 
 @interface CollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
@@ -17,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *lastEditButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tableViewButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+
+@property (nonatomic, assign) id<MemeProtocol> delegate;
 
 - (IBAction)PhotoGalleryAction:(id)sender;
 - (IBAction)MenuAction:(id)sender;

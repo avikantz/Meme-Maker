@@ -41,6 +41,8 @@
 	
 	UIPinchGestureRecognizer *pinchImage;
 	
+	UIPanGestureRecognizer *panGesture;
+	
 	int textAlignment;
 	NSTextAlignment align;
 	
@@ -200,6 +202,11 @@
 	[swipeFromBottom setDelegate:self];
 	[self.view addGestureRecognizer:swipeFromBottom];
 	
+	swipeFromTop = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismissChild:)];
+	[swipeFromTop setDirection:UISwipeGestureRecognizerDirectionDown];
+	[swipeFromTop setDelegate:self];
+	[self.view addGestureRecognizer:swipeFromTop];
+	
 	pinchImage = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
@@ -232,9 +239,6 @@
 	_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
 									inImage:_imageView.image
 									atPoint:CGPointMake(20, 220)];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithString:_topField.text] forKey:@"lastEditTopText"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithString:_bottomField.text] forKey:@"lastEditBottomText"];
 }
 
 -(UIImage*) drawTextTop:(NSString*) text inImage:(UIImage*)  image atPoint:(CGPoint)   point{
@@ -402,12 +406,13 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
 	UIImage *image2 = self.imageView.image;
 	CGFloat imgheight = ((image2.size.height)/(image2.size.width))*(self.view.frame.size.width);
+	if (imgheight > self.imageView.frame.size.height)
+		imgheight = self.imageView.frame.size.height;
 	if (textField == self.bottomField) {
 		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			self.imageView.layer.transform = CATransform3DMakeTranslation(0, 50 - (imgheight - self.imageView.frame.size.height)/2 - keyboardHeight, 0);
 			_BlackBlurredImage.alpha = 0.8;
 		}completion:nil];
-		
 	}
 }
 
@@ -420,7 +425,12 @@
 
 - (IBAction)textFieldTextChanged:(id)sender {
 	_imageView.image = imagex;
-	[self Cook];
+	_imageView.image = [self drawTextTop:[_topField.text uppercaseString]
+								 inImage:_imageView.image
+								 atPoint:CGPointMake(20, 0)];
+	_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
+									inImage:_imageView.image
+									atPoint:CGPointMake(20, 220)];
 }
 
 - (IBAction)fontAction:(id)sender {
@@ -446,6 +456,23 @@
 		shouldDisplayFontView = NO;
 	}
 }
+
+-(void)dismissChild :(UIGestureRecognizer *)gestureRecognizer {
+	[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height, self.view.frame.size.width - 200, 390)];
+		else
+			[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
+		fontTableVC.view.alpha = 0.0;
+		_twoSidedArrow.layer.transform = CATransform3DMakeScale(0.0, 0.8, 0.8);
+		[self.twoSidedArrow setAlpha:0.0];
+	}completion:^(BOOL finished) {
+		[fontTableVC.view removeFromSuperview];
+		[fontTableVC removeFromParentViewController];
+		shouldDisplayFontView = YES;
+	}];
+}
+
 
 -(void)tapImage :(UIGestureRecognizer *)gestureRecognizer {
 	CGPoint point = [gestureRecognizer locationInView:self.view];
@@ -483,6 +510,7 @@
 	imagex = placeholderImage;
 	fullSizeImage = placeholderImage;
 	self.input = contentEditingInput;
+	[self viewDidLoad];
 }
 
 - (void)finishContentEditingWithCompletionHandler:(void (^)(PHContentEditingOutput *))completionHandler {

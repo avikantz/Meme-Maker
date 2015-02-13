@@ -271,11 +271,21 @@
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LibCamPickUp"];
 	UIImagePickerController *pick = [[UIImagePickerController alloc] init];
 	pick.delegate = self;
-	pick.allowsEditing = YES;
+	pick.allowsEditing = NO;
 	[pick.navigationItem setLeftBarButtonItem:_cameraButton];
 	[pick.navigationItem setTitle:@"Choose Image"];
 	pick.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-	[self presentViewController:pick animated:YES completion:NULL];
+	
+	UIView *targetView = (UIView *)[_photoGalleryButton performSelector:@selector(view)];
+	CGRect rect = targetView.frame;
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:pick];
+		//		[popup presentPopoverFromBarButtonItem:_photoGalleryButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		[popup presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+	}
+	else
+		[self presentViewController:pick animated:YES completion:NULL];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -312,7 +322,7 @@
 	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		UIImagePickerController *pick = [[UIImagePickerController alloc] init];
 		pick.delegate = self;
-		pick.allowsEditing = YES;
+		pick.allowsEditing = NO;
 		[pick setSourceType:UIImagePickerControllerSourceTypeCamera];
 		[self presentViewController:pick animated: YES completion: NULL];
 	}
@@ -327,14 +337,26 @@
 }
 
 - (IBAction)lastEditAction:(id)sender {
-	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
-	if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
-		DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
-		[self.navigationController pushViewController:dvc animated:YES];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
+		if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
+			
+		}
+		else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
+			[alert show];
+		}
 	}
 	else {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
-		[alert show];
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
+		if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
+			DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+			[self.navigationController pushViewController:dvc animated:YES];
+		}
+		else {
+			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No last edit was found, go on pick up some image." delegate:self cancelButtonTitle:@"Oh, okay." otherButtonTitles:nil, nil];
+			[alert show];
+		}
 	}
 }
 
@@ -342,28 +364,45 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)pick didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
+	UIImage *image = info[UIImagePickerControllerOriginalImage];
+	if (MAX(image.size.height, image.size.width) > 512.0) {
+		if (image.size.width > image.size.height)
+			image = [self imageToScale:image Size:CGSizeMake(512.0, 512.0*image.size.height/image.size.width)];
+		else
+			image = [self imageToScale:image Size:CGSizeMake(512.0*image.size.width/image.size.height, 512.0)];
+	}
 	
-	NSData *dataOfImage = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 0.8);
+	NSData *dataOfImage = UIImageJPEGRepresentation(image, 0.8);
 	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"image.jpg"]];
 	[dataOfImage writeToFile:imagePath atomically:YES];
 	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:@"ImagePath"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
-	dataOfLastEditedImage = UIImageJPEGRepresentation(info[UIImagePickerControllerEditedImage], 0.7);
+	dataOfLastEditedImage = UIImageJPEGRepresentation(image, 0.7);
 	imagePathOfLastEditedImage = [self documentsPathForFileName:[NSString stringWithFormat:@"lastEditedImage.jpg"]];
 	[dataOfLastEditedImage writeToFile:imagePathOfLastEditedImage atomically:YES];
 	[[NSUserDefaults standardUserDefaults] setObject:imagePathOfLastEditedImage forKey:@"lastEditedImagePath"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LibCamPickUp"];
-	DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+		DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
+		[pick dismissViewControllerAnimated:YES completion:NULL];
+		[self.navigationController pushViewController:dvc animated:YES];
+	}
+	else {
+		MemeObject *meme = [[MemeObject alloc] initWithName:@"Custom Image" image:@"Image" tags:@"" url:@""];
+		if (self.delegate)
+			[self.delegate selectedMeme:meme];
+	}
 	[pick dismissViewControllerAnimated:YES completion:NULL];
-	[self.navigationController pushViewController:dvc animated:YES];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)pick {
 	[pick dismissViewControllerAnimated:YES completion:NULL];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
 }
 
 @end

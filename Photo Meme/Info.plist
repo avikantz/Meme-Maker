@@ -29,6 +29,9 @@
 		<string>LeagueGothic-Regular.otf</string>
 		<string>Righteous-Regular.ttf</string>
 		<string>LeagueGothic-Italic.otf</string>
+		<string>PoplarStd.otf</string>
+		<string>StencilStd.otf</string>
+		<string>LithosPro-Black.otf</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
