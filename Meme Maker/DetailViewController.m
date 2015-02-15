@@ -231,20 +231,26 @@
 		self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.meme.Image]];
 		self.backgroundImage.image = [self blur:self.imageView.image];
 	}
-
-	_backgroundImage.alpha = 0.0;
-	[UIView animateWithDuration:1.0 animations:^{
-		_backgroundImage.alpha = 1.0;
-	}];
 	
 	imagex = self.imageView.image;
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			_backgroundImage.alpha = 0;
+		} completion:^(BOOL finished) {
+			[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+				_backgroundImage.alpha = 1;
+			} completion:nil];
+		}];
 		_backgroundImage.frame = CGRectMake(0, 0, self.view.frame.size.width - 16, self.view.frame.size.height - 16);
 		_topOrBottomButtonPad.hidden = NO;
 		_shareButtonPad.hidden = NO;
 	}
 	else {
+		_backgroundImage.alpha = 0.0;
+		[UIView animateWithDuration:1.0 animations:^{
+			_backgroundImage.alpha = 1.0;
+		}];
 		_topOrBottomButtonPad.hidden = YES;
 		_shareButtonPad.hidden = YES;
 		UIInterpolatingMotionEffect* horinzontalMotionEffectBg = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
@@ -455,9 +461,9 @@
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithString:_bottomField.text] forKey:@"lastEditBottomText"];
 }
 
--(UIImage*) drawTextTop:(NSString*) text inImage:(UIImage*)  image atPoint:(CGPoint)   point{
+-(UIImage*) drawTextTop:(NSString*) text inImage:(UIImage*)image atPoint:(CGPoint)   point{
 	UIGraphicsBeginImageContext(image.size);
-	[image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+	[image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
 	
 	UITextView *myText = [[UITextView alloc] init];
 	
@@ -507,19 +513,17 @@
 									  attributes:textAttributes
 										 context:nil];
 	}
-//	if (moveTop)
-		[myText.text drawInRect:CGRectMake(myText.frame.origin.x + topTextFrameOffset.x, myText.frame.origin.y + topTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
-//	else
-//		[myText.text drawInRect:myText.frame withAttributes:textAttributes];
+	
+	[myText.text drawInRect:CGRectMake(myText.frame.origin.x + topTextFrameOffset.x, myText.frame.origin.y + topTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
 	
 	UIImage *NewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	return NewImage;
 }
 
--(UIImage*) drawTextBottom:(NSString*) text inImage:(UIImage*)  image atPoint:(CGPoint)  point{
+-(UIImage*) drawTextBottom:(NSString*) text inImage:(UIImage*)image atPoint:(CGPoint)  point{
 	UIGraphicsBeginImageContext(image.size);
-	[image drawInRect:CGRectMake(0,0,image.size.width,image.size.height)];
+	[image drawInRect:CGRectMake(0, 0, image.size.width, image.size.height)];
 	
 	UITextView *myText = [[UITextView alloc] init];
 	
@@ -573,10 +577,7 @@
 		myText.frame = CGRectMake(0, (image.size.height) - (expectedLabelSize.height), image.size.width, image.size.height/2);
 	}
 	
-//	if (moveTop)
-//		[myText.text drawInRect:myText.frame withAttributes:textAttributes];
-//	else
-		[myText.text drawInRect:CGRectMake(myText.frame.origin.x + bottomTextFrameOffset.x, myText.frame.origin.y + bottomTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
+	[myText.text drawInRect:CGRectMake(myText.frame.origin.x + bottomTextFrameOffset.x, myText.frame.origin.y + bottomTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
 	
 	UIImage *NewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();

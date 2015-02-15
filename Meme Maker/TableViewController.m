@@ -116,7 +116,7 @@
 	
 	UILabel *autoDismissLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 250, self.view.frame.size.width - 65, 31)];
 	autoDismissLabel.backgroundColor = [UIColor clearColor];
-	autoDismissLabel.text = [NSString stringWithFormat:@"Auto Dismiss (Turning this on will dismiss the font options as you select any option)"];
+	autoDismissLabel.text = [NSString stringWithFormat:@"Auto Dismiss (Turning this on will dismiss the editing options as you select any option)"];
 	autoDismissLabel.alpha = 0.9;
 	[autoDismissLabel setNumberOfLines:3];
 	[autoDismissLabel setTextAlignment:NSTextAlignmentJustified];
@@ -320,6 +320,22 @@
 			}
 		}
 	});
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillEnterForegroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"]) {
+			[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"DarkMode"];
+			[darkModeSwitch setOn:NO animated:YES];
+			TextColor = [UIColor colorWithRed:50/255.0 green:100/255.0 blue:0 alpha:1];
+			DefColor = [UIColor colorWithRed:239/255.0 green:240/255.0 blue:239/255.0 alpha:1];
+		}
+		else {
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"DarkMode"];
+			[darkModeSwitch setOn:YES animated:YES];
+			DefColor = [UIColor colorWithWhite:0.12 alpha:1.0];
+			TextColor = [UIColor colorWithRed:170/255.0 green:250/255.0 blue:120.0/255 alpha:0.7];
+		}
+		[self viewWillAppear:YES];
+	}];
 	
 //	[self.searchDisplayController.searchBar setImage:[UIImage imageNamed:@"Settings"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
 //	[self.searchDisplayController.searchBar setPositionAdjustment:UIOffsetMake(-10, 0) forSearchBarIcon:UISearchBarIconBookmark];
@@ -695,7 +711,6 @@
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:pick];
-//		[popup presentPopoverFromBarButtonItem:_photoGalleryButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 		[popup presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 	}
 	else
@@ -809,7 +824,9 @@
 	[[NSUserDefaults standardUserDefaults] setObject:imagePathOfLastEditedImage forKey:@"lastEditedImagePath"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
 	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LibCamPickUp"];
+	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 		DetailViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailView"];
 		[pick dismissViewControllerAnimated:YES completion:NULL];
@@ -821,7 +838,6 @@
 			[self.delegate selectedMeme:meme];
 	}
 	[pick dismissViewControllerAnimated:YES completion:NULL];
-	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)pick {
