@@ -556,21 +556,24 @@
 		[[NSUserDefaults standardUserDefaults] setObject:[fontBook objectAtIndex:indexPath.row] forKey:@"FontName"];
 	}
 	
-	[self.parentViewController performSelector:@selector(viewDidAppear:)];
-//	[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-//		self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, self.view.frame.size.width, self.view.frame.size.height);
-//	}completion:^(BOOL finished) {
-//		[self.view removeFromSuperview];
-//	}];
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoDismiss"]) {
+		[self.parentViewController performSelector:@selector(viewDidAppear:)];
+		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height, self.view.frame.size.width, self.view.frame.size.height);
+		}completion:^(BOOL finished) {
+			[self.view removeFromSuperview];
+		}];
+	}
+	else
+		[self.parentViewController performSelector:@selector(viewDidAppear:)];
+	[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+		[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	} completion:^(BOOL finished) {
+		[self.tableView reloadData];
+	}];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-	cell.alpha = 0.0;
-	cell.layer.transform = CATransform3DMakeScale(1.2, 1.2, 1.2);
-	[UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-		cell.alpha = 1;
-		cell.layer.transform = CATransform3DIdentity;
-	}completion:nil];
 }
 
 

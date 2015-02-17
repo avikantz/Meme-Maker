@@ -54,6 +54,11 @@
 	
 	UIColor *textColor;
 	UIColor *outlineColor;
+	
+	CGPoint topTextFrameOffset;
+	CGPoint bottomTextFrameOffset;
+	
+	BOOL moveTop;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -64,10 +69,12 @@
 	
 	shouldDisplayFontView = YES;
 	
-	[UIView animateWithDuration:0.3 animations:^{
-		_twoSidedArrow.layer.transform = CATransform3DMakeTranslation(self.twoSidedArrow.frame.origin.x, [UIScreen mainScreen].bounds.size.height, 0);
-		[self.twoSidedArrow setAlpha:0.0];
-	}completion:nil];
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoDismiss"]) {
+		[UIView animateWithDuration:0.3 animations:^{
+			_twoSidedArrow.layer.transform = CATransform3DMakeTranslation(self.twoSidedArrow.frame.origin.x, [UIScreen mainScreen].bounds.size.height, 0);
+			[self.twoSidedArrow setAlpha:0.0];
+		}completion:nil];
+	}
 	
 	textAlignment = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"TextAlignment"];
 	switch (textAlignment) {
@@ -215,7 +222,28 @@
 											   object:nil];
 	
 	
+	panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+	[panGesture setMinimumNumberOfTouches:2];
+	[self.view addGestureRecognizer:panGesture];
+	topTextFrameOffset = CGPointZero;
+	bottomTextFrameOffset = CGPointZero;
+	
+	moveTop = YES;
+
+	
     // Do any additional setup after loading the view.
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)recognizer {
+	CGPoint translation = [recognizer translationInView:self.imageView];
+	if (moveTop)
+		topTextFrameOffset = CGPointMake(topTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/60,
+										 topTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/60);
+	else
+		bottomTextFrameOffset = CGPointMake(bottomTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/60,
+											bottomTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/60);
+	[recognizer setTranslation:translation inView:self.imageView];
+	[self Cook];
 }
 
 - (void)keyboardWasShown:(NSNotification *)notification {
@@ -294,7 +322,7 @@
 										 context:nil];
 	}
 	
-	[myText.text drawInRect:myText.frame withAttributes:textAttributes];
+	[myText.text drawInRect:CGRectMake(myText.frame.origin.x + topTextFrameOffset.x, myText.frame.origin.y + topTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
 	
 	UIImage *NewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
@@ -357,7 +385,7 @@
 		myText.frame = CGRectMake(0, (image.size.height) - (expectedLabelSize.height), image.size.width, image.size.height/2);
 	}
 	
-	[myText.text drawInRect:myText.frame withAttributes:textAttributes];
+	[myText.text drawInRect:CGRectMake(myText.frame.origin.x + bottomTextFrameOffset.x, myText.frame.origin.y + bottomTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
 	
 	UIImage *NewImage = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
@@ -436,11 +464,15 @@
 - (IBAction)fontAction:(id)sender {
 	if (shouldDisplayFontView) {
 		fontTableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FontView"];
-		[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height, self.view.frame.size.width - 200, 390)];
+		else
+			[fontTableVC.view setFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 270)];
 		
 		[self addChildViewController:fontTableVC];
 		[self.view addSubview:fontTableVC.view];
 		
+		[fontTableVC.view.superview setAutoresizesSubviews:YES];
 		
 		[fontTableVC didMoveToParentViewController:self];
 		
@@ -448,11 +480,27 @@
 		[self.twoSidedArrow setAlpha:0.0];
 		
 		[UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-			[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+				[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
+			else {
+				[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+				[self.twoSidedArrow setAlpha:0.5];
+				_twoSidedArrow.layer.transform = CATransform3DIdentity;
+			}
 			fontTableVC.view.alpha = 0.5;
-			_twoSidedArrow.layer.transform = CATransform3DIdentity;
-			[self.twoSidedArrow setAlpha:0.5];
 		}completion:nil];
+		
+		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+		[[NSNotificationCenter defaultCenter] addObserverForName:UIDeviceOrientationDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+				[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
+			else
+				[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+			NSLog(@"Rotated");
+			[fontTableVC.tableView reloadData];
+			
+		}];
+		
 		shouldDisplayFontView = NO;
 	}
 }
@@ -486,6 +534,14 @@
 	return [theImage applyDarkEffect];
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	if (motion == UIEventSubtypeMotionShake) {
+		topTextFrameOffset = CGPointZero;
+		bottomTextFrameOffset = CGPointZero;
+		[self Cook];
+	}
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 	[_topField resignFirstResponder];
 	[_bottomField resignFirstResponder];
@@ -493,6 +549,18 @@
 		self.imageView.layer.transform = CATransform3DIdentity;
 		_BlackBlurredImage.alpha = 0;
 	}completion:nil];
+}
+
+- (IBAction)topOrBottom:(id)sender {
+	if (moveTop) {
+		moveTop = NO;
+		[_topOrBottomButton setImage:[UIImage imageNamed:@"BottomEdit.png"] forState:UIControlStateNormal];
+	}
+	else {
+		moveTop = YES;
+		[_topOrBottomButton setImage:[UIImage imageNamed:@"TopEdit.png"] forState:UIControlStateNormal];
+		
+	}
 }
 
 #pragma mark - PHContentEditingController

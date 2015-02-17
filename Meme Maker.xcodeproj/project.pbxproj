@@ -387,6 +387,11 @@
 		59F668191A7438480089FD23 /* You're gonna have a Bad Time.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F668091A7438480089FD23 /* You're gonna have a Bad Time.jpg */; };
 		59F6681A1A7438480089FD23 /* College Freshman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F6680A1A7438480089FD23 /* College Freshman.jpg */; };
 		59F6681B1A7438480089FD23 /* Successful Black Man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59F6680B1A7438480089FD23 /* Successful Black Man.jpg */; };
+		59FE49331A931C670020E18F /* Me Gusta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59FE49301A931C670020E18F /* Me Gusta.jpg */; };
+		59FE49341A931C670020E18F /* All the things.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59FE49311A931C670020E18F /* All the things.jpg */; };
+		59FE49351A931C670020E18F /* Stop Trying to Make xxx Happen. It's not going to happen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59FE49321A931C670020E18F /* Stop Trying to Make xxx Happen. It's not going to happen.jpg */; };
+		59FE49371A9326400020E18F /* TopEdit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE49361A9326400020E18F /* TopEdit@2x.png */; };
+		59FE49391A9326490020E18F /* BottomEdit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FE49381A9326490020E18F /* BottomEdit@2x.png */; };
 		59FE603A1A74EABB00C6F93A /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FE60391A74EABB00C6F93A /* PhotosUI.framework */; };
 		59FE603C1A74EABB00C6F93A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FE603B1A74EABB00C6F93A /* Photos.framework */; };
 		59FE60421A74EABB00C6F93A /* PhotoEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FE60411A74EABB00C6F93A /* PhotoEditingViewController.m */; };
@@ -844,6 +849,11 @@
 		59F668091A7438480089FD23 /* You're gonna have a Bad Time.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "You're gonna have a Bad Time.jpg"; sourceTree = "<group>"; };
 		59F6680A1A7438480089FD23 /* College Freshman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "College Freshman.jpg"; sourceTree = "<group>"; };
 		59F6680B1A7438480089FD23 /* Successful Black Man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Successful Black Man.jpg"; sourceTree = "<group>"; };
+		59FE49301A931C670020E18F /* Me Gusta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Me Gusta.jpg"; sourceTree = "<group>"; };
+		59FE49311A931C670020E18F /* All the things.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "All the things.jpg"; sourceTree = "<group>"; };
+		59FE49321A931C670020E18F /* Stop Trying to Make xxx Happen. It's not going to happen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Stop Trying to Make xxx Happen. It's not going to happen.jpg"; sourceTree = "<group>"; };
+		59FE49361A9326400020E18F /* TopEdit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopEdit@2x.png"; sourceTree = "<group>"; };
+		59FE49381A9326490020E18F /* BottomEdit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BottomEdit@2x.png"; sourceTree = "<group>"; };
 		59FE60381A74EABB00C6F93A /* Photo Meme.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Photo Meme.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59FE60391A74EABB00C6F93A /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		59FE603B1A74EABB00C6F93A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -1112,6 +1122,9 @@
 		599D0B701A6E935000A1EB34 /* Memes */ = {
 			isa = PBXGroup;
 			children = (
+				59FE49301A931C670020E18F /* Me Gusta.jpg */,
+				59FE49311A931C670020E18F /* All the things.jpg */,
+				59FE49321A931C670020E18F /* Stop Trying to Make xxx Happen. It's not going to happen.jpg */,
 				595BED121A913F1E00D03E9E /* I'm Going on an Adventure.jpg */,
 				595BED131A913F1E00D03E9E /* I've Never Been So Wrong In All My Life.jpg */,
 				593BB6451A8F6D7C00A74ECC /* Fly You Fools.jpg */,
@@ -1486,6 +1499,8 @@
 				59FE60541A74ECF600C6F93A /* Righteous-Regular.ttf */,
 				59FE60611A74EDB900C6F93A /* BlackBlurredmage.png */,
 				59FE60621A74EDB900C6F93A /* twoSidedArrow.png */,
+				59FE49381A9326490020E18F /* BottomEdit@2x.png */,
+				59FE49361A9326400020E18F /* TopEdit@2x.png */,
 				59FE60651A74EDD500C6F93A /* Settings@3x.png */,
 			);
 			name = "Supporting Files";
@@ -1691,6 +1706,7 @@
 				59DF1B021A76AC1400C49011 /* It's a Trap.jpg in Resources */,
 				5943A8F71A867DBC007156E6 /* Rasta Science Teacher.jpg in Resources */,
 				59E68E6D1A7596AE00D1C0C8 /* Hannibal.jpg in Resources */,
+				59FE49341A931C670020E18F /* All the things.jpg in Resources */,
 				59E68E671A7596AE00D1C0C8 /* So I Got That Goin For Me Which Is Nice.jpeg in Resources */,
 				59DF1B851A76C10300C49011 /* Surprise Mo********er.jpg in Resources */,
 				599D0B6B1A6E934700A1EB34 /* Albert Cagestein.jpeg in Resources */,
@@ -1721,6 +1737,7 @@
 				59F6681B1A7438480089FD23 /* Successful Black Man.jpg in Resources */,
 				59E68E761A7596AE00D1C0C8 /* Minions Bottom.jpg in Resources */,
 				59E68E681A7596AE00D1C0C8 /* Kim Jong Un Sad.jpeg in Resources */,
+				59FE49331A931C670020E18F /* Me Gusta.jpg in Resources */,
 				5943A8E81A867DBC007156E6 /* Annoying Childhood Friend.jpg in Resources */,
 				59E68E941A7596AE00D1C0C8 /* I Have Made a Huge Mistake.jpg in Resources */,
 				599D0B181A6E902B00A1EB34 /* Main.storyboard in Resources */,
@@ -1924,6 +1941,7 @@
 				59AE79341A77E67B00014735 /* What Year is It.jpeg in Resources */,
 				59DF1B711A76BDFA00C49011 /* The Joker.jpg in Resources */,
 				5984AE651A717DE9009B078F /* Matrix Morpheus.jpeg in Resources */,
+				59FE49351A931C670020E18F /* Stop Trying to Make xxx Happen. It's not going to happen.jpg in Resources */,
 				593D39791A8D1FB900C36250 /* Jesus Facepalm.jpg in Resources */,
 				59E68E7F1A7596AE00D1C0C8 /* 10 Peeking.jpg in Resources */,
 				59E68E6E1A7596AE00D1C0C8 /* Advice Doge.jpeg in Resources */,
@@ -1975,6 +1993,7 @@
 				59FE605D1A74ECF600C6F93A /* Righteous-Regular.ttf in Resources */,
 				59FE605C1A74ECF600C6F93A /* LeagueGothic-Regular.otf in Resources */,
 				59FE605B1A74ECF600C6F93A /* LeagueGothic-Italic.otf in Resources */,
+				59FE49371A9326400020E18F /* TopEdit@2x.png in Resources */,
 				59FE60581A74ECF600C6F93A /* Dead Kansas.ttf in Resources */,
 				59FE60591A74ECF600C6F93A /* EtelkaNarrowTextPro.otf in Resources */,
 				59FE60551A74ECF600C6F93A /* AbadiMTBold.ttf in Resources */,
@@ -1983,6 +2002,7 @@
 				597971421A8E4DAC008D014A /* StencilStd.otf in Resources */,
 				597971411A8E4DAC008D014A /* PoplarStd.otf in Resources */,
 				59FE605A1A74ECF600C6F93A /* Impact.ttf in Resources */,
+				59FE49391A9326490020E18F /* BottomEdit@2x.png in Resources */,
 				59FE60661A74EDD500C6F93A /* Settings@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

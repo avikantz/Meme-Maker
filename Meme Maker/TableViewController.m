@@ -430,6 +430,11 @@
 	return YES;
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+	[self.searchDisplayController setActive:NO];
+	self.tableView.tableHeaderView = searchBar;
+}
+
 #pragma mark - Table view data source
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -666,8 +671,9 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-		return NO;
+	if ([identifier isEqualToString:@"toDetail"])
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+			return NO;
 	return YES;
 }
 
@@ -692,6 +698,7 @@
 }
 
 - (IBAction)SearchAction:(id)sender {
+	self.tableView.tableHeaderView = self.searchDisplayController.searchBar;
 	[self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
@@ -705,13 +712,10 @@
 	[pick.navigationItem setLeftBarButtonItem:_cameraButton];
 	[pick.navigationItem setTitle:@"Choose Image"];
 	pick.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-	
-	UIView *targetView = (UIView *)[_photoGalleryButton performSelector:@selector(view)];
-	CGRect rect = targetView.frame;
-	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:pick];
-		[popup presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+		[popup presentPopoverFromBarButtonItem:_photoGalleryButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//		[popup presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 	}
 	else
 		[self presentViewController:pick animated:YES completion:NULL];

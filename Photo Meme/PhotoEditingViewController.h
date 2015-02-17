@@ -30,4 +30,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *BlackBlurredImage;
 
+- (IBAction)topOrBottom:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *topOrBottomButton;
+
 @end

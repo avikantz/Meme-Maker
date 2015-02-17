@@ -235,14 +235,16 @@
 	imagex = self.imageView.image;
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		[UIView animateWithDuration:0.20 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			_backgroundImage.alpha = 0;
+			_imageView.alpha = 0.8;
 		} completion:^(BOOL finished) {
-			[UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+			[UIView animateWithDuration:0.20 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 				_backgroundImage.alpha = 1;
+				_imageView.alpha = 1;
 			} completion:nil];
 		}];
-		_backgroundImage.frame = CGRectMake(0, 0, self.view.frame.size.width - 16, self.view.frame.size.height - 16);
+		_backgroundImage.frame = CGRectMake(-16, -16, self.view.frame.size.width + 32, self.view.frame.size.height + 32);
 		_topOrBottomButtonPad.hidden = NO;
 		_shareButtonPad.hidden = NO;
 	}
@@ -326,10 +328,8 @@
 	
 	pinchImage = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWasShown:)
-												 name:UIKeyboardDidShowNotification
-											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasHidden:) name:UIKeyboardDidHideNotification object:nil];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 		self.topField.alpha = 0;
@@ -394,6 +394,10 @@
 	keyboardHeight = rect.size.height;
 }
 
+- (void)keyboardWasHidden:(NSNotification *)notification {
+	keyboardHeight = 0;
+}
+
 -(void)swipeTextView :(UISwipeGestureRecognizer *)gesture {
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_topField text]] forKey:@"lastEditedTopText"];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_bottomField text]] forKey:@"lastEditedBottomText"];
@@ -419,7 +423,8 @@
 	UIImageWriteToSavedPhotosAlbum(_imageView.image, nil, nil, nil);
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Saved!" message:@"The Image has successfully been saved to the Camera Roll." delegate:self cancelButtonTitle:@"Awwwww Yeah!" otherButtonTitles:nil, nil];
 	[alert show];
-	AudioServicesPlaySystemSound (1006);
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"PlaySounds"])
+		AudioServicesPlaySystemSound (1006);
 }
 
 #pragma mark - Cooking Methods
@@ -626,7 +631,8 @@
 	}
 	else if (textField == _bottomField){
 		[_bottomField resignFirstResponder];
-		AudioServicesPlaySystemSound (1113);
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"PlaySounds"])
+			AudioServicesPlaySystemSound (1113);
 		[self makeMemeWithTopText:[[_topField text] uppercaseString] andBottomText:[[_bottomField text] uppercaseString]];
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_topField text]] forKey:@"lastEditedTopText"];
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_bottomField text]] forKey:@"lastEditedBottomText"];
@@ -647,8 +653,9 @@
 		imgheight = self.imageView.frame.size.height;
 	if (textField == self.bottomField) {
 		[UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-			self.imageView.layer.transform = CATransform3DMakeTranslation(0, 50 - (imgheight - self.imageView.frame.size.height)/2 - keyboardHeight, 0);
-			_BlackBlurredImage.alpha = 0.8;
+			if (keyboardHeight != 0)
+				self.imageView.layer.transform = CATransform3DMakeTranslation(0, 50 - (imgheight - self.imageView.frame.size.height)/2 - keyboardHeight, 0);
+			_BlackBlurredImage.alpha = 1.0;
 		}completion:nil];
 		
 	}
