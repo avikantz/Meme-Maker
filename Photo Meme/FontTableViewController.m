@@ -42,6 +42,8 @@
 				@"AppleSDGothicNeo-SemiBold",
 				@"Futura-CondensedExtraBold",
 				@"AvenirNext-Bold",
+				@"AvenirCondensedHand",
+				@"Arabella",
 				@"Copperplate",
 				@"GillSans-Bold",
 				@"Kailasa-Bold",
@@ -54,9 +56,26 @@
 				@"LeagueGothic-Italic",
 				@"MarkerFelt-Wide",
 				@"Menlo-Bold",
+				@"EtelkaNarrowTextPro",
 				@"LithosPro-Black",
 				@"PoplarStd",
 				@"StencilStd",
+				@"Darkwoman",
+				@"angelina",
+				@"TrashHand",
+				@"JennaSue",
+				@"HoneyScript-Light",
+				@"Skipping_Stones",
+				@"daniel",
+				@"TobagoPoster",
+				@"Subway-Black",
+				@"RollingNoOne-ExtraBold",
+				@"MarketingScript",
+				@"Artbrush",
+				@"Bolina",
+				@"LouisaCP",
+				@"Prisma",
+				@"Karate",
 				nil];
 	
 	fontNames = [[NSMutableArray alloc] initWithObjects:
@@ -64,6 +83,8 @@
 				 @"Apple Gothic",
 				 @"Futura",
 				 @"Avenir Next",
+				 @"Avenir Next - Hand",
+				 @"Arabella",
 				 @"Copperplate",
 				 @"Gill Sans",
 				 @"Kailasa",
@@ -76,9 +97,26 @@
 				 @"League Gothic Italic",
 				 @"Marker Felt",
 				 @"Menlo",
+				 @"Etelka Narrow Text",
 				 @"Lithos Pro",
 				 @"Poplar",
 				 @"Stencil",
+				 @"Darkwoman",
+				 @"Angelina",
+				 @"Trashand",
+				 @"Jenna Sue",
+				 @"Honey Script",
+				 @"Skipping Stones",
+				 @"Daniel",
+				 @"Tobago Poster",
+				 @"Subway",
+				 @"Rolling No One",
+				 @"Marketing Script",
+				 @"Art Brush",
+				 @"Bolina",
+				 @"Louisa CP",
+				 @"Prisma",
+				 @"Karate",
 				 nil];
 	
 	alignmentNames = [[NSMutableArray alloc] initWithObjects:
@@ -492,6 +530,46 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (table == 1) {
 		[[NSUserDefaults standardUserDefaults] setObject:[fontBook objectAtIndex:indexPath.row] forKey:@"FontName"];
+		if ([[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Avenir Next - Hand"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Etelka Narrow Text"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Darkwoman"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Angelina"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Trashand"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Jenna Sue"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Honey Script"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Skipping Stones"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Marketing Script"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Arabella"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Daniel"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Marketing Script"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Bolina"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Louisa CP"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Prisma"])
+			[[NSUserDefaults standardUserDefaults] setObject:@"No Outline" forKey:@"OutlineColor"];
+		
+		if ([[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Avenir Next"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Futura"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Kaliasa"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Helvectica Neue"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Poplar"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Rolling No One"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Art Brush"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Tobago Poster"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Subway"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Gill Sans"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Marker Felt"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Lithos Pro"] ||
+			[[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Karate"])
+			[[NSUserDefaults standardUserDefaults] setObject:@"Black (Default)" forKey:@"OutlineColor"];
+		
+		if ([[fontNames objectAtIndex:indexPath.row] isEqualToString:@"Default"]) {
+			[[NSUserDefaults standardUserDefaults] setFloat:40.0f forKey:@"RelativeFontScale"];
+			[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TextAlignment"];
+			[[NSUserDefaults standardUserDefaults] setObject:@"Impact" forKey:@"FontName"];
+			[[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"StrokeWidth"];
+			[[NSUserDefaults standardUserDefaults] setObject:@"Black (default)" forKey:@"OutlineColor"];
+			[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
+		}
 	}
 	
 	else if (table == 2) {
@@ -541,15 +619,15 @@
 	else if (table == 6) {
 		NSString *title= [relativeFontSizeNames objectAtIndex:indexPath.row];
 		if ([title isEqualToString:@"Extra Large"])
-			[[NSUserDefaults standardUserDefaults] setFloat:96.0f forKey:@"RelativeFontScale"];
+			[[NSUserDefaults standardUserDefaults] setFloat:56.0f forKey:@"RelativeFontScale"];
 		else if ([title isEqualToString:@"Large"])
-			[[NSUserDefaults standardUserDefaults] setFloat:80.0f forKey:@"RelativeFontScale"];
-		else if ([title isEqualToString:@"Medium (Default)"])
-			[[NSUserDefaults standardUserDefaults] setFloat:64.0f forKey:@"RelativeFontScale"];
-		else if ([title isEqualToString:@"Small"])
 			[[NSUserDefaults standardUserDefaults] setFloat:48.0f forKey:@"RelativeFontScale"];
+		else if ([title isEqualToString:@"Medium (Default)"])
+			[[NSUserDefaults standardUserDefaults] setFloat:40.0f forKey:@"RelativeFontScale"];
+		else if ([title isEqualToString:@"Small"])
+			[[NSUserDefaults standardUserDefaults] setFloat:32.0f forKey:@"RelativeFontScale"];
 		else if ([title isEqualToString:@"Extra Small"])
-			[[NSUserDefaults standardUserDefaults] setFloat:36.0f forKey:@"RelativeFontScale"];
+			[[NSUserDefaults standardUserDefaults] setFloat:24.0f forKey:@"RelativeFontScale"];
 	}
 	
 	else {

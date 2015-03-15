@@ -37,6 +37,7 @@
 	UISwipeGestureRecognizer *swipeFromTop;
 	
 	UIPanGestureRecognizer *panGesture;
+	UIPanGestureRecognizer *oppanGesture;
 	
 	UIPinchGestureRecognizer *pinchImage;
 	
@@ -48,6 +49,9 @@
 	
 	float strokeWidth;
 	
+	float topopacity;
+	float bottomopacity;
+	
 	UIFont *cookingFont;
 	
 	UIColor *textColor;
@@ -58,10 +62,16 @@
 	UISwipeGestureRecognizer *swipeTextView;
 	UISwipeGestureRecognizer *swipeTextView2;
 	
+	UISwipeGestureRecognizer *leftSwipeImage;
+	UISwipeGestureRecognizer *rightSwipeImage;
+	
 	CGPoint topTextFrameOffset;
 	CGPoint bottomTextFrameOffset;
 	
 	BOOL moveTop;
+	
+	UITapGestureRecognizer *doubleTap;
+	BOOL willBeUppercase;
 	
 //	GADBannerView *bannerView;
 }
@@ -91,8 +101,6 @@
 		[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
 		[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
 	}
-	
-	shouldDisplayFontView = YES;
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoDismiss"]) {
 		[UIView animateWithDuration:0.3 animations:^{
@@ -130,43 +138,43 @@
 	
 	NSString *textColorName = [[NSUserDefaults standardUserDefaults] objectForKey:@"TextColor"];
 	if ([textColorName isEqualToString:@"White (default)"])
-		textColor = [UIColor whiteColor];
+		textColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	else if ([textColorName isEqualToString:@"Black"])
-		textColor = [UIColor blackColor];
+		textColor = [self getColorWithOpacity:[UIColor blackColor]];
 	else if ([textColorName isEqualToString:@"Yellow"])
-		textColor = [UIColor yellowColor];
+		textColor = [self getColorWithOpacity:[UIColor yellowColor]];
 	else if ([textColorName isEqualToString:@"Green"])
-		textColor = [UIColor greenColor];
+		textColor = [self getColorWithOpacity:[UIColor greenColor]];
 	else if ([textColorName isEqualToString:@"Cyan"])
-		textColor = [UIColor cyanColor];
+		textColor = [self getColorWithOpacity:[UIColor cyanColor]];
 	else if ([textColorName isEqualToString:@"Purple"])
-		textColor = [UIColor purpleColor];
+		textColor = [self getColorWithOpacity:[UIColor purpleColor]];
 	else if ([textColorName isEqualToString:@"Magenta"])
-		textColor = [UIColor magentaColor];
+		textColor = [self getColorWithOpacity:[UIColor magentaColor]];
 	else if ([textColorName isEqualToString:@"Clear Color"])
 		textColor = [UIColor clearColor];
 	else
-		textColor = [UIColor whiteColor];
+		textColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	
 	NSString *outlineColorName = [[NSUserDefaults standardUserDefaults] objectForKey:@"OutlineColor"];
 	if ([outlineColorName isEqualToString:@"Black (default)"])
-		outlineColor = [UIColor blackColor];
+		outlineColor = [self getColorWithOpacity:[UIColor blackColor]];
 	else if ([outlineColorName isEqualToString:@"White"])
-		outlineColor = [UIColor whiteColor];
+		outlineColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	else if ([outlineColorName isEqualToString:@"Yellow"])
-		outlineColor = [UIColor yellowColor];
+		outlineColor = [self getColorWithOpacity:[UIColor yellowColor]];
 	else if ([outlineColorName isEqualToString:@"Green"])
-		outlineColor = [UIColor greenColor];
+		outlineColor = [self getColorWithOpacity:[UIColor greenColor]];
 	else if ([outlineColorName isEqualToString:@"Brown"])
-		outlineColor = [UIColor brownColor];
+		outlineColor = [self getColorWithOpacity:[UIColor brownColor]];
 	else if ([outlineColorName isEqualToString:@"Purple"])
-		outlineColor = [UIColor purpleColor];
+		outlineColor = [self getColorWithOpacity:[UIColor purpleColor]];
 	else if ([outlineColorName isEqualToString:@"Magenta"])
-		outlineColor = [UIColor magentaColor];
+		outlineColor = [self getColorWithOpacity:[UIColor magentaColor]];
 	else if ([outlineColorName isEqualToString:@"No Outline"])
 		outlineColor = [UIColor clearColor];
 	else
-		outlineColor = [UIColor blackColor];
+		outlineColor = [self getColorWithOpacity:[UIColor blackColor]];
 	
 	[self.view addGestureRecognizer:pinchImage];
 	[self Cook];
@@ -176,6 +184,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	shouldDisplayFontView = YES;
+	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ResetSettingsOnLaunch"]) {
 		[[NSUserDefaults standardUserDefaults] setFloat:64.0f forKey:@"RelativeFontScale"];
 		[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TextAlignment"];
@@ -183,6 +193,7 @@
 		[[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"StrokeWidth"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"Black (default)" forKey:@"OutlineColor"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
+		[[NSUserDefaults standardUserDefaults] setFloat:1.0f forKey:@"TextOpacity"];
 	}
 	
 	[_topField setPlaceholder:@"TOP TEXT"];
@@ -197,40 +208,95 @@
 		self.backgroundImage.image = [self blur:self.imageView.image];
 		[_topField setText: @""];
 		[_bottomField setText: @""];
-		[_topField setPlaceholder:@"<--- Pick an Image"];
-		[_bottomField setPlaceholder:@"<--- Pick an Image"];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			[_topField setPlaceholder:@"<--- Pick an Image"];
+			[_bottomField setPlaceholder:@"<--- Pick an Image"];
+		}
 		
-		NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"];
-		if ([NSData dataWithContentsOfFile:imagePath]) {
-			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
-			self.navigationItem.title = [NSString stringWithFormat:@"Custom Image"];
+		if ([NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]) {
+			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]];
 			self.backgroundImage.image = [self blur:self.imageView.image];
 			self.navigationItem.title = @"Last Edit";
-			[_topField setPlaceholder:@""];
-			[_bottomField setPlaceholder:@""];
 			[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
 			[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+			//		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
+			//			[_topField setText: @""];
+			//			[_bottomField setText: @""];
+			//			[_topField setPlaceholder:@"Top Text"];
+			//			[_bottomField setPlaceholder:@"Bottom Text"];
+			//			self.navigationItem.title = @"Custom Image";
+			//		}
 		}
-	}
-	else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
-		NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"ImagePath"];
-		if (imagePath)
-			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
-		self.navigationItem.title = [NSString stringWithFormat:@"Custom Image"];
-		self.backgroundImage.image = [self blur:self.imageView.image];
-	}
-	else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LoadingLastEdit"]) {
-		self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]];
-		self.backgroundImage.image = [self blur:self.imageView.image];
-		self.navigationItem.title = @"Last Edit";
-		[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
-		[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
+			NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"ImagePath"];
+			if ([NSData dataWithContentsOfFile:imagePath]) {
+				self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+				self.navigationItem.title = [NSString stringWithFormat:@"Custom Image"];
+				self.backgroundImage.image = [self blur:self.imageView.image];
+			}
+			else {
+				self.navigationItem.title = [NSString stringWithFormat:@"Pick an Image..."];
+				self.imageView.image = [UIImage imageNamed:@"Meme Colored Background.jpg"];
+				self.backgroundImage.image = [self blur:self.imageView.image];
+			}
+			[_topField setText: @""];
+			[_bottomField setText: @""];
+			[_topField setPlaceholder:@"Top Text"];
+			[_bottomField setPlaceholder:@"Bottom Text"];
+			//		if ([NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]) {
+			//			[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
+			//			[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+			//		}
+		}
+		
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+			
+		}
 	}
 	else {
 		self.navigationItem.title = [NSString stringWithFormat:@"%@", self.meme.Name];
 		self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.meme.Image]];
 		self.backgroundImage.image = [self blur:self.imageView.image];
+		
+		if ([NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]) {
+			self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]];
+			self.backgroundImage.image = [self blur:self.imageView.image];
+			self.navigationItem.title = @"Last Edit";
+			[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
+			[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+			//		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
+			//			[_topField setText: @""];
+			//			[_bottomField setText: @""];
+			//			[_topField setPlaceholder:@"Top Text"];
+			//			[_bottomField setPlaceholder:@"Bottom Text"];
+			//			self.navigationItem.title = @"Custom Image";
+			//		}
+		}
+		if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
+			NSString *imagePath = [[NSUserDefaults standardUserDefaults] objectForKey:@"ImagePath"];
+			if ([NSData dataWithContentsOfFile:imagePath]) {
+				self.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
+				self.navigationItem.title = [NSString stringWithFormat:@"Custom Image"];
+				self.backgroundImage.image = [self blur:self.imageView.image];
+			}
+			else {
+				self.navigationItem.title = [NSString stringWithFormat:@"Pick an Image..."];
+				self.imageView.image = [UIImage imageNamed:@"Meme Colored Background.jpg"];
+				self.backgroundImage.image = [self blur:self.imageView.image];
+			}
+			[_topField setText: @""];
+			[_bottomField setText: @""];
+			[_topField setPlaceholder:@"Top Text"];
+			[_bottomField setPlaceholder:@"Bottom Text"];
+			//		if ([NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]) {
+			//			[_topField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedTopText"]];
+			//			[_bottomField setText: [[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedBottomText"]];
+			//		}
+		}
 	}
+	
+	if (self.meme.Name)
+		self.navigationItem.title = self.meme.Name;
 	
 	imagex = self.imageView.image;
 	
@@ -304,7 +370,8 @@
 	
 	keyboardHeight = 216.0f;
 	
-//	[self.view addGestureRecognizer:tapImage];
+	topopacity = 1.0f;
+	bottomopacity = 1.0f;
 	
 	[self.twoSidedArrow setAlpha:0.0];
 	
@@ -328,8 +395,7 @@
 	
 	pinchImage = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchImage:)];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardDidShowNotification object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasHidden:) name:UIKeyboardDidHideNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
 	
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 		self.topField.alpha = 0;
@@ -350,7 +416,48 @@
 	topTextFrameOffset = CGPointZero;
 	bottomTextFrameOffset = CGPointZero;
 	
+	oppanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(updateOpacity:)];
+	[oppanGesture setMinimumNumberOfTouches:1];
+	[self.opacityLines addGestureRecognizer:oppanGesture];
+	
 	moveTop = YES;
+	
+	leftSwipeImage = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeImage:)];
+	[leftSwipeImage setNumberOfTouchesRequired:1];
+	[leftSwipeImage setDirection:UISwipeGestureRecognizerDirectionLeft];
+	[self.view addGestureRecognizer:leftSwipeImage];
+	
+	rightSwipeImage = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeImage:)];
+	[rightSwipeImage setNumberOfTouchesRequired:1];
+	[rightSwipeImage setDirection:UISwipeGestureRecognizerDirectionRight];
+	[self.view addGestureRecognizer:rightSwipeImage];
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidEnterBackgroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_topField text]] forKey:@"lastEditedTopText"];
+		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_bottomField text]] forKey:@"lastEditedBottomText"];
+	}];
+	
+	doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTappedView:)];
+	[doubleTap setNumberOfTouchesRequired:1];
+	[doubleTap setNumberOfTapsRequired:2];
+	[self.view addGestureRecognizer:doubleTap];
+	
+	willBeUppercase = YES;
+	
+	_opacityLines.transform = CGAffineTransformMakeTranslation(120, 0);
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillEnterForegroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+		[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+													  forBarMetrics:UIBarMetricsDefault];
+		self.navigationController.navigationBar.shadowImage = [UIImage new];
+		self.navigationController.navigationBar.translucent = YES;
+		self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+		self.navigationController.view.backgroundColor = [UIColor clearColor];
+		self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor],
+																		NSFontAttributeName : [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:18.0f]};
+		self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
+	}];
 	
 	/*
 	bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait origin:CGPointMake(0, self.view.frame.size.height - 50)];
@@ -366,6 +473,54 @@
 	[self.view addSubview:bannerView];
 	*/
 	
+}
+
+-(void)leftSwipeImage: (UISwipeGestureRecognizer *)recognizer {
+	[UIView animateWithDuration:0.15 animations:^{
+		_opacityLines.transform = CGAffineTransformIdentity;
+	}];
+}
+
+-(void)rightSwipeImage: (UISwipeGestureRecognizer *)recognizer {
+	[UIView animateWithDuration:0.15 animations:^{
+		_opacityLines.transform = CGAffineTransformMakeTranslation(120, 0);
+	}];
+}
+
+- (UIColor*)getColorWithOpacity:(UIColor *)color {
+	if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"TextColor"] isEqualToString:@"Clear Color"])
+		return color;
+	
+	if (moveTop)
+		return [color colorWithAlphaComponent:topopacity];
+	
+	else
+		return [color colorWithAlphaComponent:bottomopacity];
+}
+
+-(void)updateOpacity:(UIPanGestureRecognizer *)recognizer {
+	float h = recognizer.view.frame.size.height;
+	CGPoint pt = [recognizer locationInView:recognizer.view];
+	float p = h - pt.y;
+	if (moveTop) {
+		bottomopacity = 1;
+		topopacity = sqrtf(p/h);
+	}
+	else {
+		topopacity = 1;
+		bottomopacity = sqrt(p/h);
+	}
+	[self Cook];
+}
+
+-(void)doubleTappedView: (UITapGestureRecognizer *)recognizer {
+	if (CGRectContainsRect(recognizer.view.frame, _imageView.frame)) {
+		if (willBeUppercase)
+			willBeUppercase = NO;
+		else
+			willBeUppercase = YES;
+	}
+	[self Cook];
 }
 
 -(void)selectedMeme:(MemeObject *)meme {
@@ -395,20 +550,26 @@
 }
 
 - (void)keyboardWasHidden:(NSNotification *)notification {
-	keyboardHeight = 0;
+//	keyboardHeight = 0;
 }
 
 -(void)swipeTextView :(UISwipeGestureRecognizer *)gesture {
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_topField text]] forKey:@"lastEditedTopText"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_bottomField text]] forKey:@"lastEditedBottomText"];
 	if (gesture.view == self.topField) {
-		if (self.meme.Name)
-			[self.topField setText:self.meme.Name];
+		if (self.meme.topText)
+			[self.topField setText:self.meme.topText];
+		else
+			if (self.meme.Name)
+				[self.topField setText:self.meme.Name];
 	}
 	else if (gesture.view == self.bottomField) {
-		if (self.meme.Name)
-			[self.bottomField setText:self.meme.Name];
+		if (self.meme.bottomText)
+			[self.bottomField setText:self.meme.bottomText];
+		else
+			if (self.meme.Name)
+				[self.bottomField setText:self.meme.Name];
 	}
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_topField text]] forKey:@"lastEditedTopText"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@", [_bottomField text]] forKey:@"lastEditedBottomText"];
 	[self Cook];
 }
 
@@ -445,25 +606,23 @@
 
 - (void)Cook {
 	[self.view endEditing:YES];
-//	_imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", _meme.Image]];
-//	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LibCamPickUp"]) {
-//		_imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"ImagePath"]]];
-//	}
-//	else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"LoadingLastEdit"]) {
-//		_imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]];
-//	}
-	
 	_imageView.image = imagex;
 	
-	_imageView.image = [self drawTextTop:[_topField.text uppercaseString]
-												 inImage:_imageView.image
-												 atPoint:CGPointMake(20, 0)];
-	_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
-													inImage:_imageView.image
-													atPoint:CGPointMake(20, 220)];
-	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithString:_topField.text] forKey:@"lastEditTopText"];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithString:_bottomField.text] forKey:@"lastEditBottomText"];
+	NSString *topText, *bottomText;
+	if (willBeUppercase) {
+		topText = [_topField.text uppercaseString];
+		bottomText = [_bottomField.text uppercaseString];
+	}
+	else {
+		topText = [_topField text];
+		bottomText = [_bottomField text];
+	}
+	_imageView.image = [self drawTextTop:topText
+								 inImage:_imageView.image
+								 atPoint:CGPointMake(20, 0)];
+	_imageView.image = [self drawTextBottom:bottomText
+									inImage:_imageView.image
+									atPoint:CGPointMake(20, 220)];
 }
 
 -(UIImage*) drawTextTop:(NSString*) text inImage:(UIImage*)image atPoint:(CGPoint)   point{
@@ -482,11 +641,11 @@
 
 	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:topfontsize];
 	myText.font = cookingFont;
-	myText.textColor = textColor;
+	myText.textColor = [self getColorWithOpacity:textColor];
 	myText.textAlignment = align;
 	myText.text = [NSString stringWithString:text];
 	
-	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : textColor,
+	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 									 NSFontAttributeName: cookingFont,
 									 NSShadowAttributeName: shadow,
 									 NSParagraphStyleAttributeName: paragraphStyle,
@@ -507,7 +666,7 @@
 		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:topfontsize];
 		[myText setFont:cookingFont];
 		myText.text = [NSString stringWithString:text];
-		textAttributes = @{NSForegroundColorAttributeName : textColor,
+		textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 						   NSFontAttributeName: cookingFont,
 						   NSShadowAttributeName: shadow,
 						   NSParagraphStyleAttributeName: paragraphStyle,
@@ -542,11 +701,11 @@
 	
 	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:bottomfontsize];
 	myText.font = cookingFont;
-	myText.textColor = textColor;
+	myText.textColor = [self getColorWithOpacity:textColor];
 	myText.textAlignment = align;
 	myText.text = [NSString stringWithString:text];
 	
-	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : textColor,
+	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 									 NSFontAttributeName: cookingFont,
 									 NSShadowAttributeName: shadow,
 									 NSParagraphStyleAttributeName: paragraphStyle,
@@ -568,7 +727,7 @@
 		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:bottomfontsize];
 		[myText setFont:cookingFont];
 		myText.text = [NSString stringWithString:text];
-		textAttributes = @{NSForegroundColorAttributeName : textColor,
+		textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 						   NSFontAttributeName: cookingFont,
 						   NSShadowAttributeName: shadow,
 						   NSParagraphStyleAttributeName: paragraphStyle,
@@ -657,7 +816,6 @@
 				self.imageView.layer.transform = CATransform3DMakeTranslation(0, 50 - (imgheight - self.imageView.frame.size.height)/2 - keyboardHeight, 0);
 			_BlackBlurredImage.alpha = 1.0;
 		}completion:nil];
-		
 	}
 }
 
@@ -671,17 +829,29 @@
 - (IBAction)textFieldTextChanged:(id)sender {
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ContinuousEditing"]) {
 		_imageView.image = imagex;
-		_imageView.image = [self drawTextTop:[_topField.text uppercaseString]
+		
+		NSString *topText, *bottomText;
+		if (willBeUppercase) {
+			topText = [_topField.text uppercaseString];
+			bottomText = [_bottomField.text uppercaseString];
+		}
+		else {
+			topText = [_topField text];
+			bottomText = [_bottomField text];
+		}
+		_imageView.image = [self drawTextTop:topText
 									 inImage:_imageView.image
 									 atPoint:CGPointMake(20, 0)];
-		_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
+		_imageView.image = [self drawTextBottom:bottomText
 										inImage:_imageView.image
 										atPoint:CGPointMake(20, 220)];
 	}
 }
 
 - (IBAction)fontAction:(id)sender {
+	
 	if (shouldDisplayFontView) {
+		shouldDisplayFontView = NO;
 		fontTableVC = [self.storyboard instantiateViewControllerWithIdentifier:@"FontView"];
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 			[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height, self.view.frame.size.width - 200, 390)];
@@ -719,8 +889,6 @@
 			[fontTableVC.tableView reloadData];
 			
 		}];
-		
-		shouldDisplayFontView = NO;
 	}
 }
 

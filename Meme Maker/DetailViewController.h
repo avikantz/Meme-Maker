@@ -43,5 +43,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *topOrBottomButtonPad;
 @property (weak, nonatomic) IBOutlet UIButton *shareButtonPad;
 
+@property (weak, nonatomic) IBOutlet UIImageView *opacityLines;
 
 @end

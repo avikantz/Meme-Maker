@@ -68,8 +68,10 @@
 	
 	for (int i = 0; i < [ArrayOfMemeObjects count]; ++i) {
 		MemeObject *meme = [[MemeObject alloc] initWithName:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Name"]] image:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Image"]] tags:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Tags"]] url:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"URL"]]];
-		meme.topText = @"";
-		meme.bottomText = @"";
+		if ([[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"topText"])
+			meme.topText = [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"topText"];
+		if ([[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"bottomText"])
+			meme.bottomText = [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"bottomText"];
 		[AllMemes addObject:meme];
 	}
 	
@@ -122,11 +124,6 @@
 	return UIEdgeInsetsMake(0.0, 2.0, 0.0, 5.0);
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 	return [AllMemes count];
 }
@@ -138,11 +135,9 @@
 	meme = [AllMemes objectAtIndex:indexPath.row];
 	
 	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
-	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
-	NSString *imageKey = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"I%@", meme.Image]];
 	
 	UIImage *image;
-	if (imageKey)
+	if ([NSData dataWithContentsOfFile:imagePath])
 		image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
 	else
 		image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", meme.Image]];

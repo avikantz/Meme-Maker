@@ -64,7 +64,11 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <IDERemoteRunnable
+         RemotePath = "/Applications/MobileSlideShow.app"
+         BundleIdentifier = "/Applications/MobileSlideShow.app">
+      </IDERemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "599D0B081A6E902B00A1EB34"
@@ -72,7 +76,7 @@
             BlueprintName = "Meme Maker"
             ReferencedContainer = "container:Meme Maker.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

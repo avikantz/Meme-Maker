@@ -10,8 +10,5 @@
 
 @class MemeObject;
 @protocol MemeProtocol <NSObject>
-
 -(void)selectedMeme:(MemeObject*)meme;
-
-
 @end

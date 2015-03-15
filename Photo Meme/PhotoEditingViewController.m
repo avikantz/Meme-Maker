@@ -42,11 +42,19 @@
 	UIPinchGestureRecognizer *pinchImage;
 	
 	UIPanGestureRecognizer *panGesture;
+	UIPanGestureRecognizer *oppanGesture;
+	
+	UITapGestureRecognizer *doubleTap;
+	BOOL willBeUppercase;
 	
 	int textAlignment;
 	NSTextAlignment align;
 	
-	float fontsize;
+	float topfontsize;
+	float bottomfontsize;
+	
+	float topopacity;
+	float bottomopacity;
 	
 	float strokeWidth;
 	
@@ -57,6 +65,9 @@
 	
 	CGPoint topTextFrameOffset;
 	CGPoint bottomTextFrameOffset;
+	
+	UISwipeGestureRecognizer *leftSwipeImage;
+	UISwipeGestureRecognizer *rightSwipeImage;
 	
 	BOOL moveTop;
 }
@@ -95,53 +106,53 @@
 			break;
 	}
 	
-	fontsize = 1.5*[[NSUserDefaults standardUserDefaults] floatForKey:@"RelativeFontScale"];
+	topfontsize = 0.8*[[NSUserDefaults standardUserDefaults] floatForKey:@"RelativeFontScale"];
+	bottomfontsize = 0.8*[[NSUserDefaults standardUserDefaults] floatForKey:@"RelativeFontScale"];
 	
 	strokeWidth = -(int)[[NSUserDefaults standardUserDefaults] integerForKey:@"StrokeWidth"];
 	
 	cookingFont = [[UIFont alloc] init];
-	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"] size:fontsize];
+	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"] size:topfontsize];
 	
 	NSString *textColorName = [[NSUserDefaults standardUserDefaults] objectForKey:@"TextColor"];
 	if ([textColorName isEqualToString:@"White (default)"])
-		textColor = [UIColor whiteColor];
+		textColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	else if ([textColorName isEqualToString:@"Black"])
-		textColor = [UIColor blackColor];
+		textColor = [self getColorWithOpacity:[UIColor blackColor]];
 	else if ([textColorName isEqualToString:@"Yellow"])
-		textColor = [UIColor yellowColor];
+		textColor = [self getColorWithOpacity:[UIColor yellowColor]];
 	else if ([textColorName isEqualToString:@"Green"])
-		textColor = [UIColor greenColor];
+		textColor = [self getColorWithOpacity:[UIColor greenColor]];
 	else if ([textColorName isEqualToString:@"Cyan"])
-		textColor = [UIColor cyanColor];
+		textColor = [self getColorWithOpacity:[UIColor cyanColor]];
 	else if ([textColorName isEqualToString:@"Purple"])
-		textColor = [UIColor purpleColor];
+		textColor = [self getColorWithOpacity:[UIColor purpleColor]];
 	else if ([textColorName isEqualToString:@"Magenta"])
-		textColor = [UIColor magentaColor];
+		textColor = [self getColorWithOpacity:[UIColor magentaColor]];
 	else if ([textColorName isEqualToString:@"Clear Color"])
 		textColor = [UIColor clearColor];
 	else
-		textColor = [UIColor whiteColor];
+		textColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	
 	NSString *outlineColorName = [[NSUserDefaults standardUserDefaults] objectForKey:@"OutlineColor"];
 	if ([outlineColorName isEqualToString:@"Black (default)"])
-		outlineColor = [UIColor blackColor];
+		outlineColor = [self getColorWithOpacity:[UIColor blackColor]];
 	else if ([outlineColorName isEqualToString:@"White"])
-		outlineColor = [UIColor whiteColor];
+		outlineColor = [self getColorWithOpacity:[UIColor whiteColor]];
 	else if ([outlineColorName isEqualToString:@"Yellow"])
-		outlineColor = [UIColor yellowColor];
+		outlineColor = [self getColorWithOpacity:[UIColor yellowColor]];
 	else if ([outlineColorName isEqualToString:@"Green"])
-		outlineColor = [UIColor greenColor];
-	else if ([outlineColorName isEqualToString:@"Cyan"])
-		outlineColor = [UIColor cyanColor];
+		outlineColor = [self getColorWithOpacity:[UIColor greenColor]];
+	else if ([outlineColorName isEqualToString:@"Brown"])
+		outlineColor = [self getColorWithOpacity:[UIColor brownColor]];
 	else if ([outlineColorName isEqualToString:@"Purple"])
-		outlineColor = [UIColor purpleColor];
+		outlineColor = [self getColorWithOpacity:[UIColor purpleColor]];
 	else if ([outlineColorName isEqualToString:@"Magenta"])
-		outlineColor = [UIColor magentaColor];
+		outlineColor = [self getColorWithOpacity:[UIColor magentaColor]];
 	else if ([outlineColorName isEqualToString:@"No Outline"])
 		outlineColor = [UIColor clearColor];
 	else
-		outlineColor = [UIColor blackColor];
-	
+		outlineColor = [self getColorWithOpacity:[UIColor blackColor]];
 	[self.view addGestureRecognizer:pinchImage];
 	[self Cook];
 }
@@ -150,12 +161,13 @@
     [super viewDidLoad];
 	
 	self.BlackBlurredImage.alpha = 0;
-	[[NSUserDefaults standardUserDefaults] setFloat:64.0f forKey:@"RelativeFontScale"];
+	[[NSUserDefaults standardUserDefaults] setFloat:40.0f forKey:@"RelativeFontScale"];
 	[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TextAlignment"];
 	[[NSUserDefaults standardUserDefaults] setObject:@"Impact" forKey:@"FontName"];
 	[[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"StrokeWidth"];
 	[[NSUserDefaults standardUserDefaults] setObject:@"Black (default)" forKey:@"OutlineColor"];
 	[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
+	
 	
 	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
 												  forBarMetrics:UIBarMetricsDefault];
@@ -218,9 +230,8 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(keyboardWasShown:)
-												 name:UIKeyboardDidShowNotification
+												 name:UIKeyboardWillShowNotification
 											   object:nil];
-	
 	
 	panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
 	[panGesture setMinimumNumberOfTouches:2];
@@ -229,19 +240,100 @@
 	bottomTextFrameOffset = CGPointZero;
 	
 	moveTop = YES;
+	
+	leftSwipeImage = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeImage:)];
+	[leftSwipeImage setNumberOfTouchesRequired:1];
+	[leftSwipeImage setDirection:UISwipeGestureRecognizerDirectionLeft];
+	[self.view addGestureRecognizer:leftSwipeImage];
+	
+	rightSwipeImage = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeImage:)];
+	[rightSwipeImage setNumberOfTouchesRequired:1];
+	[rightSwipeImage setDirection:UISwipeGestureRecognizerDirectionRight];
+	[self.view addGestureRecognizer:rightSwipeImage];
+	
+	oppanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(updateOpacity:)];
+	[oppanGesture setMinimumNumberOfTouches:1];
+	[self.opacityLines addGestureRecognizer:oppanGesture];
+	
+	doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTappedView:)];
+	[doubleTap setNumberOfTouchesRequired:1];
+	[doubleTap setNumberOfTapsRequired:2];
+	[self.view addGestureRecognizer:doubleTap];
+	
+	willBeUppercase = YES;
+	
+	_opacityLines.transform = CGAffineTransformMakeTranslation(120, 0);
+	
+	topopacity = 1.0f;
+	bottomopacity = 1.0f;
+	
+	[self repositionTextField];
 
 	
     // Do any additional setup after loading the view.
 }
 
+-(void)leftSwipeImage: (UISwipeGestureRecognizer *)recognizer {
+	[UIView animateWithDuration:0.15 animations:^{
+		_opacityLines.transform = CGAffineTransformIdentity;
+	}];
+}
+
+-(void)rightSwipeImage: (UISwipeGestureRecognizer *)recognizer {
+	[UIView animateWithDuration:0.15 animations:^{
+		_opacityLines.transform = CGAffineTransformMakeTranslation(120, 0);
+	}];
+}
+
+-(void)doubleTappedView: (UITapGestureRecognizer *)recognizer {
+	if (CGRectContainsRect(recognizer.view.frame, _imageView.frame)) {
+		if (willBeUppercase)
+			willBeUppercase = NO;
+		else
+			willBeUppercase = YES;
+	}
+	[self Cook];
+}
+
+- (UIColor*)getColorWithOpacity:(UIColor *)color {
+	if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"TextColor"] isEqualToString:@"Clear Color"])
+		return color;
+	
+	if (moveTop)
+		return [color colorWithAlphaComponent:topopacity];
+	
+	else
+		return [color colorWithAlphaComponent:bottomopacity];
+}
+
+-(void)updateOpacity:(UIPanGestureRecognizer *)recognizer {
+	float h = recognizer.view.frame.size.height;
+	CGPoint pt = [recognizer locationInView:recognizer.view];
+	float p = h - pt.y;
+	if (moveTop) {
+		bottomopacity = 1;
+		topopacity = sqrtf(p/h);
+	}
+	else {
+		topopacity = 1;
+		bottomopacity = sqrt(p/h);
+	}
+	[self Cook];
+}
+
+-(void)repositionTextField {
+	NSLog(@"Reposition TF");
+	[self.topField setFrame: CGRectMake(10, (self.imageView.frame.size.height - self.imageView.image.size.height)/2, self.view.frame.size.width - 20, self.imageView.image.size.height/2)];
+}
+
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
 	CGPoint translation = [recognizer translationInView:self.imageView];
 	if (moveTop)
-		topTextFrameOffset = CGPointMake(topTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/60,
-										 topTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/60);
+		topTextFrameOffset = CGPointMake(topTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/90,
+										 topTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/90);
 	else
-		bottomTextFrameOffset = CGPointMake(bottomTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/60,
-											bottomTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/60);
+		bottomTextFrameOffset = CGPointMake(bottomTextFrameOffset.x + [recognizer velocityInView:self.imageView].x/90,
+											bottomTextFrameOffset.y + [recognizer velocityInView:self.imageView].y/90);
 	[recognizer setTranslation:translation inView:self.imageView];
 	[self Cook];
 }
@@ -261,10 +353,19 @@
 - (void)Cook {
 	[self.view endEditing:YES];
 	_imageView.image = imagex;
-	_imageView.image = [self drawTextTop:[_topField.text uppercaseString]
+	NSString *topText, *bottomText;
+	if (willBeUppercase) {
+		topText = [_topField.text uppercaseString];
+		bottomText = [_bottomField.text uppercaseString];
+	}
+	else {
+		topText = [_topField text];
+		bottomText = [_bottomField text];
+	}
+	_imageView.image = [self drawTextTop:topText
 								 inImage:_imageView.image
 								 atPoint:CGPointMake(20, 0)];
-	_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
+	_imageView.image = [self drawTextBottom:bottomText
 									inImage:_imageView.image
 									atPoint:CGPointMake(20, 220)];
 }
@@ -283,13 +384,13 @@
 	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 	paragraphStyle.alignment = align;
 	
-	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:fontsize];
+	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:topfontsize];
 	myText.font = cookingFont;
-	myText.textColor = textColor;
+	myText.textColor = [self getColorWithOpacity:textColor];
 	myText.textAlignment = align;
 	myText.text = [NSString stringWithString:text];
 	
-	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : textColor,
+	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 									 NSFontAttributeName: cookingFont,
 									 NSShadowAttributeName: shadow,
 									 NSParagraphStyleAttributeName: paragraphStyle,
@@ -302,15 +403,15 @@
 									  attributes:textAttributes
 										 context:nil];
 	
-	myText.frame = CGRectMake(0, 0, image.size.width, image.size.height/2);
+	myText.frame = CGRectMake(0, 0, image.size.width, image.size.height/1.5);
 	topTextRect = myText.frame;
 	
 	while (ceilf(textRect.size.height) >= ceilf(maximumLabelSize.height)){
-		fontsize --;
-		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:fontsize];
+		topfontsize --;
+		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:topfontsize];
 		[myText setFont:cookingFont];
 		myText.text = [NSString stringWithString:text];
-		textAttributes = @{NSForegroundColorAttributeName : textColor,
+		textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 						   NSFontAttributeName: cookingFont,
 						   NSShadowAttributeName: shadow,
 						   NSParagraphStyleAttributeName: paragraphStyle,
@@ -343,13 +444,13 @@
 	NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 	paragraphStyle.alignment = align;
 	
-	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:fontsize];
+	cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:bottomfontsize];
 	myText.font = cookingFont;
-	myText.textColor = textColor;
+	myText.textColor = [self getColorWithOpacity:textColor];
 	myText.textAlignment = align;
 	myText.text = [NSString stringWithString:text];
 	
-	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : textColor,
+	NSDictionary *textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 									 NSFontAttributeName: cookingFont,
 									 NSShadowAttributeName: shadow,
 									 NSParagraphStyleAttributeName: paragraphStyle,
@@ -367,11 +468,11 @@
 	bottomTextRect = myText.frame;
 	
 	while (ceilf(textRect.size.height) >= ceilf(maximumLabelSize.height)){
-		fontsize --;
-		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:fontsize];
+		bottomfontsize --;
+		cookingFont = [UIFont fontWithName:[[NSUserDefaults standardUserDefaults] objectForKey:@"FontName"]	size:bottomfontsize];
 		[myText setFont:cookingFont];
 		myText.text = [NSString stringWithString:text];
-		textAttributes = @{NSForegroundColorAttributeName : textColor,
+		textAttributes = @{NSForegroundColorAttributeName : [self getColorWithOpacity:textColor],
 						   NSFontAttributeName: cookingFont,
 						   NSShadowAttributeName: shadow,
 						   NSParagraphStyleAttributeName: paragraphStyle,
@@ -382,7 +483,7 @@
 									  attributes:textAttributes
 										 context:nil];
 		CGSize expectedLabelSize = textRect.size;
-		myText.frame = CGRectMake(0, (image.size.height) - (expectedLabelSize.height), image.size.width, image.size.height/2);
+		myText.frame = CGRectMake(0, (image.size.height) - (expectedLabelSize.height), image.size.width, image.size.height/1.5);
 	}
 	
 	[myText.text drawInRect:CGRectMake(myText.frame.origin.x + bottomTextFrameOffset.x, myText.frame.origin.y + bottomTextFrameOffset.y, myText.frame.size.width, myText.frame.size.height) withAttributes:textAttributes];
@@ -394,17 +495,33 @@
 
 -(void)pinchImage :(UIPinchGestureRecognizer *)gestureRecognizer {
 	CGFloat fontscale = 0.3f * gestureRecognizer.velocity;
-	if (gestureRecognizer.scale > 1) {
-		if (fontsize < 150.0f)
-			fontsize += fontscale;
-		else
-			fontsize = 150.0f;
+	if (moveTop) {
+		if (gestureRecognizer.scale > 1) {
+			if (topfontsize < 150.0f)
+				topfontsize += fontscale;
+			else
+				topfontsize = 150.0f;
+		}
+		else if (gestureRecognizer.scale < 1) {
+			if (topfontsize > 20.0f)
+				topfontsize += fontscale;
+			else
+				topfontsize = 20.0f;
+		}
 	}
-	else if (gestureRecognizer.scale < 1) {
-		if (fontsize > 20.0f)
-			fontsize += fontscale;
-		else
-			fontsize = 20.0f;
+	else {
+		if (gestureRecognizer.scale > 1) {
+			if (bottomfontsize < 150.0f)
+				bottomfontsize += fontscale;
+			else
+				bottomfontsize = 150.0f;
+		}
+		else if (gestureRecognizer.scale < 1) {
+			if (bottomfontsize > 20.0f)
+				bottomfontsize += fontscale;
+			else
+				bottomfontsize = 20.0f;
+		}
 	}
 	[self Cook];
 }
@@ -453,10 +570,19 @@
 
 - (IBAction)textFieldTextChanged:(id)sender {
 	_imageView.image = imagex;
-	_imageView.image = [self drawTextTop:[_topField.text uppercaseString]
+	NSString *topText, *bottomText;
+	if (willBeUppercase) {
+		topText = [_topField.text uppercaseString];
+		bottomText = [_bottomField.text uppercaseString];
+	}
+	else {
+		topText = [_topField text];
+		bottomText = [_bottomField text];
+	}
+	_imageView.image = [self drawTextTop:topText
 								 inImage:_imageView.image
 								 atPoint:CGPointMake(20, 0)];
-	_imageView.image = [self drawTextBottom:[_bottomField.text uppercaseString]
+	_imageView.image = [self drawTextBottom:bottomText
 									inImage:_imageView.image
 									atPoint:CGPointMake(20, 220)];
 }
@@ -491,11 +617,13 @@
 		}completion:nil];
 		
 		[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-		[[NSNotificationCenter defaultCenter] addObserverForName:UIDeviceOrientationDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-			if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-				[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
-			else
-				[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+		[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidChangeStatusBarOrientationNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+			[UIView animateWithDuration:0.5 animations:^{
+				if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+					[fontTableVC.view setFrame:CGRectMake(100, self.view.frame.size.height - 400, self.view.frame.size.width - 200, 390)];
+				else
+					[fontTableVC.view setFrame:CGRectMake(5, self.view.frame.size.height - 275, self.view.frame.size.width - 10, 270)];
+			}];
 			NSLog(@"Rotated");
 			[fontTableVC.tableView reloadData];
 			
@@ -563,6 +691,14 @@
 	}
 }
 
+-(UIImage *)imageToScale:(UIImage *)image Size:(CGSize)size {
+	UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+	[image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+	UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return newImage;
+}
+
 #pragma mark - PHContentEditingController
 
 - (BOOL)canHandleAdjustmentData:(PHAdjustmentData *)adjustmentData {
@@ -575,8 +711,24 @@
     // Present content for editing, and keep the contentEditingInput for use when closing the edit session.
     // If you returned YES from canHandleAdjustmentData:, contentEditingInput has the original image and adjustment data.
     // If you returned NO, the contentEditingInput has past edits "baked in".
-	imagex = placeholderImage;
-	fullSizeImage = placeholderImage;
+	
+	
+	fullSizeImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:contentEditingInput.fullSizeImageURL]];
+	
+	UIImage *image = placeholderImage;
+	CGFloat heightx = 848.0/([UIScreen mainScreen].scale);
+	if (MAX(image.size.height, image.size.width) > heightx) {
+		if (image.size.width > image.size.height)
+			image = [self imageToScale:image Size:CGSizeMake(heightx, heightx*image.size.height/image.size.width)];
+		else
+			image = [self imageToScale:image Size:CGSizeMake(heightx*image.size.width/image.size.height, heightx)];
+	}
+	imagex = image;
+	
+	NSLog(@"Imagex : %f X %f\n", image.size.width, image.size.height);
+	NSLog(@"PlaceholderImage : %f X %f\n", placeholderImage.size.width, placeholderImage.size.height);
+	NSLog(@"Input Res : %f X %f\n", fullSizeImage.size.width, fullSizeImage.size.height);
+	
 	self.input = contentEditingInput;
 	[self viewDidLoad];
 }
@@ -584,16 +736,29 @@
 - (void)finishContentEditingWithCompletionHandler:(void (^)(PHContentEditingOutput *))completionHandler {
     // Update UI to reflect that editing has finished and output is being rendered.
 	
-	if (imagex == nil) {
+	if (fullSizeImage == nil) {
 		[self cancelContentEditing];
 	}
 	
-	[self Cook];
-	imagex = [self drawTextTop:[_topField.text uppercaseString]
-								 inImage:imagex
+	NSString *topText, *bottomText;
+	if (willBeUppercase) {
+		topText = [_topField.text uppercaseString];
+		bottomText = [_bottomField.text uppercaseString];
+	}
+	else {
+		topText = [_topField text];
+		bottomText = [_bottomField text];
+	}
+	float scale = fullSizeImage.size.height/imagex.size.height;
+	topfontsize *= scale;
+	bottomfontsize *= scale;
+	topTextFrameOffset = CGPointMake(topTextFrameOffset.x * scale, topTextFrameOffset.y * scale);
+	bottomTextFrameOffset = CGPointMake(bottomTextFrameOffset.x * scale, bottomTextFrameOffset.y * scale);
+	fullSizeImage = [self drawTextTop:topText
+								 inImage:fullSizeImage
 								 atPoint:CGPointMake(20, 0)];
-	imagex = [self drawTextBottom:[_bottomField.text uppercaseString]
-									inImage:imagex
+	fullSizeImage = [self drawTextBottom:bottomText
+									inImage:fullSizeImage
 									atPoint:CGPointMake(20, 220)];
     
     // Render and provide output on a background queue.
@@ -606,7 +771,10 @@
         // Provide new adjustments and render output to given location.
 		output.adjustmentData = [[PHAdjustmentData alloc] initWithFormatIdentifier:indetifier formatVersion:@"1.1" data:archivedData];
 		
-         NSData *renderedJPEGData = UIImageJPEGRepresentation(imagex, 1.0);
+		NSLog(@"Edited Res : %f X %f", imagex.size.width, imagex.size.height);
+		NSLog(@"Optput Res : %f X %f", fullSizeImage.size.width, fullSizeImage.size.height);
+		
+         NSData *renderedJPEGData = UIImageJPEGRepresentation(fullSizeImage, 1.0);
          [renderedJPEGData writeToURL:output.renderedContentURL atomically:YES];
 		
         // Call completion handler to commit edit to Photos.
@@ -619,7 +787,7 @@
 - (BOOL)shouldShowCancelConfirmation {
     // Returns whether a confirmation to discard changes should be shown to the user on cancel.
     // (Typically, you should return YES if there are any unsaved changes.)
-    return NO;
+    return YES;
 }
 
 - (void)cancelContentEditing {

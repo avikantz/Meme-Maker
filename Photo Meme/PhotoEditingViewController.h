@@ -33,4 +33,8 @@
 - (IBAction)topOrBottom:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *topOrBottomButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *opacityLines;
+
+
+
 @end

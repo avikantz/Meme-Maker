@@ -14,7 +14,7 @@
 #import "MemeProtocol.h"
 //#import "PageContentViewController.h" 
 
-@interface TableViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate>
+@interface TableViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate, UISearchDisplayDelegate>
 
 // UIPageViewControllerDataSource
 
@@ -36,9 +36,5 @@
 - (IBAction)CameraAction:(id)sender;
 - (IBAction)lastEditAction:(id)sender;
 - (IBAction)collectionViewAction:(id)sender;
-
-
-
-
 
 @end

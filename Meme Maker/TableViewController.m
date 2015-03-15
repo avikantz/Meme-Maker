@@ -39,6 +39,10 @@
 	UIView *footer;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+	[self viewWillAppear:YES];
+}
+
 -(void)viewWillAppear:(BOOL)animated {
 	if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil)
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
@@ -68,7 +72,7 @@
 	self.searchDisplayController.searchResultsTableView.backgroundColor = DefColor;
 	self.searchDisplayController.searchResultsTableView.backgroundView.backgroundColor = DefColor;
 	self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	self.searchDisplayController.searchBar.translucent = YES;
+	self.searchDisplayController.searchBar.translucent = NO;
 	self.searchDisplayController.searchBar.backgroundColor = DefColor;
 	self.searchDisplayController.searchBar.tintColor = TextColor;
 	[[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:15.0f], NSForegroundColorAttributeName: TextColor}];
@@ -81,7 +85,6 @@
 	
 	self.tableView.tableFooterView.backgroundColor = DefColor;
 	self.tableView.tableFooterView.tintColor = DefColor;
-	self.tableView.tableFooterView.layer.backgroundColor = (__bridge CGColorRef)(DefColor);
 	
 	// Add a frakking footer here...
 	footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 620)];
@@ -98,7 +101,7 @@
 	
 	UITextView *informationLabel = [[UITextView alloc] initWithFrame:CGRectMake(10, 25, self.view.frame.size.width - 20, 190)];
 	[informationLabel setBackgroundColor:[UIColor clearColor]];
-	[informationLabel setText:[NSString stringWithFormat:@"Select or search a meme.\nAdd your own images.\nSwipe up to bring up editing options.\nSwipe left and right to switch between options.\nPinch to set text size.\nTwo finger pan to place top or bottom text, tap the button on the right to select. Shake to reset position.\nSwipe on text field to add default text (The title in most cases).\nShare with friends and the internet."]];
+	[informationLabel setText:[NSString stringWithFormat:@"Select or search a meme.\nAdd your own images.\nSwipe up to bring up editing options.\nSwipe left and right to switch between options.\nPinch to set text size. Swipe left for text opacity option.\nTwo finger pan to place top or bottom text, tap the button on the right to select. Shake to reset position.\nSwipe on text field to add default text. Double tap to change case.\nShare with friends and the internet."]];
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"])
 		[informationLabel setTextColor:[UIColor blackColor]];
 	else
@@ -206,11 +209,17 @@
 		[lbl2 setTextColor:[UIColor colorWithWhite:0.9 alpha:1.0]];
 	[footer addSubview:lbl2];
 	
-	UIButton *mailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 490, 20, 20)];
+	UIButton *mailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 485, 30, 30)];
 	[mailButton setImage:[UIImage imageNamed:@"Mail"] forState:UIControlStateNormal];
 	[mailButton setAlpha:0.5];
-	[mailButton addTarget:self action:@selector(Contact) forControlEvents:UIControlEventValueChanged];
+	[mailButton addTarget:self action:@selector(Contact) forControlEvents:UIControlEventTouchUpInside];
 	[footer addSubview:mailButton];
+	
+	UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(70, 485, 30, 30)];
+	[shareButton setImage:[UIImage imageNamed:@"Share"] forState:UIControlStateNormal];
+	[shareButton setAlpha:0.5];
+	[shareButton addTarget:self action:@selector(Share) forControlEvents:UIControlEventTouchUpInside];
+	[footer addSubview:shareButton];
 	
 	UILabel *lbl3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 585, self.view.frame.size.width , 20)];
 	lbl3.backgroundColor = [UIColor clearColor];
@@ -279,7 +288,7 @@
 	self.searchDisplayController.searchResultsTableView.backgroundColor = DefColor;
 	self.searchDisplayController.searchResultsTableView.backgroundView.backgroundColor = DefColor;
 	self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-	self.searchDisplayController.searchResultsTableView.contentOffset = CGPointMake(0.0, 20.0);
+	self.searchDisplayController.searchResultsTableView.contentOffset = CGPointMake(0.0, 44.0);
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"DarkMode"])
 		self.searchDisplayController.searchBar.keyboardAppearance = UIKeyboardAppearanceDark;
 	else
@@ -299,8 +308,10 @@
 	
 	for (int i = 0; i < [ArrayOfMemeObjects count]; ++i) {
 		MemeObject *meme = [[MemeObject alloc] initWithName:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Name"]] image:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Image"]] tags:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"Tags"]] url:[NSString stringWithFormat:@"%@", [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"URL"]]];
-		meme.topText = @"";
-		meme.bottomText = @"";
+		if ([[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"topText"])
+			meme.topText = [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"topText"];
+		if ([[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"bottomText"])
+			meme.bottomText = [[ArrayOfMemeObjects objectAtIndex:i] objectForKey:@"bottomText"];
 		[AllMemes addObject:meme];
 	}
 	
@@ -313,12 +324,12 @@
 				NSData *dataOfImage = UIImageJPEGRepresentation(imagey, 0.7);
 				NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
 				[dataOfImage writeToFile:imagePath atomically:YES];
-				[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
 				[[NSUserDefaults standardUserDefaults] synchronize];
 				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"SmallSizeLoadedOnce"];
 				[[NSUserDefaults standardUserDefaults] setInteger:[AllMemes count] forKey:@"NumberOfMemes"];
 			}
 		}
+		[self performSelectorOnMainThread:@selector(viewWillAppear:) withObject:nil waitUntilDone:YES];
 	});
 	
 	[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillEnterForegroundNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
@@ -336,22 +347,6 @@
 		}
 		[self viewWillAppear:YES];
 	}];
-	
-//	[self.searchDisplayController.searchBar setImage:[UIImage imageNamed:@"Settings"] forSearchBarIcon:UISearchBarIconBookmark state:UIControlStateNormal];
-//	[self.searchDisplayController.searchBar setPositionAdjustment:UIOffsetMake(-10, 0) forSearchBarIcon:UISearchBarIconBookmark];
-
-//	_pageImages = @[@"Screen1.jpg",
-//					@"Screen2.jpg",
-//					@"Screen3.jpg",
-//					@"Screen4.jpg"];
-	
-//	[self.tableView setTransform:CGAffineTransformMakeTranslation(0, self.view.frame.size.height)];
-//	[self.tableView setAlpha:0.0];
-//	[UIView animateWithDuration:0.6 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-//		[self.tableView setTransform:CGAffineTransformIdentity];
-//		[self.tableView setAlpha:1.0];
-//	}completion:nil];
-	
 }
 
 #pragma mark - Switches
@@ -412,6 +407,21 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)Share{
+	UIActivityViewController *ShareAVC = [[UIActivityViewController alloc] initWithActivityItems:
+										  @[[NSString stringWithFormat:@"Hey!, I'm using 'Meme Maker' to create Awesome Memes!\n\nhttps://itunes.apple.com/us/app/meme-maker-add-customized/id962121383?ls=1&mt=8"],
+											[NSURL URLWithString:@"https://itunes.apple.com/us/app/meme-maker-add-customized/id962121383?ls=1&mt=8"],
+											[UIImage imageNamed:@"MemeMakerIcon.jpg"]]
+																		   applicationActivities:nil];
+	ShareAVC.excludedActivityTypes = @[UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypePrint];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+		UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:ShareAVC];
+		[popup presentPopoverFromRect:self.tableView.tableFooterView.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	}
+	else
+		[self presentViewController:ShareAVC animated:TRUE completion:nil];
+}
+
 #pragma mark - Search display results
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
@@ -430,9 +440,22 @@
 	return YES;
 }
 
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-	[self.searchDisplayController setActive:NO];
-	self.tableView.tableHeaderView = searchBar;
+-(void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView {
+	[self viewDidAppear:YES];
+	
+	[self prefersStatusBarHidden];
+	[self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+	}
+
+-(void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView {
+	[self prefersStatusBarHidden];
+	[self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+}
+
+- (BOOL)prefersStatusBarHidden {
+	if (self.searchDisplayController.isActive)
+		return YES;
+	return NO;
 }
 
 #pragma mark - Table view data source
@@ -465,11 +488,9 @@
 	cell.cellTitle.text = [NSString stringWithFormat:@"%@", meme.Name];
 	
 	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"%@", meme.Image]];
-	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:[NSString stringWithFormat:@"I%@", meme.Image]];
-	NSString *imageKey = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"I%@", meme.Image]];
 	
 	UIImage *image;
-	if (imageKey)
+	if ([NSData dataWithContentsOfFile:imagePath])
 		image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
 	else {
 		image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", meme.Image]];
@@ -542,44 +563,6 @@
 	return nilView;
 }
 
-/*
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-	UIView *footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 150)];
-	footer.backgroundColor = [UIColor clearColor];
-	
-	UILabel *lbl = [[UILabel alloc]initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 20)];
-	lbl.backgroundColor = [UIColor clearColor];
-	lbl.text = [NSString stringWithFormat:@"%li MEMES", (long)[AllMemes count]];
-	lbl.alpha = 0.9;
-	[lbl setTextAlignment:NSTextAlignmentCenter];
-	[lbl setFont: [UIFont fontWithName:@"EtelkaNarrowTextPro" size:18.0]];
-	[lbl setTextColor:[UIColor colorWithRed:51.0/255 green:104.0/255 blue:0 alpha:1]];
-	[footer addSubview:lbl];
-	
-	UILabel *lbl2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 110, self.view.frame.size.width - 20, 20)];
-	lbl2.backgroundColor = [UIColor clearColor];
-	lbl2.text = [NSString stringWithFormat:@"Created by @avikantz for the glory of Satan."];
-	lbl2.alpha = 0.4;
-	[lbl2 setTextAlignment:NSTextAlignmentRight];
-	[lbl2 setFont: [UIFont fontWithName:@"EtelkaNarrowTextPro" size:14.0]];
-	[lbl2 setTextColor:[UIColor blackColor]];
-	[footer addSubview:lbl2];
-	
-	UILabel *lbl3 = [[UILabel alloc]initWithFrame:CGRectMake(20, 125, self.view.frame.size.width - 20, 20)];
-	lbl3.backgroundColor = [UIColor clearColor];
-	lbl3.text = [NSString stringWithFormat:@"What, you were expecting more stuff here?"];
-	lbl3.alpha = 0.4;
-	[lbl3 setTextAlignment:NSTextAlignmentLeft];
-	[lbl3 setFont: [UIFont fontWithName:@"EtelkaNarrowTextPro" size:14.0]];
-	[lbl3 setTextColor:[UIColor blackColor]];
-	[footer addSubview:lbl3];
-	
-	self.tableView.tableFooterView=footer;
-	return footer;
-}
-
-*/
-
 -(void)Contact {
 	if ([MFMailComposeViewController canSendMail]) {
 		MFMailComposeViewController *mail = [[MFMailComposeViewController alloc] init];
@@ -591,6 +574,10 @@
 		[mail setMessageBody:emailBody isHTML:NO];
 		mail.modalPresentationStyle = UIModalPresentationPageSheet;
 		[self presentViewController:mail animated:YES completion:nil];
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+			UIPopoverController *popup = [[UIPopoverController alloc] initWithContentViewController:mail];
+			[popup presentPopoverFromRect:self.tableView.tableFooterView.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+		}
 	}
 	else {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"What year is this?!" message:@"Your device cannot send or recieve e-mails!" delegate:nil cancelButtonTitle:@"Uhh.... Okay!" otherButtonTitles: nil];
@@ -602,15 +589,6 @@
 
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
 	[self dismissViewControllerAnimated:YES completion:nil];	
-}
-
--(void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
-	view.alpha = 0.5;
-	view.layer.transform = CATransform3DMakeScale(0.3, 0.3, 0.3);
-	[UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		view.alpha = 1;
-		view.layer.transform = CATransform3DIdentity;
-	}completion:nil];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -629,6 +607,9 @@
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LibCamPickUp"];
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+//	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"lastEditedTopText"];
+//	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"lastEditedBottomText"];
 	
 	if (self.delegate)
 		[self.delegate selectedMeme:meme];
@@ -678,7 +659,7 @@
 }
 
 - (IBAction)MenuAction:(id)sender {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"By Popularity", @"Alphabetically", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Sort" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"By Popularity", @"Alphabetically", @"Dealphabetically", nil];
 	[actionSheet showInView:self.view];
 }
 
@@ -691,9 +672,15 @@
 		AllMemes = [[NSMutableArray alloc] initWithArray:sortedArray];
 		[self.tableView reloadData];
 	}
-	if ([title isEqualToString:@"By Popularity"]) {
-		[self viewDidLoad];
+	else if ([title isEqualToString:@"Dealphabetically"]){
+		NSArray *sortedArray = [AllMemes sortedArrayUsingComparator:^(MemeObject *a, MemeObject *b){
+			return [b.Name caseInsensitiveCompare:a.Name];
+		}];
+		AllMemes = [[NSMutableArray alloc] initWithArray:sortedArray];
 		[self.tableView reloadData];
+	}
+	else if ([title isEqualToString:@"By Popularity"]) {
+		[self viewWillAppear:YES];
 	}
 }
 
@@ -770,6 +757,7 @@
 }
 
 - (IBAction)lastEditAction:(id)sender {
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LibCamPickUp"];
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"LoadingLastEdit"];
 		if ([UIImage imageWithData:[NSData dataWithContentsOfFile:[[NSUserDefaults standardUserDefaults] objectForKey:@"lastEditedImagePath"]]] != nil) {
@@ -799,24 +787,16 @@
 
 - (void)imagePickerController:(UIImagePickerController *)pick didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *image = info[UIImagePickerControllerOriginalImage];
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-		if (MAX(image.size.height, image.size.width) > 1024.0) {
-			if (image.size.width > image.size.height)
-				image = [self imageToScale:image Size:CGSizeMake(1024.0, 1024.0*image.size.height/image.size.width)];
-			else
-				image = [self imageToScale:image Size:CGSizeMake(1024.0*image.size.width/image.size.height, 1024.0)];
-		}
+	CGFloat heightx = 1024.0/([UIScreen mainScreen].scale);
+	if (MAX(image.size.height, image.size.width) > heightx) {
+		if (image.size.width > image.size.height)
+			image = [self imageToScale:image Size:CGSizeMake(heightx, heightx*image.size.height/image.size.width)];
+		else
+			image = [self imageToScale:image Size:CGSizeMake(heightx*image.size.width/image.size.height, heightx)];
 	}
-	else {
-		if (MAX(image.size.height, image.size.width) > 512.0) {
-			if (image.size.width > image.size.height)
-				image = [self imageToScale:image Size:CGSizeMake(512.0, 512.0*image.size.height/image.size.width)];
-			else
-				image = [self imageToScale:image Size:CGSizeMake(512.0*image.size.width/image.size.height, 512.0)];
-		}
-	}
+	NSLog(@"%f x %f\nScreen = %f", image.size.height, image.size.width, self.view.frame.size.height);
 	
-	NSData *dataOfImage = UIImageJPEGRepresentation(image, 0.8);
+	NSData *dataOfImage = UIImageJPEGRepresentation(image, 0.7);
 	NSString *imagePath = [self documentsPathForFileName:[NSString stringWithFormat:@"image.jpg"]];
 	[dataOfImage writeToFile:imagePath atomically:YES];
 	[[NSUserDefaults standardUserDefaults] setObject:imagePath forKey:@"ImagePath"];
@@ -847,6 +827,7 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)pick {
 	[pick dismissViewControllerAnimated:YES completion:NULL];
 	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LoadingLastEdit"];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"LibCamPickUp"];
 }
 
 #pragma mark - Page View Controller Data Source

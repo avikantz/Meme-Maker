@@ -41,7 +41,7 @@
 		[[NSUserDefaults standardUserDefaults] setFloat:64.0f forKey:@"RelativeFontScale"];
 		[[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"TextAlignment"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"Impact" forKey:@"FontName"];
-		[[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"StrokeWidth"];
+		[[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"StrokeWidth"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"Black (default)" forKey:@"OutlineColor"];
 		[[NSUserDefaults standardUserDefaults] setObject:@"White (default)" forKey:@"TextColor"];
 	}

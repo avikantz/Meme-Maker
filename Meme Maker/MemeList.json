@@ -15,7 +15,9 @@
   "Name": "Futurama Fry",
   "Image": "Futurama Fry.jpeg",
   "Tags": "Not sure if X or Y Skeptical Fry Futurama",
-  "URL": ""
+  "URL": "",
+  "topText": "Not Sure If ",
+  "bottomText": ""
   },
   {
   "Name": "Bad Luck Brian",
@@ -27,7 +29,9 @@
   "Name": "One Does Not Simply",
   "Image": "One Does Not Simply.jpeg",
   "Tags": "one does not simply walk into morder lord of the rings boromir Sean Bean lotr",
-  "URL": ""
+  "URL": "",
+  "topText": "One Does Not Simply",
+  "bottomText": "Walk into Mordor"
   },
   {
   "Name": "First World Problems",
@@ -45,13 +49,17 @@
   "Name": "I Don't Always ... But When I Do",
   "Image": "The Most Interesting Man In The World.jpeg",
   "Tags": "The Most Interesting Man In The World I dont always don't but when I do Dos Equis Man ",
-  "URL": ""
+  "URL": "",
+  "topText": "I Don't Always ",
+  "bottomText": "But When I Do "
   },
   {
   "Name": "Brace Yourselves",
   "Image": "Brace Yourselves X is Coming.jpeg",
   "Tags": "Brace Yourselves X is Coming Ned Stark Winter Is Coming Game of Thrones Sean Bean prepare yourselves",
-  "URL": ""
+  "URL": "",
+  "topText": "Brace Yourselves",
+  "bottomText": "Winter is Coming"
   },
   {
   "Name": "Success Kid",
@@ -93,7 +101,9 @@
   "Name": "X, X Everywhere",
   "Image": "X, X Everywhere.jpeg",
   "Tags": "X Everywhere dicks woody and buzz lightyear pointing toy story",
-  "URL": ""
+  "URL": "",
+  "topText": "xxx, xxx",
+  "bottomText": "Everywhere"
   },
   {
   "Name": "Actual Advice Mallard",
@@ -111,7 +121,9 @@
   "Name": "That Would Be Great",
   "Image": "That Would Be Great.jpeg",
   "Tags": "That Would Be Great Bill Lumbergh office space, yea that'd be great",
-  "URL": ""
+  "URL": "",
+  "topText": "If you could just ",
+  "bottomText": "That would be great"
   },
   {
   "Name": "Please Guy",
@@ -126,10 +138,12 @@
   "URL": ""
   },
   {
-  "Name": "What If",
+  "Name": "Conspiracy Keanu",
   "Image": "Conspiracy Keanu.jpeg",
   "Tags": "Conspiracy Keanu Matrix",
-  "URL": ""
+  "URL": "",
+  "topText": "What If ",
+  "bottomText": ""
   },
   {
   "Name": "Unpopular Opinion Puffin",
@@ -207,12 +221,6 @@
   "Name": "So You're Telling Me",
   "Image": "Third World Skeptical Kid.jpeg",
   "Tags": "Third World Skeptical Kid African So You're Telling Me",
-  "URL": ""
-  },
-  {
-  "Name": "X All The Y",
-  "Image": "X All The Y.jpeg",
-  "Tags": "X All The Y all the Things",
   "URL": ""
   },
   {
@@ -315,7 +323,8 @@
   "Name": "Sudden Clarity Clarence",
   "Image": "Sudden Clarity Clarence.jpg",
   "Tags": "Sudden Clarity Clarence Realization",
-  "URL": ""
+  "URL": "",
+  "topText": "What If "
   },
   {
   "Name": "Lazy College Senior",
@@ -339,7 +348,9 @@
   "Name": "Say That Again I Dare You",
   "Image": "Say That Again I Dare You.jpeg",
   "Tags": "Say That Again I Dare You Samuel L Jackson Pulp Fiction I Double Dare You Motherfucker",
-  "URL": ""
+  "URL": "",
+  "topText": "Say that again, I dare you, I double dare you",
+  "bottomText": "mo********er"
   },
   {
   "Name": "Scumbag Stacy",
@@ -399,7 +410,8 @@
   "Name": "And at this point I'm too afraid to ask",
   "Image": "And at this point I'm too afraid to ask.jpg",
   "Tags": "And at this point I'm too afraid to ask I Dont Know how I Don't Know how Chris Pratt",
-  "URL": ""
+  "URL": "",
+  "topText": "I don't know what xxx is"
   },
   {
   "Name": "Scumbag Brain",
@@ -489,7 +501,9 @@
   "Name": "Sparta Leonidas",
   "Image": "Sparta Leonidas.jpeg",
   "Tags": "Sparta Leonidas This is Sparta 300 Movie",
-  "URL": ""
+  "URL": "",
+  "topText": "This is Sparta",
+  "bottomText": "This is Spaaaaarrrttttaaaaa!!!!"
   },
   {
   "Name": "Socially Awkward Penguin",
@@ -552,6 +566,12 @@
   "URL": ""
   },
   {
+  "Name": "Charlie Sheen Rant",
+  "Image": "Charlie Sheen Rant.jpg",
+  "Tags": "Charlie Sheen Rant",
+  "URL": ""
+  },
+  {
   "Name": "Anti Joke Chicken",
   "Image": "Anti Joke Chicken.jpg",
   "Tags": "Anti Joke Chicken",
@@ -567,7 +587,9 @@
   "Name": "Stop Trying to Make xxx Happen. It's not going to happen",
   "Image": "Stop Trying to Make xxx Happen. It's not going to happen.jpg",
   "Tags": "Stop Trying to Make xxx Happen. It's not going to happen Rachel McAdams Mean Girls",
-  "URL": ""
+  "URL": "",
+  "topText": "Stop Trying to Make xxx Happen",
+  "bottomText": "It's not going to happen"
   },
   {
   "Name": "Technologically Impaired Duck",
@@ -579,7 +601,9 @@
   "Name": "I've Never Been So Wrong In All My Life",
   "Image": "I've Never Been So Wrong In All My Life.jpg",
   "Tags": "I've Never Been So Wrong In All My Life Bilbo Baggins The Hobbit Thorin",
-  "URL": ""
+  "URL": "",
+  "topText": "I thought ",
+  "bottomText": "I've Never Been So Wrong In All My Life"
   },
   {
   "Name": "I'm Going on an Adventure",
@@ -597,7 +621,9 @@
   "Name": "We've had one, yes. What about a second breakfast?",
   "Image": "We've had one, yes. What about a second breakfast?.jpg",
   "Tags": "We've had one, yes. What about a second breakfast? Lord of the rings lotr merry pippin",
-  "URL": ""
+  "URL": "",
+  "topText": "We've had one, yes.",
+  "bottomText": "What about a second breakfast?"
   },
   {
   "Name": "Now that'a a name I haven't heard in a long time",
@@ -669,13 +695,15 @@
   "Name": "And I'm Just Sitting Here",
   "Image": "And I'm Just Sitting Here.jpg",
   "Tags": "And I'm Just Sitting Here Spiderman Masturbating",
-  "URL": ""
+  "URL": "",
+  "bottomText": "Master-baiting!"
   },
   {
   "Name": "Y'all Got Any More",
   "Image": "Y'all Got Any More.jpg",
-  "Tags": "Dave Chappelle - Y'all Got Any More",
-  "URL": ""
+  "Tags": "Dave Chappelle Y'all Got Any More",
+  "URL": "",
+  "topText": "Y'all got any more of those "
   },
   {
   "Name": "Why So Serious?",
@@ -687,7 +715,9 @@
   "Name": "Doctor Who Don't",
   "Image": "Doctor Who Don't.jpeg",
   "Tags": "Doctor Who Don't 10th Doctor David Tennant",
-  "URL": ""
+  "URL": "",
+  "topText": "Don't",
+  "bottomText": "Don't"
   },
   {
   "Name": "Net N00b",
@@ -699,7 +729,8 @@
   "Name": "You're gonna have a Bad Time",
   "Image": "You're gonna have a Bad Time.jpg",
   "Tags": "You're gonna have a Bad Time Ski Instructor South Park Super Cool",
-  "URL": ""
+  "URL": "",
+  "topText": ""
   },
   {
   "Name": "You Sir",
@@ -723,13 +754,16 @@
   "Name": "Leonardo Dicaprio Cheers",
   "Image": "Leonardo Dicaprio Cheers.jpeg",
   "Tags": "Leonardo Dicaprio Cheers",
-  "URL": ""
+  "URL": "",
+  "topText": "Cheers",
+  "bottomText": "Cheers"
   },
   {
   "Name": "Look at all these...",
   "Image": "Look at all these....jpg",
   "Tags": "Look at all these fucks i give",
-  "URL": ""
+  "URL": "",
+  "bottomText": "Fraks I give"
   },
   {
   "Name": "Challenge Accepted",
@@ -762,9 +796,27 @@
   "URL": ""
   },
   {
+  "Name": "Meditating Charlie Sheen",
+  "Image": "Meditating Charlie Sheen.jpg",
+  "Tags": "Meditating Charlie Sheen Middle Finger",
+  "URL": ""
+  },
+  {
   "Name": "But Thats None Of My Business",
   "Image": "But Thats None Of My Business.jpg",
-  "Tags": "But Thats None Of My Business Kermit",
+  "Tags": "But Thats None Of My Business Kermit Frog",
+  "URL": ""
+  },
+  {
+  "Name": "Small Fact Frog",
+  "Image": "Small Fact Frog.jpg",
+  "Tags": "Small Fact Blue Frog Frog",
+  "URL": ""
+  },
+  {
+  "Name": "Stephen Colbert",
+  "Image": "Stephen Colbert.jpg",
+  "Tags": "Stephen Colbert Report",
   "URL": ""
   },
   {
@@ -776,14 +828,18 @@
   {
   "Name": "Darth Vader and Luke Skywalker",
   "Image": "Darth Vader and Luke Skywalker.jpg",
-  "Tags": "Darth Vader and Luke Skywalker Star Wars",
-  "URL": ""
+  "Tags": "Darth Vader Luke Skywalker Star Wars",
+  "URL": "",
+  "bottomText": "Nooooooooooo!",
+  "topText": "No. I'm your father."
   },
   {
   "Name": "Kill Yourself Guy",
   "Image": "Kill Yourself Guy.jpeg",
   "Tags": "Kill Yourself Guy Stop It Guy Correction guy Grammar Nazi grammer guy",
-  "URL": ""
+  "URL": "",
+  "topText": "Kill Yourself!",
+  "bottomText": "*"
   },
   {
   "Name": "Whyyy",
@@ -807,7 +863,9 @@
   "Name": "It's Over, It's Done",
   "Image": "It's Over, It's Done.jpg",
   "Tags": "It's Over, It's Done lord of the rings lotr frodo baggins",
-  "URL": ""
+  "URL": "",
+  "topText": "It's Over",
+  "bottomText": "It's Done"
   },
   {
   "Name": "Good Girl Gina",
@@ -819,13 +877,17 @@
   "Name": "This is where I'd put my ... If I had one",
   "Image": "This is Where.jpg",
   "Tags": "This is Where I'd put my If I had one",
-  "URL": ""
+  "URL": "",
+  "bottomText": "If I had one",
+  "topText": "This is where I'd put my "
   },
   {
   "Name": "Do you want to get … cause that’s how you get …",
   "Image": "Archer.jpeg",
   "Tags": "Archer Sterling Do you want to get Ants cause thats how you get ants",
-  "URL": ""
+  "URL": "",
+  "topText": "Do you want to get ",
+  "bottomText": "Cause that's how you get "
   },
   {
   "Name": "Annoying Childhood Friend",
@@ -849,7 +911,9 @@
   "Name": "I Will Find You and I Will Kill You",
   "Image": "I Will Find You and I Will Kill You.jpg",
   "Tags": "I Will Find You and I Will Kill You Taken Liam Neeson",
-  "URL": ""
+  "URL": "",
+  "topText": "I don't know who you are ",
+  "bottomText": "But I will find you and I will kill you"
   },
   {
   "Name": "Scumbag Parents",
@@ -933,12 +997,22 @@
   "Name": "LOL Guy",
   "Image": "LOL Guy.jpeg",
   "Tags": "LOL Guy rage",
-  "URL": ""
+  "URL": "",
+  "topText": "L.O.L.",
+  "bottomText": "L.O.L."
   },
   {
   "Name": "Pickup Line Panda",
   "Image": "Pickup Line Panda.jpg",
   "Tags": "Pickup Line Panda",
+  "URL": ""
+  },
+  {
+  "Name": "Riddle Me This",
+  "Image": "Riddle Me This.jpg",
+  "Tags": "Riddle Me This Riddler Batman",
+  "topText": "Riddle Me This: ",
+  "bottomText": "",
   "URL": ""
   },
   {
@@ -957,7 +1031,9 @@
   "Name": "10 Peeking",
   "Image": "10 Peeking.jpg",
   "Tags": "10 Peeking Doctor Who 10th",
-  "URL": ""
+  "URL": "",
+  "topText": "Aha!",
+  "bottomText": "Aha!"
   },
   {
   "Name": "Lame Pun Coon",
@@ -1083,6 +1159,8 @@
   "Name": "Archer Deal With It",
   "Image": "Archer Deal With It.jpg",
   "Tags": "Archer Deal With It",
+  "topText": "Deal with it",
+  "bottomText": "Deal with it",
   "URL": ""
   },
   {
@@ -1119,7 +1197,9 @@
   "Name": "Minion What!",
   "Image": "Minion What!.jpg",
   "Tags": "Minion What Despicable Me",
-  "URL": ""
+  "URL": "",
+  "bottomText": "Whaaaaaaaaaaaat!",
+  "topText": "Whaaaaaaaaaaaat"
   },
   {
   "Name": "Me Gusta",
@@ -1146,6 +1226,18 @@
   "URL": ""
   },
   {
+  "Name": "No Patrick",
+  "Image": "No Patrick.jpg",
+  "Tags": "No Patrick Spongebob Is This An",
+  "URL": ""
+  },
+  {
+  "Name": "Surprised Patrick",
+  "Image": "Surprised Patrick.jpg",
+  "Tags": "Surprised Patrick Spongebob",
+  "URL": ""
+  },
+  {
   "Name": "Heisenberg",
   "Image": "Heisenberg.jpg",
   "Tags": "Heisenberg Walter White Breaking Bad",
@@ -1161,7 +1253,9 @@
   "Name": "Spiderman Pssssst",
   "Image": "Spiderman Pssssst.jpg",
   "Tags": "Spiderman Pssssst Animated",
-  "URL": ""
+  "URL": "",
+  "topText": "Pssssst",
+  "bottomText": "Pssssst"
   },
   {
   "Name": "If You Know What I Mean",
@@ -1173,7 +1267,8 @@
   "Name": "Heavy Breathing",
   "Image": "Heavy Breathing.jpg",
   "Tags": "Heavy Breathing Cat",
-  "URL": ""
+  "URL": "",
+  "bottomText": "(Heavy Breathing)"
   },
   {
   "Name": "Computer Guy",
@@ -1185,7 +1280,9 @@
   "Name": "Put It Somewhere Else Patrick",
   "Image": "Put It Somewhere Else Patrick.jpg",
   "Tags": "Put It Somewhere Else Patrick Spongebob Why dont we take this annd put it somewhere else",
-  "URL": ""
+  "URL": "",
+  "topText": "Why don't we take ",
+  "bottomText": "And put it "
   },
   {
   "Name": "Leo Bites his Hand",
@@ -1203,13 +1300,16 @@
   "Name": "Never Thought I'd Die Fighting Side by Side With an Elf",
   "Image": "Never Thought I'd Die Fighting Side by Side With an Elf.jpg",
   "Tags": "Never Thought I'd Die Fighting Side by Side With an Elf Lord of the rings LOTR Legolas Gimli",
-  "URL": ""
+  "URL": "",
+  "bottomText": "How about side by side with a friend?"
   },
   {
   "Name": "What Do You Fear My Lady - A Cage",
   "Image": "What Do You Fear My Lady - A Cage.jpg",
   "Tags": "What Do You Fear My Lady - A Cage Lord of the rings lotr aaragon ewyon",
-  "URL": ""
+  "URL": "",
+  "topText": "What Do You Fear My Lady?",
+  "bottomText": "A Cage"
   },
   {
   "Name": "Priority Peter",
@@ -1293,13 +1393,16 @@
   "Name": "Good Guy Putin",
   "Image": "Good Guy Putin.jpg",
   "Tags": "Good Guy Putin Give that Guy a cookie",
-  "URL": ""
+  "URL": "",
+  "bottomText": "Give the man a cookie"
   },
   {
-  "Name": "I Know Fuck Me Right",
+  "Name": "I Know F*** Me Right",
   "Image": "I Know Fuck Me Right.jpeg",
   "Tags": "I Know Fuck Me Right",
-  "URL": ""
+  "URL": "",
+  "topText": "",
+  "bottomText": "Frak me right"
   },
   {
   "Name": "Civil War",
@@ -1314,7 +1417,7 @@
   "URL": ""
   },
   {
-  "Name": "Then you have my permission to",
+  "Name": "Then you have my permission to ",
   "Image": "Permission Bane.jpeg",
   "Tags": "Permission Bane Then you'll have my permission to die",
   "URL": ""
@@ -1377,7 +1480,9 @@
   "Name": "Rage Fuuuuu",
   "Image": "Rage Fuuuuu.jpg",
   "Tags": "Rage Fuuuuu Face Angry Fuck",
-  "URL": ""
+  "URL": "",
+  "topText": "Fuuuuuuu",
+  "bottomText": "Fuuuuuuu"
   },
   {
   "Name": "Overly Attached Boyfriend",
@@ -1497,7 +1602,9 @@
   "Name": "Minions Bottom",
   "Image": "Minions Bottom.jpg",
   "Tags": "Minions Bottom Despicable Me",
-  "URL": ""
+  "URL": "",
+  "bottomText": "Bottom",
+  "topText": "Bottom"
   },
   {
   "Name": "Scumbag Boss",
@@ -1604,7 +1711,13 @@
   {
   "Name": "No Shit Sherlock",
   "Image": "No Shit Sherock.jpg",
-  "Tags": "No Shit Sherlock Holmes",
+  "Tags": "No Shit Sherlock Holmes Cumberbatch",
+  "URL": ""
+  },
+  {
+  "Name": "Surprised Morarity",
+  "Image": "Morarity Awe.jpg",
+  "Tags": "Jim Morarity Andrew Scott Sherlock",
   "URL": ""
   },
   {
@@ -1704,12 +1817,6 @@
   "URL": ""
   },
   {
-  "Name": "Pedobear",
-  "Image": "Pedobear.jpg",
-  "Tags": "Pedobear",
-  "URL": ""
-  },
-  {
   "Name": "House Thumbs Up",
   "Image": "House Thumbs Up.jpg",
   "Tags": "House Thumbs Up MD Gregory Hugh Laurie",
@@ -1740,9 +1847,11 @@
   "URL": "http://apimeme.com/meme?meme=3g3xw"
   },
   {
-  "Name": "Surprise Mo********er",
+  "Name": "James Doakes",
   "Image": "Surprise Mo********er.jpg",
-  "Tags": "Surprise Motherfucker James Doakes",
+  "Tags": "Surprise Motherfucker James Doakes Dexter",
+  "topText": "Surprise Mo********er",
+  "bottomText": "Surprise Mo********er",
   "URL": ""
   },
   {
@@ -1767,7 +1876,8 @@
   "Name": "Unimpressed Queen",
   "Image": "Unimressed Queen.jpg",
   "Tags": "Unimpressed Queen Elizabeth Britain",
-  "URL": ""
+  "URL": "",
+  "bottomText": "The Queen is not impressed"
   },
   {
   "Name": "Ordinary Muslim Man",
@@ -1899,7 +2009,9 @@
   "Name": "When Everything is... Nothing is",
   "Image": "Incredibles Syndrome.jpg",
   "Tags": "Incredibles Syndrome When everything nothing is",
-  "URL": ""
+  "URL": "",
+  "topText": "When everything is ",
+  "bottomText": "Nothing is"
   },
   {
   "Name": "Steve Jobs",
@@ -1929,7 +2041,9 @@
   "Name": "Hail Hydra Will Wonka",
   "Image": "Hail Hydra Will Wonka.jpeg",
   "Tags": "Hail Hydra Will Wonka",
-  "URL": ""
+  "URL": "",
+  "topText": "Hail Hydra",
+  "bottomText": "Hail Hydra!"
   },
   {
   "Name": "Helpful Tyler Durden",
